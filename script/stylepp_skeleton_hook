@@ -7,9 +7,7 @@ for CUP in $*; do
   for I in `git diff --name-only`; do
     I=$TOP/$I
     if [ ${I: -2} == ".c" ] || [ ${I: -2} == ".h" ]; then
-      echo $I
       if $CUP $I <$I > /tmp/fmt; then
-        echo $I
         mv /tmp/fmt $I
       fi
     fi

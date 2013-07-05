@@ -1,0 +1,4 @@
+if [ -z "`grep "[Cc]opyright" $1`" ]; then
+  echo $1: Missing copyright notice. >&2
+fi
+exit 1
