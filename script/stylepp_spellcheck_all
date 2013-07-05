@@ -1,0 +1,11 @@
+DIR="$( cd "$( dirname "${BASH_SOURCE[0]}" )" && pwd )"
+PATH=$PATH:$DIR/../bin:$DIR
+
+echo > /tmp/misspells
+for I in `find -regex ".*[.][ch]\$"`; do
+  for WORD in `stylepp_extract_comment $I < $I | aspell list`; do
+    echo $WORD >>/tmp/misspells
+  done
+done
+
+cat /tmp/misspells | sort | uniq
