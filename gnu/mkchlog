@@ -1,0 +1,45 @@
+rm Log
+echo -e `date +%Y-%m-%d` "  `git config --get user.name`  <`git config --get user.email`>\n" > tmp
+
+for I in `find | grep "\.ChangeLog"`; do
+  rm $I 
+done
+
+TOP=`git rev-parse --show-toplevel`
+for I in `git diff --name-only HEAD^ | sort`; do
+  DIR=$TOP/`dirname $I`
+  PATHN=`basename $I`
+  if [ "$I" != "ChangeLog" ]; then
+    while true; do
+      if  [ -f $DIR/ChangeLog ]; then
+        I=`echo $I | cut -d'/' -f2-`
+        if  [ -f $DIR/.ChangeLog ]; then
+          echo "	* $PATHN: Likewise." >> $DIR/.ChangeLog
+        else
+          echo "	* $PATHN: $*" >> $DIR/.ChangeLog
+        fi
+        echo $DIR
+        break
+      fi
+      PATHN=`basename $DIR`/$PATHN
+      DIR=`dirname $DIR`
+    done
+  fi
+done
+
+for I in `find | grep "\.ChangeLog"`; do
+  DIR=`dirname $I`
+  echo >> $DIR/.ChangeLog
+  cat tmp $DIR/.ChangeLog $DIR/ChangeLog > t2
+  mv t2 $DIR/ChangeLog
+  echo -e "$DIR/Changelog:\n\n" >> Log
+  cat $DIR/.ChangeLog >> Log
+  rm $DIR/.ChangeLog
+done
+
+rm tmp
+for I in `find | grep "\.ChangeLog"`; do
+  rm $I 
+done
+
+
