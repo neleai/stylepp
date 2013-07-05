@@ -1,9 +1,8 @@
-TOP=`git rev-parse --show-toplevel`
 DIR="$( cd "$( dirname "${BASH_SOURCE[0]}" )" && pwd )"
 
-for CUP in $*; do
-  gcc -g $DIR/$CUP.c -o $DIR/bin/$CUP
+TOP=`git rev-parse --show-toplevel`
 
+for CUP in $*; do
   for I in `git diff --name-only`; do
     I=$TOP/$I
     if [ ${I: -2} == ".c" ] || [ ${I: -2} == ".h" ]; then
