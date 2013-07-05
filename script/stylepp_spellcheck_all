@@ -8,4 +8,4 @@ for I in `find -regex ".*[.][ch]\$"`; do
   done
 done
 
-cat /tmp/misspells | sort | uniq | grep -v "[[:upper:]]"
+cat /tmp/misspells | sort | uniq --count | grep -v "[[:upper:]]" | sort -t" " -k +2n 
