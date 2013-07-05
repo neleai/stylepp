@@ -1,5 +1,5 @@
 DIR="$( cd "$( dirname "${BASH_SOURCE[0]}" )" && pwd )"
 
 for I in  trailing_space form_feed space_before_tab leading_space; do
-	$DIR/run_skeleton_hook stylepp/$I
+	$DIR/stylepp_skeleton_hook stylepp_$I
 done

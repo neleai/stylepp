@@ -7,7 +7,7 @@ for CUP in $*; do
     I=$TOP/$I
     if [ ${I: -2} == ".c" ] || [ ${I: -2} == ".h" ]; then
       echo $I
-      if $DIR/bin/$CUP $I <$I > /tmp/fmt; then
+      if $DIR/../bin/$CUP $I <$I > /tmp/fmt; then
         echo $I
         mv /tmp/fmt $I
       fi

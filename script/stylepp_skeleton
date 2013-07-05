@@ -4,7 +4,7 @@ for CUP in $*; do
 
   for I in `find -regex ".*[.][ch]\$"`; do
 
-    if $DIR/bin/$CUP $I <$I > /tmp/fmt; then
+    if $DIR/../bin/$CUP $I <$I > /tmp/fmt; then
       echo $I
       mv /tmp/fmt $I
     fi
