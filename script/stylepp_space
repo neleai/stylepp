@@ -1,7 +1,9 @@
 DIR="$( cd "$( dirname "${BASH_SOURCE[0]}" )" && pwd )"
+PATH=$PATH:$DIR/../bin:$DIR
+
 VERSION=`cd $DIR; git rev-parse HEAD`
 for I in  trailing_space form_feed space_before_tab leading_space; do
-	$DIR/stylepp_skeleton stylepp_$I
+	stylepp_skeleton stylepp_$I
 	$DIR/../gnu/mkchlog Formatted by $I commit $VERSION.
 	git commit -a -m "Formatted by $I commit $VERSION."
 done
