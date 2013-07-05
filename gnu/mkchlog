@@ -10,7 +10,7 @@ for I in `git diff --name-only HEAD^ | sort`; do
   DIR=$TOP/`dirname $I`
   PATHN=`basename $I`
   if [ "$I" != "ChangeLog" ]; then
-    while true; do
+    while [ "$DIR" != "/" ]; do
       if  [ -f $DIR/ChangeLog ]; then
         I=`echo $I | cut -d'/' -f2-`
         if  [ -f $DIR/.ChangeLog ]; then
