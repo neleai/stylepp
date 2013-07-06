@@ -1,21 +1,21 @@
 /* Copyright 2013 by Ondřej Bílka <neleai@seznam.cz> */
 
 /*
- Fix misspellings in comments. Reads list of word replacement lines from
- dictionary and replaces all these occurences in comments.
+   Fix misspellings in comments. Reads list of word replacement lines from
+   dictionary and replaces all these occurences in comments.
  */
 #include "common.h"
 int name_number;
-char names[10000][100],replacements[10000][100];
+char names[10000][100], replacements[10000][100];
 int
 main (int argc, char **argv)
 {
   START_TEST
 
   /* Read a dictionary */
-  FILE *dictionary = fopen("dictionary","r");
-  name_number=0;
-  while (fscanf(dictionary, "%s %s", names[name_number], replacements[name_number])!=EOF)
+  FILE *dictionary = fopen ("dictionary", "r");
+  name_number = 0;
+  while (fscanf (dictionary, "%s %s", names[name_number], replacements[name_number]) != EOF)
     name_number++;
 
   int i, j, k, len;
@@ -29,19 +29,19 @@ main (int argc, char **argv)
     {
       for (i = 0, j = 0; buffer[i]; )
 	{
-          if (incomment || incomment2) 
-            {
-              // try replace.
-              // TODO use trie.
-              if (!isalnum(buffer[i-1]))
-              for (k=0;k<name_number;k++)
-                if (!cmp(buffer+i,names[k])&& !isalnum(buffer[i+strlen(names[k])])){
-                  strcpy(buffer2+j,replacements[k]);
-                  i+=strlen(names[k]);
-                  j+=strlen(replacements[k]); 
-                }
-              
-            }
+	  if (incomment || incomment2)
+	    {
+	      // try replace.
+	      // TODO use trie.
+	      if (!isalnum (buffer[i - 1]))
+		for (k = 0; k < name_number; k++)
+		  if (!cmp (buffer + i, names[k]) && !isalnum (buffer[i + strlen (names[k])]))
+		    {
+		      strcpy (buffer2 + j, replacements[k]);
+		      i += strlen (names[k]);
+		      j += strlen (replacements[k]);
+		    }
+	    }
 	  if (incomment)
 	    {
 	      if (!cmp (buffer + i, "*/"))
