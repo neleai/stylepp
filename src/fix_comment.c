@@ -10,7 +10,7 @@ char names[10000][100], replacements[10000][100];
 int
 main (int argc, char **argv)
 {
-  START_TEST
+  // START_TEST
 
   /* Read a dictionary */
   FILE *dictionary = fopen ("dictionary", "r");
