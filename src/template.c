@@ -1,3 +1,4 @@
+/* Template of c parser. It recognizes only comments, strings and normal code. */
 #include "common.h"
 int
 main (int argc, char **argv)

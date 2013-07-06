@@ -1,3 +1,9 @@
+/* Copyright 2013 by Ondřej Bílka <neleai@seznam.cz> */
+
+/*
+   Collection of utility functions.
+ */
+
 #include <stdio.h>
 #include <ctype.h>
 #include <stdlib.h>

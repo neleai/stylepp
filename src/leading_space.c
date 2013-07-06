@@ -1,3 +1,4 @@
+
 #include "common.h"
 
 #ifndef SPACEBEFORETAB
@@ -23,6 +24,7 @@ main (int argc, char **argv)
       len = 0;
 
 #ifndef TRALING_SPACE
+      /* Change leading spaces to tabs followed by space format.  */
       if (!insquote && !indquote)
 	{
 	  while (buffer[i] && isblank (buffer[i]))
@@ -90,6 +92,7 @@ main (int argc, char **argv)
 	}
 
 #ifdef TRAILING_SPACE
+      /* Remove trailing spaces. */
       j--;
       while (j > 0 && (isblank (buffer2[j - 1]) || buffer2[j - 1] == FORMFEED))
 	j--;

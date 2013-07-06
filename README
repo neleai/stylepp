@@ -14,3 +14,8 @@ or run formatter periodicaly.
 
 You need to specify which files are stylepp responsibility. Currently this is done by 
 placing file .indent.on to each directory you want to format.
+
+Current tools are:
+
+stylepp_space: Fix all leading and trailing whitespaces in project.
+stylepp_space_hook: An git hook version of above.
