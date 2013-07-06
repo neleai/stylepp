@@ -28,3 +28,6 @@ else
     done
   done
 fi
+
+# Cleanup.
+rm /tmp/fmp.$PID

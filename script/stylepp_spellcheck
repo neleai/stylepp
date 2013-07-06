@@ -11,3 +11,6 @@ done
 
 cat /tmp/misspells.$PID | sort | uniq --count |  sort  -n -r 
 #grep -v "[[:upper:]]" 
+
+# Cleanup.
+rm /tmp/misspells.$PID
