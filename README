@@ -10,12 +10,23 @@ First run inital cleanuup over codebase, this separate formatting changes
 from code changes.
 
 Then to maintain consistent state you need either add appropriate hook 
-or run formatter periodicaly.
+or run formatter periodicaly. A hook version is ran by --hook argument.
 
 You need to specify which files are stylepp responsibility. Currently this is done by 
 placing file .indent.on to each directory you want to format.
 
+You typically write combination of formatters, you can use following:
+
+stylepp_space: Fix all leading and trailing whitespaces.
+stylepp_warnings: Run miscelanous warnings.
+
+
+
 Current tools are:
 
-stylepp_space: Fix all leading and trailing whitespaces in project.
-stylepp_space_hook: An git hook version of above.
+stylepp_leading_trailing_space: Fix leading and trailing spaces.
+stylepp_form_feed: Removes form feeds.
+stylepp_wann_spellcheck: Extract comments and after some filtering check them with aspell.
+stylepp_warn_copyright: Print list of names that lack copyright header.
+
+
