@@ -2,14 +2,29 @@ DIR="$( cd "$( dirname "${BASH_SOURCE[0]}" )" && pwd )"
 PID=$BASHPID
 PATH=$PATH:$DIR/../bin:$DIR
 
-for CUP in $*; do
-
-  for I in `find -regex ".*[.][ch]\$"`; do
-
-    if $CUP $I <$I > /tmp/fmt.$PID; then
-      echo $I
-      mv /tmp/fmt.$PID $I
-    fi
+if [ $1 == "--hook" ]; then
+  shift 1
+  # Hook version.
+  TOP=`git rev-parse --show-toplevel`
+  for CUP in $*; do
+    for I in `git diff --name-only`; do
+      I=$TOP/$I
+      if [ ${I: -2} == ".c" ] || [ ${I: -2} == ".h" ]; then
+        if $CUP $I <$I > /tmp/fmt.$PID; then
+          diff -u /tmp/fmt.$PID $I >> diff
+          mv /tmp/fmt.$PID $I
+        fi
+      fi
+    done
   done
-done
 
+else
+  # Normal version.
+  for CUP in $*; do
+    for I in `find -regex ".*[.][ch]\$"`; do
+      if $CUP $I <$I > /tmp/fmt.$PID; then
+        mv /tmp/fmt.$PID $I
+      fi
+    done
+  done
+fi

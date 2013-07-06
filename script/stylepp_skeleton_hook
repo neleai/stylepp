@@ -1,19 +1,2 @@
 DIR="$( cd "$( dirname "${BASH_SOURCE[0]}" )" && pwd )"
-PID=$BASHPID
-PATH=$PATH:$DIR/../bin:$DIR
-
-TOP=`git rev-parse --show-toplevel`
-
-
-for CUP in $*; do
-  for I in `git diff --name-only`; do
-    I=$TOP/$I
-    if [ ${I: -2} == ".c" ] || [ ${I: -2} == ".h" ]; then
-      if $CUP $I <$I > /tmp/fmt.$PID; then
-	diff -u /tmp/fmt.$PID $I >> diff
-        mv /tmp/fmt.$PID $I
-      fi
-    fi
-  done
-done
-
+$DIR/stylepp_skeleton --hook $*
