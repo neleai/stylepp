@@ -1,13 +1,14 @@
 DIR="$( cd "$( dirname "${BASH_SOURCE[0]}" )" && pwd )"
+PID=$BASHPID
 PATH=$PATH:$DIR/../bin:$DIR
 
 for CUP in $*; do
 
   for I in `find -regex ".*[.][ch]\$"`; do
 
-    if $CUP $I <$I > /tmp/fmt; then
+    if $CUP $I <$I > /tmp/fmt.$PID; then
       echo $I
-      mv /tmp/fmt $I
+      mv /tmp/fmt.$PID $I
     fi
   done
 done

@@ -1,11 +1,12 @@
 DIR="$( cd "$( dirname "${BASH_SOURCE[0]}" )" && pwd )"
+PID=$BASHPID
 PATH=$PATH:$DIR/../bin:$DIR
 
-echo > /tmp/misspells
+echo > /tmp/misspells.$PID
 for I in `find -regex ".*[.][ch]\$"`; do
   for WORD in `stylepp_extract_comment $I < $I | aspell list`; do
-    echo $WORD >>/tmp/misspells
+    echo $WORD >>/tmp/misspells.$PID
   done
 done
 
-cat /tmp/misspells | sort | uniq --count | grep -v "[[:upper:]]" | sort -t" " -k +2n 
+cat /tmp/misspells.$PID | sort | uniq --count | grep -v "[[:upper:]]" | sort -t" " -k +2n 
