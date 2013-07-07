@@ -9,18 +9,20 @@ for I in `find -regex ".*[.][ch]\$"`; do
   stylepp_extract_comment $I < $I >> /tmp/comment.$PID
 done
 
-
-
+# Now we find words in comments but not in code
 cat /tmp/code.$PID | sort | uniq > /tmp/code2.$PID
 cat /tmp/comment.$PID | sort | uniq > /tmp/comment2.$PID
 
+# This can take while so it is better to save it to file for users which forget
+# to redirect this.
 
+stylepp_symdiff /tmp/comment2.$PID /tmp/code2.$PID | grep -v "[[:upper:]]" | aspell list > /tmp/misspells
+cat /tmp/misspells
 
-diff -u /tmp/code2.$PID /tmp/comment2.$PID | grep "^+" | sed 's/^.//' | aspell list
-
+echo "Also saved into /tmp/misspells file
 
 # Cleanup.
 rm /tmp/code.$PID
-rm /tmp/code2.$PID
 rm /tmp/comment.$PID
-rm /tmp/comment2.$PID
+#rm /tmp/code2.$PID
+#rm /tmp/comment2.$PID

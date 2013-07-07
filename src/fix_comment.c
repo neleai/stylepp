@@ -28,12 +28,18 @@ main (int argc, char **argv)
   /* Verify thaat dictionary consists only of letters and '.  */
   for (i = 0; i < name_number; i++)
     {
-      for (j = 0; names[j]; j++)
-	if (!isalpha (names[j]) && names[j] != '\'')
+      for (j = 0; names[i][j]; j++){
+        if (names[i][j]=='_') 
+           names[i][j]=' ';
+	else if (!isalpha (names[i][j]) && names[i][j] != '\'')
 	  abort ();
-      for (j = 0; replacements[j]; j++)
-	if (!isalpha (replacements[j]) && replacements[j] != '\'')
+      }
+      for (j = 0; replacements[i][j]; j++){
+        if (replacements[i][j]=='_') 
+           replacements[i][j]=' ';
+	else if (!isalpha (replacements[i][j]) && replacements[i][j] != '\'')
 	  abort ();
+      }
     }
 
 
