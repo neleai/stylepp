@@ -25,7 +25,7 @@ main (int argc, char **argv)
 
 #ifndef TRALING_SPACE
       /* Change leading spaces to tabs followed by space format.  */
-      if (!insquote && !indquote)
+      if (!insquote && !indquote) /* Beware of multiline comments.  */
 	{
 	  while (buffer[i] && isblank (buffer[i]))
 	    {

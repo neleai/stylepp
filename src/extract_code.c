@@ -19,7 +19,6 @@ word (char *c)
 }
 
 char code_words[HASH_SIZE];
-char comment_words[HASH_SIZE][100];
 unsigned int
 hash (char *s)
 {
@@ -31,18 +30,16 @@ hash (char *s)
     }
   return collect;
 }
-void
+int
 add_word (char *word)
 {
   int h = hash (word) % HASH_SIZE;
+  if (code_words[h])
+    return 0;
   code_words[h] = 1;
+  return 1;
 }
-void
-add_comment_word (char *word)
-{
-  int h = hash (word) % HASH_SIZE;
-  strcpy (comment_words[h], word);
-}
+
 
 
 #include "common.h"
@@ -61,9 +58,6 @@ main (int argc, char **argv)
     {
       for (i = 0, j = 0; buffer[i]; )
 	{
-	  if ((incomment || incomment2) && !isalpha (buffer[i - 1]) && isalpha (buffer[i]))
-	    add_comment_word (word (buffer + i));
-
 	  if (incomment)
 	    {
 	      if (!cmp (buffer + i, "*/"))
@@ -91,7 +85,9 @@ main (int argc, char **argv)
 	  else
 	    {
 	      if (!isalpha (buffer[i - 1]) && isalpha (buffer[i]))
-		add_word (word (buffer + i));
+		if (add_word (word (buffer + i)))
+		  printf ("%s\n", word (buffer + i));
+
 	      if (!cmp (buffer + i, "/*"))
 		incomment = 1;
 	      if (!cmp (buffer + i, "//"))
@@ -108,10 +104,6 @@ main (int argc, char **argv)
       memcpy (ip, buffer, i); ip += i;
       memcpy (op, buffer2, j); op += j;
     }
-  for (i = 0; i < HASH_SIZE; i++)
-    {
-      if (!code_words[i] && comment_words[i][0])
-	printf ("%s\n", comment_words[i]);
-    }
+
   return 0;
 }

@@ -12,12 +12,6 @@ main (int argc, char **argv)
 {
   // START_TEST
 
-  /* Read a dictionary */
-  FILE *dictionary = fopen ("dictionary", "r");
-  name_number = 0;
-  while (fscanf (dictionary, "%s %s", names[name_number], replacements[name_number]) != EOF)
-    name_number++;
-
   int i, j, k, len;
   int incomment = 0, incomment2 = 0, insquote = 0, indquote = 0;
   char _buffer[100000], *buffer = _buffer + 1;
@@ -25,6 +19,25 @@ main (int argc, char **argv)
   char *input = malloc (100000000), *ip = input;
   char *output = malloc (100000000), *op = output;
   _buffer[0] = ' ';
+
+  /* Read a dictionary */
+  FILE *dictionary = fopen ("dictionary", "r");
+  name_number = 0;
+  while (fscanf (dictionary, "%s %s", names[name_number], replacements[name_number]) != EOF)
+    name_number++;
+  /* Verify thaat dictionary consists only of letters and '.  */
+  for (i = 0; i < name_number; i++)
+    {
+      for (j = 0; names[j]; j++)
+	if (!isalpha (names[j]) && names[j] != '\'')
+	  abort ();
+      for (j = 0; replacements[j]; j++)
+	if (!isalpha (replacements[j]) && replacements[j] != '\'')
+	  abort ();
+    }
+
+
+
   while (fgets (buffer, 100000, stdin))
     {
       for (i = 0, j = 0; buffer[i]; )
