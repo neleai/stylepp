@@ -22,8 +22,8 @@ for CUP in $*; do
   for I in $FILES; do
     if [ ${I: -2} == ".c" ] || [ ${I: -2} == ".h" ]; then
       if $CUP $I <$I > /tmp/fmt.$PID; then
-        mv /tmp/fmt.$PID $I
         diff -u /tmp/fmt.$PID $I >> /tmp/diff
+        mv /tmp/fmt.$PID $I
       fi
     fi
   done

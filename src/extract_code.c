@@ -5,6 +5,13 @@
 /*
    TODO  use trie.
  */
+
+int
+isword (char c)
+{
+  return isalpha (c) || c == '\'' || c == '-';
+}
+
 #include <string.h>
 #define HASH_SIZE 1000000
 char _word[1000];
@@ -12,7 +19,7 @@ char *
 word (char *c)
 {
   int i;
-  for (i = 0; isalpha (c[i]) || c[i] == '\''; i++)
+  for (i = 0; isword (c[i]); i++)
     _word[i] = c[i];
   _word[i] = '\0';
   return _word;

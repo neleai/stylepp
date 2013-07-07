@@ -5,6 +5,11 @@
    dictionary and replaces all these occurences in comments.
  */
 #include "common.h"
+int
+isword (char c)
+{
+  return isalpha (c) || c == '\'' || c == '-';
+}
 int name_number;
 char names[10000][100], replacements[10000][100];
 int
@@ -13,7 +18,7 @@ main (int argc, char **argv)
   // START_TEST
 
   int i, j, k, len;
-  int incomment = 0, incomment2 = 0, insquote = 0, indquote = 0;
+  int incomment = 0, incomment2 = 0, insquote = 0, indquote = 0, inmail = 0;
   char _buffer[100000], *buffer = _buffer + 1;
   char buffer2[100000];
   char *input = malloc (100000000), *ip = input;
@@ -32,14 +37,14 @@ main (int argc, char **argv)
 	{
 	  if (names[i][j] == '_')
 	    names[i][j] = ' ';
-	  else if (!isalpha (names[i][j]) && names[i][j] != '\'')
+	  else if (!isword (names[i][j]))
 	    abort ();
 	}
       for (j = 0; replacements[i][j]; j++)
 	{
 	  if (replacements[i][j] == '_')
 	    replacements[i][j] = ' ';
-	  else if (!isalpha (replacements[i][j]) && replacements[i][j] != '\'')
+	  else if (!isword (replacements[i][j]))
 	    abort ();
 	}
     }
@@ -52,9 +57,16 @@ main (int argc, char **argv)
 	{
 	  if (incomment || incomment2)
 	    {
-	      // try replace.
+	      // Simple heuristic to identify mail address. Has false negatives
+	      // but they are relatively rare.
+	      if (buffer[i] == '<')
+		inmail = 1;
+	      if (buffer[i] == '>')
+		inmail = 0;
+
+	      // We try all replacement candidates.
 	      // TODO use trie.
-	      if (!isalnum (buffer[i - 1]))
+	      if (!inmail && !isalnum (buffer[i - 1]) && isalnum (buffer[i]))
 		for (k = 0; k < name_number; k++)
 		  if (!cmp (buffer + i, names[k]) && !isalnum (buffer[i + strlen (names[k])]))
 		    {
@@ -93,7 +105,8 @@ main (int argc, char **argv)
 		incomment = 1;
 	      if (!cmp (buffer + i, "//") || buffer[i] == '#')
 		incomment2 = 1;
-
+	      if (incomment || incomment2)
+		inmail = 0;
 	      if (buffer[i] == '\'')
 		insquote = 1;
 	      if (buffer[i] == '"')
