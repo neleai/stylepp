@@ -3,13 +3,37 @@
 /*
    Fix misspellings in comments. Reads list of word replacement lines from
    dictionary and replaces all these occurences in comments.
+   You can specify multiword pattern by using underscore instead space.
  */
+
+
 #include "common.h"
 int
 isword (char c)
 {
   return isalpha (c) || c == '\'' || c == '-';
 }
+int
+isseparator (char c)
+{
+  return isspace (c) || c == '.' || c == ',' || c == ';';
+}
+
+
+
+void
+parseword (char *word)
+{
+  int i;
+  for (i = 0; word[i]; i++)
+    {
+      if (word[i] == '_')
+	word[i] = ' ';
+      else if (!isword (word[i]) && !isdigit (word[i]))
+	abort ();
+    }
+}
+
 int name_number;
 char names[10000][100], replacements[10000][100];
 int
@@ -30,23 +54,11 @@ main (int argc, char **argv)
   name_number = 0;
   while (fscanf (dictionary, "%s %s", names[name_number], replacements[name_number]) != EOF)
     name_number++;
-  /* Verify thaat dictionary consists only of letters and '.  */
+  /* Verify that dictionary consists only of letters and '.  */
   for (i = 0; i < name_number; i++)
     {
-      for (j = 0; names[i][j]; j++)
-	{
-	  if (names[i][j] == '_')
-	    names[i][j] = ' ';
-	  else if (!isword (names[i][j]))
-	    abort ();
-	}
-      for (j = 0; replacements[i][j]; j++)
-	{
-	  if (replacements[i][j] == '_')
-	    replacements[i][j] = ' ';
-	  else if (!isword (replacements[i][j]))
-	    abort ();
-	}
+      parseword (names[i]);
+      parseword (replacements[i]);
     }
 
 
@@ -66,9 +78,9 @@ main (int argc, char **argv)
 
 	      // We try all replacement candidates.
 	      // TODO use trie.
-	      if (!inmail && !isalnum (buffer[i - 1]) && isalnum (buffer[i]))
+	      if (!inmail && isseparator (buffer[i - 1]) && isalnum (buffer[i]))
 		for (k = 0; k < name_number; k++)
-		  if (!cmp (buffer + i, names[k]) && !isalnum (buffer[i + strlen (names[k])]))
+		  if (!cmp (buffer + i, names[k]) && isseparator (buffer[i + strlen (names[k])]))
 		    {
 		      strcpy (buffer2 + j, replacements[k]);
 		      i += strlen (names[k]);
@@ -103,7 +115,7 @@ main (int argc, char **argv)
 	    {
 	      if (!cmp (buffer + i, "/*"))
 		incomment = 1;
-	      if (!cmp (buffer + i, "//") || buffer[i] == '#')
+	      if (!cmp (buffer + i, "//"))
 		incomment2 = 1;
 	      if (incomment || incomment2)
 		inmail = 0;
