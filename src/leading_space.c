@@ -1,3 +1,4 @@
+/* Copyright 2013 by Ondřej Bílka <neleai@seznam.cz> */
 
 #include "common.h"
 
@@ -8,7 +9,7 @@
 int
 main (int argc, char **argv)
 {
-  START_TEST;
+//  START_TEST;
   int i, j, k, len;
   int incomment = 0, incomment2 = 0, insquote = 0, indquote = 0;
   char _buffer[100000], *buffer = _buffer + 1;
@@ -23,7 +24,7 @@ main (int argc, char **argv)
       j = 0;
       len = 0;
 
-#ifndef TRALING_SPACE
+#ifndef TRAILING_SPACE
       /* Change leading spaces to tabs followed by space format.  */
       if (!insquote && !indquote) /* Beware of multiline comments.  */
 	{

@@ -4,6 +4,13 @@ stylepp is a tool to maintain consistent style.
 
 It consist of independent programs that can be used as needed.
 
+You need to run:
+
+make
+
+to compile stylepp. Then you can add stylepp/script directory into your PATH
+or run them with relative names.
+
 A two basic workflows are possible.
 
 First run inital cleanuup over codebase, this separate formatting changes 

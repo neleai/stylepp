@@ -1,3 +1,5 @@
+/* Copyright 2013 by Ondřej Bílka <neleai@seznam.cz> */
+
 /*
    Create misspelling correction dictionary from file
    with misspellings and file with corrections.

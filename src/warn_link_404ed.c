@@ -1,6 +1,6 @@
 /* Copyright 2013 by Ondřej Bílka <neleai@seznam.cz> */
 
-/* Template of c parser. It recognizes only comments, strings and normal code. */
+/* A checker for http link validity. Prints warning when it detect unreachable http address.  */
 #include "common.h"
 int
 main (int argc, char **argv)
@@ -17,6 +17,28 @@ main (int argc, char **argv)
     {
       for (i = 0, j = 0; buffer[i]; )
 	{
+	  if (!cmp (buffer + i, "http://"))
+	    {
+	      // List of allowed characters is from http://en.wikipedia.org/wiki/Uniform_resource_locator.
+	      int size = strspn (buffer + i, "ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz0123456789-_.~!*'();:@&=+$,/?%#[]");
+	      char command[1000];
+	      strcpy (command, "curl -f ");
+	      char *command_arg = command + strlen (command);
+	      for (k = 0; k < size; k++)
+		{
+		  command_arg[2 * k] = '\\';
+		  command_arg[2 * k + 1] = buffer[i + k];
+		}
+	      command_arg[2 * size] = '\0';
+	      strcat (command, " > /dev/null 2> /dev/null");
+	      if (system (command))
+		{
+		  char link[1000];
+		  memcpy (link, buffer + i, size);
+		  printf ("Invalid link: %s\n", link);
+		}
+	    }
+
 	  if (incomment)
 	    {
 	      if (!cmp (buffer + i, "*/"))

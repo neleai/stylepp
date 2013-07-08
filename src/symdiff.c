@@ -1,3 +1,5 @@
+/* Copyright 2013 by Ondřej Bílka <neleai@seznam.cz> */
+
 /*
    Prints list of words that appear in first sorted file but not second.
  */

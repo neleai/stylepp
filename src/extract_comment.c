@@ -1,3 +1,5 @@
+/* Copyright 2013 by Ondřej Bílka <neleai@seznam.cz> */
+
 /*
    We extract words that are contained in comments but not in actual source.
  */
