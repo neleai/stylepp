@@ -1,0 +1,6 @@
+(cd ../../stylepp_maintained/gcc; git pull)
+(cd ../../stylepp_maintained/gmp; hg pull)
+(cd ../../stylepp_maintained/mpfr; svn update)
+(cd ../../stylepp_maintained/mpc; svn update)
+(cd ../../stylepp_maintained/zlib; git pull)
+

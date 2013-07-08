@@ -2,7 +2,7 @@
 
 /*
    Fix misspellings in comments. Reads list of word replacement lines from
-   dictionary and replaces all these occurences in comments.
+   dictionary and replaces all these occurrences in comments.
    You can specify multiword pattern by using underscore instead space.
  */
 
