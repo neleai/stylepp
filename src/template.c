@@ -5,7 +5,7 @@
 int
 main (int argc, char **argv)
 {
-  START_TEST
+  test_indent_off (argv[1]);
   int i, j, k, len;
   int incomment = 0, incomment2 = 0, insquote = 0, indquote = 0;
   char _buffer[100000], *buffer = _buffer + 1;
@@ -59,5 +59,5 @@ main (int argc, char **argv)
       memcpy (ip, buffer, i); ip += i;
       memcpy (op, buffer2, j); op += j;
     }
-  WRITE_IF_COMMON
+  return write_if_common (input, ip, output, op);
 }

@@ -56,7 +56,7 @@ add_word (char *word)
 int
 main (int argc, char **argv)
 {
-//START_TEST
+  test_indent_off (argv[1]);
   int i, j, k, len;
   int incomment = 0, incomment2 = 0, insquote = 0, indquote = 0;
   char _buffer[100000], *buffer = _buffer + 1;

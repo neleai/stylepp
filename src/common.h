@@ -14,16 +14,30 @@
 #define cmp(x, y) memcmp (x, y, strlen (y))
 #define one_from(x, y) (x && strchr (y, x))
 
-#define START_TEST \
-  char strbuf[1000]; strcpy (strbuf, argv[1]); \
-  if (!fopen (strcat (dirname (strbuf), "/.indent.on"), "r")) \
-    return 1;
-
-#define WRITE_IF_COMMON \
-  if ((ip - input == op - output) && !memcmp (input, output, ip - input)) \
-    return 1; \
-  else \
-    { \
-      printf ("%s", output); \
-      return 0; \
+void
+test_indent_off (char *arg)
+{
+  if (!arg)
+    return;
+  char strbuf[1000]; strcpy (strbuf, arg);
+  char strbuf2[1000];
+  while (strchr (strbuf, '/'))
+    {
+      dirname (strbuf);
+      strcpy (strbuf2, strbuf);
+      strcat (strbuf2, "/.indent.off");
+      if (fopen (strbuf2, "r"))
+	exit (1);
     }
+}
+int
+write_if_common (char *input, char *ip, char *output, char *op)
+{
+  if ((ip - input == op - output) && !memcmp (input, output, ip - input))
+    return (1);
+  else
+    {
+      printf ("%s", output);
+      return (0);
+    }
+}
