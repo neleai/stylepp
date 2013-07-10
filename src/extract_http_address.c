@@ -71,5 +71,5 @@ main (int argc, char **argv)
       memcpy (ip, buffer, i); ip += i;
       memcpy (op, buffer2, j); op += j;
     }
-  return write_if_common (input, ip, output, op);
+  return 1;
 }

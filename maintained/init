@@ -4,3 +4,5 @@ svn checkout svn://scm.gforge.inria.fr/svn/mpfr/trunk ../../stylepp_maintained/m
 svn checkout svn://scm.gforge.inria.fr/svnroot/mpc/trunk ../../stylepp_maintained/mpc
 git clone https://github.com/madler/zlib ../../stylepp_maintained/zlib
 git clone https://github.com/ivmai/bdwgc.git ../../stylepp_maintained/boehm-gc
+
+cd ../../stylepp_maintained; cvs -z3 -d:pserver:anonymous@cvs.savannah.gnu.org:/sources/aspell co aspell
