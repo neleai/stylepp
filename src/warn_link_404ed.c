@@ -21,6 +21,8 @@ main (int argc, char **argv)
 	    {
 	      // List of allowed characters is from http://en.wikipedia.org/wiki/Uniform_resource_locator.
 	      int size = strspn (buffer + i, "ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz0123456789-_.~!*'();:@&=+$,/?%#[]");
+	      while (!isalnum (buffer[i + size - 1]) && buffer[i + size - 1] != '/')
+		size--;
 	      char command[1000];
 	      strcpy (command, "curl -m 1 -f ");
 	      char *command_arg = command + strlen (command);
