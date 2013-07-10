@@ -30,4 +30,4 @@ for CUP in $*; do
 done
 
 # Cleanup.
-rm /tmp/fmp.$PID
+rm /tmp/fmp.$PID 2>/dev/null

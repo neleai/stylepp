@@ -23,22 +23,9 @@ main (int argc, char **argv)
 	      int size = strspn (buffer + i, "ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz0123456789-_.~!*'();:@&=+$,/?%#[]");
 	      while (!isalnum (buffer[i + size - 1]) && buffer[i + size - 1] != '/')
 		size--;
-	      char command[1000];
-	      strcpy (command, "curl -m 1 -f ");
-	      char *command_arg = command + strlen (command);
-	      for (k = 0; k < size; k++)
-		{
-		  command_arg[2 * k] = '\\';
-		  command_arg[2 * k + 1] = buffer[i + k];
-		}
-	      command_arg[2 * size] = '\0';
-	      strcat (command, " > /dev/null 2> /dev/null");
-	      if (system (command))
-		{
-		  char link[1000];
-		  memcpy (link, buffer + i, size);
-		  fprintf (stderr, "%s: Invalid link: %s\n", argv[0], link);
-		}
+	      char link[1000];
+	      memcpy (link, buffer + i, size);
+	      fprintf (stderr, "%s\n", link);
 	    }
 
 	  if (incomment)

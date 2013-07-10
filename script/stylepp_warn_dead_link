@@ -1,0 +1,11 @@
+DIR="$( cd "$( dirname "${BASH_SOURCE[0]}" )" && pwd )"
+PATH=$PATH:$DIR/../bin:$DIR
+
+
+for LINK in `stylepp_skeleton $* stylepp_extract_http_address 2>&1`; do
+  if curl -f "$LINK" >/dev/null 2>/dev/null; then
+    true
+  else
+    echo Dead link: $LINK
+  fi
+done
