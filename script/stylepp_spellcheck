@@ -19,7 +19,7 @@ cat /tmp/comment.$PID | sort | uniq > /tmp/comment2.$PID
 stylepp_symdiff /tmp/comment2.$PID /tmp/code2.$PID | grep -v "[[:upper:]]" | aspell list > /tmp/misspells
 cat /tmp/misspells
 
-echo "Also saved into /tmp/misspells file
+echo "Also saved into /tmp/misspells file"
 
 # Cleanup.
 rm /tmp/code.$PID

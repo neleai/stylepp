@@ -25,6 +25,7 @@ main (int argc, char **argv)
 		size--;
 	      char link[1000];
 	      memcpy (link, buffer + i, size);
+	      link[size] = 0;
 	      fprintf (stderr, "%s\n", link);
 	    }
 
