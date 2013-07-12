@@ -17,7 +17,7 @@ main (int argc, char **argv)
     {
       for (i = 0, j = 0; buffer[i]; )
 	{
-	  if (!cmp (buffer + i, "http://"))
+	  if (!cmp (buffer + i, "http://") || (!cmp (buffer + i, "www.") && isspace (buffer[i - 1])))
 	    {
 	      // List of allowed characters is from http://en.wikipedia.org/wiki/Uniform_resource_locator.
 	      int size = strspn (buffer + i, "ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz0123456789-_.~!*'();:@&=+$,/?%#[]");
