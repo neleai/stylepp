@@ -9,3 +9,4 @@ for LINK in `stylepp_skeleton $* stylepp_extract_http_address 2>&1 | sort | uniq
     echo Dead link: $LINK
   fi
 done
+exit 1
