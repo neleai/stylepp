@@ -7,7 +7,8 @@ if [ $1 == "--hook" ]; then
   shift 1
   # Hook version.
   TOP=`git rev-parse --show-toplevel`
-  rm /tmp/files
+  rm /tmp/files 2> /dev/null
+  echo > /tmp/files
   for I in `git diff --name-only`; do
     I=$TOP/$I
     echo $I >> /tmp/files
