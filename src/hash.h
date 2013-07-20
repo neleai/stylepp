@@ -1,3 +1,5 @@
+/* Copyright 2013 by Ondřej Bílka <neleai@seznam.cz> */
+
 int
 isword (char c)
 {
