@@ -35,6 +35,8 @@ main (int argc, char **argv)
 	{
 	  if (fscanf (fp[0], "%s", word[0]) == EOF)
 	    return 0;
+	  if (fscanf (fp[1], "%s", word[1]) == EOF)
+	    return 0;
 	}
     }
 }

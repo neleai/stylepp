@@ -6,22 +6,14 @@
    You can specify multiword pattern by using underscore instead space.
  */
 
+#include <string.h>
+
+#define HASH_TYPE int
+
+#include "hash.h"
 
 #include "common.h"
-int
-isword (char c)
-{
-  return isalpha (c) || c == '\'' || c == '-';
-}
-int
-isseparator (char c)
-{
-  return isspace (c) || c == '.' || c == ',' || c == ';';
-}
 
-
-
-void
 parseword (char *word)
 {
   int i;
@@ -34,6 +26,7 @@ parseword (char *word)
     }
 }
 
+
 int name_number;
 char names[10000][100], replacements[10000][100];
 int
@@ -42,7 +35,7 @@ main (int argc, char **argv)
   test_indent_off (argv[1]);
 
   int i, j, k, len;
-  int incomment = 0, incomment2 = 0, insquote = 0, indquote = 0, inmail = 0;
+  int incomment = 0, incomment2 = 0, insquote = 0, indquote = 0, inmail = 0, inhtml = 0;
   char _buffer[100000], *buffer = _buffer + 1;
   char buffer2[100000];
   char *input = malloc (100000000), *ip = input;
@@ -59,6 +52,7 @@ main (int argc, char **argv)
     {
       parseword (names[i]);
       parseword (replacements[i]);
+      add_word (names[i], i);
     }
 
 
@@ -78,14 +72,16 @@ main (int argc, char **argv)
 
 	      // We try all replacement candidates.
 	      // TODO use trie.
-	      if (!inmail && isseparator (buffer[i - 1]) && isalnum (buffer[i]))
-		for (k = 0; k < name_number; k++)
+	      if (!inmail && !inhtml && isseparator (buffer[i - 1]) && isalnum (buffer[i]))
+		{
+		  k = get_word (word (buffer + i));
 		  if (!cmp (buffer + i, names[k]) && isseparator (buffer[i + strlen (names[k])]))
 		    {
 		      strcpy (buffer2 + j, replacements[k]);
 		      i += strlen (names[k]);
 		      j += strlen (replacements[k]);
 		    }
+		}
 	    }
 	  if (incomment)
 	    {

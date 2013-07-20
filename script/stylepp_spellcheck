@@ -10,8 +10,8 @@ for I in `find -regex ".*[.][ch]\$"`; do
 done
 
 # Now we find words in comments but not in code
-cat /tmp/code.$PID | sort | uniq > /tmp/code2.$PID
-cat /tmp/comment.$PID | sort | uniq > /tmp/comment2.$PID
+cat /tmp/code.$PID    | stylepp_sortuniq | aspell list | stylepp_sortuniq> /tmp/code2.$PID
+cat /tmp/comment.$PID | stylepp_sortuniq | aspell list | stylepp_sortuniq> /tmp/comment2.$PID
 
 # This can take while so it is better to save it to file for users which forget
 # to redirect this.

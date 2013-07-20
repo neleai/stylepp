@@ -9,49 +9,10 @@
    TODO  use trie.
  */
 
-int
-isword (char c)
-{
-  return isalpha (c) || c == '\'' || c == '-';
-}
-
 #include <string.h>
-#define HASH_SIZE 1000000
-char _word[1000];
-char *
-word (char *c)
-{
-  int i;
-  for (i = 0; isword (c[i]); i++)
-    _word[i] = c[i];
-  _word[i] = '\0';
-  return _word;
-}
 
-char code_words[HASH_SIZE];
-unsigned int
-hash (char *s)
-{
-  int collect = 0;
-  while (*s)
-    {
-      collect = 11 * collect + *s;
-      s++;
-    }
-  return collect;
-}
-int
-add_word (char *word)
-{
-  int h = hash (word) % HASH_SIZE;
-  if (code_words[h])
-    return 0;
-  code_words[h] = 1;
-  return 1;
-}
-
-
-
+#define HASH_TYPE char
+#include "hash.h"
 #include "common.h"
 int
 main (int argc, char **argv)
@@ -95,7 +56,7 @@ main (int argc, char **argv)
 	  else
 	    {
 	      if (!isalpha (buffer[i - 1]) && isalpha (buffer[i]))
-		if (add_word (word (buffer + i)))
+		if (add_word (word (buffer + i), 1))
 		  printf ("%s\n", word (buffer + i));
 
 	      if (!cmp (buffer + i, "/*"))
