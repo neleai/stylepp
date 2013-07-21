@@ -24,7 +24,11 @@ main (int argc, char **argv)
 	}
 
       if (len > 81)
-	fprintf (stderr, "vim +%i %s\n", line, argv[1]);
+	{
+	  fprintf (stderr, "vim +%i %s\n", line, argv[1]);
+	  line++; // As this line will probably be split into two
+	          // we need adjust position of subsequent opens.
+	}
       line++;
     }
 
