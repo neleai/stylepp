@@ -1,8 +1,11 @@
+mkdir ../../stylepp_maintained
+
 git clone git://gcc.gnu.org/git/gcc.git ../../stylepp_maintained/gcc
-hg clone http://gmplib.org:8000/gmp ../../stylepp_maintained/gmp
-svn checkout svn://scm.gforge.inria.fr/svn/mpfr/trunk ../../stylepp_maintained/mpfr
-svn checkout svn://scm.gforge.inria.fr/svnroot/mpc/trunk ../../stylepp_maintained/mpc
+git clone hg::http://gmplib.org:8000/gmp ../../stylepp_maintained/gmp
+git svn clone svn://scm.gforge.inria.fr/svn/mpfr/trunk ../../stylepp_maintained/mpfr
+git svn clone svn://scm.gforge.inria.fr/svnroot/mpc/trunk ../../stylepp_maintained/mpc
 git clone https://github.com/madler/zlib ../../stylepp_maintained/zlib
 git clone https://github.com/ivmai/bdwgc.git ../../stylepp_maintained/boehm-gc
+git clone https://github.com/git/git.git ../../stylepp_maintained/git
 
 cd ../../stylepp_maintained; cvs -z3 -d:pserver:anonymous@cvs.savannah.gnu.org:/sources/aspell co aspell
