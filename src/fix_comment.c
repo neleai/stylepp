@@ -33,6 +33,13 @@ int
 main (int argc, char **argv)
 {
   test_indent_off (argv[1]);
+  int plain = 0;
+  if (TEST_EXTENSION (argv[1], ".txt") ||
+      TEST_EXTENSION (argv[1], ".htm") ||
+      TEST_EXTENSION (argv[1], ".html") ||
+      TEST_EXTENSION (argv[1], ".texi"))
+    plain = 1;
+
 
   int i, j, k, len;
   int incomment = 0, incomment2 = 0, insquote = 0, indquote = 0, inmail = 0, inhtml = 0;
@@ -61,7 +68,7 @@ main (int argc, char **argv)
     {
       for (i = 0, j = 0; buffer[i]; )
 	{
-	  if (incomment || incomment2)
+	  if (incomment || incomment2 || plain)
 	    {
 	      // Simple heuristic to identify mail address. Has false negatives
 	      // but they are relatively rare.

@@ -17,7 +17,14 @@
 int
 main (int argc, char **argv)
 {
+  int plain = 0;
   test_indent_off (argv[1]);
+  if (TEST_EXTENSION (argv[1], ".txt") ||
+      TEST_EXTENSION (argv[1], ".htm") ||
+      TEST_EXTENSION (argv[1], ".html") ||
+      TEST_EXTENSION (argv[1], ".texi"))
+    plain = 1;
+
   int i, j, k, len;
   int incomment = 0, incomment2 = 0, insquote = 0, indquote = 0;
   char _buffer[100000], *buffer = _buffer + 1;
@@ -29,7 +36,7 @@ main (int argc, char **argv)
     {
       for (i = 0, j = 0; buffer[i]; )
 	{
-	  if ((incomment || incomment2) && !isalpha (buffer[i - 1]) && isalpha (buffer[i]))
+	  if ((plain || incomment || incomment2) && !isalpha (buffer[i - 1]) && isalpha (buffer[i]))
 	    if (add_word (word (buffer + i), 1))
 	      printf ("%s\n", word (buffer + i));
 

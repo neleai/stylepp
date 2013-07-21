@@ -4,7 +4,7 @@ PATH=$PATH:$DIR/../bin:$DIR
 
 echo > /tmp/code.$PID
 echo > /tmp/comment.$PID
-for I in `find -regex ".*[.][ch]\$"`; do
+for I in `find -regex ".*\(\.c\|\.h\|\.cpp\|\.txt\|\.htm\|\.html\|\.texi\)\$"`; do
   stylepp_extract_code $I < $I >> /tmp/code.$PID
   stylepp_extract_comment $I < $I >> /tmp/comment.$PID
 done

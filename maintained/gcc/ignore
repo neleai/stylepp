@@ -1,0 +1,8 @@
+git checkout boehm-gc
+git checkout zlib
+git checkout intl
+git checkout libdecnumber
+git checkout libffi
+git checkout libjava/classpath
+git checkout libjava/libltdl
+git checkout libquadmath

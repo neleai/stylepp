@@ -13,6 +13,7 @@
 #define isalnum_(x) (isalnum (x) || x == '_')
 #define cmp(x, y) memcmp (x, y, strlen (y))
 #define one_from(x, y) (x && strchr (y, x))
+#define TEST_EXTENSION(file, ext) (!cmp (file + strlen (file) - strlen (ext), ext))
 
 void
 test_indent_off (char *arg)
