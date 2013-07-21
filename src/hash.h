@@ -7,9 +7,9 @@ isword (char c)
 }
 
 int
-isseparator (char c)
+isseparator (char *c)
 {
-  return isspace (c) || c == '.' || c == ',' || c == ';';
+  return isspace (c[0]) || ((c[0] == '.' || c[0] == ',' || c[0] == ';') && isspace (c[1]));
 }
 
 

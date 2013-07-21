@@ -36,7 +36,7 @@ main (int argc, char **argv)
     {
       for (i = 0, j = 0; buffer[i]; )
 	{
-	  if ((plain || incomment || incomment2) && !isalpha (buffer[i - 1]) && isalpha (buffer[i]))
+	  if ((plain || incomment || incomment2) && isseparator (buffer[i - 1]) && isalpha (buffer[i]))
 	    if (add_word (word (buffer + i), 1))
 	      printf ("%s\n", word (buffer + i));
 
