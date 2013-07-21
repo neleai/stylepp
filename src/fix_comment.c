@@ -79,7 +79,7 @@ main (int argc, char **argv)
 
 	      // We try all replacement candidates.
 	      // TODO use trie.
-	      if (!inmail && !inhtml && isseparator (buffer[i - 1]) && isalnum (buffer[i]))
+	      if (!inmail && !inhtml && isseparator (buffer[i - 1]) && buffer[i - 1] != '.' && isalnum (buffer[i]))
 		{
 		  k = get_word (word (buffer + i));
 		  if (!cmp (buffer + i, names[k]) && isseparator (buffer[i + strlen (names[k])]))

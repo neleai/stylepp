@@ -6,3 +6,4 @@ git checkout libffi
 git checkout libjava/classpath
 git checkout libjava/libltdl
 git checkout libquadmath
+git checkout libgo/go/compress/testdata
