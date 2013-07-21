@@ -1,0 +1,8 @@
+DIR="$( cd "$( dirname "${BASH_SOURCE[0]}" )" && pwd )"
+PID=$BASHPID
+PATH=$PATH:$DIR/../bin:$DIR
+
+stylepp_skeleton stylepp_warn80 2>&1
+
+sh /tmp/files
+
