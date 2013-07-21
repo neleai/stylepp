@@ -1,0 +1,15 @@
+DIR="$( cd "$( dirname "${BASH_SOURCE[0]}" )" && pwd )"
+PATH=$PATH:$DIR/../bin:$DIR
+
+
+cp $DIR/../maintained/dictionary_wiki dictionary
+stylepp_fix_spell
+git commit -a -m "Fix common typos."
+cp $DIR/../maintained/dictionary_names dictionary
+stylepp_fix_spell
+git commit -a -m "Fix capitalization."
+stylepp_spellcheck
+stylepp_dictionary
+stylepp_fix_spell
+git commit -a -m "Fix typos."
+

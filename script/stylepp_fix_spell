@@ -2,8 +2,8 @@ DIR="$( cd "$( dirname "${BASH_SOURCE[0]}" )" && pwd )"
 PID=$BASHPID
 PATH=$PATH:$DIR/../bin:$DIR
 
-$TMP_FILES=`mktemp`
-$TMP_FMT=`mktemp`
+TMP_FILES=`mktemp`
+TMP_FMT=`mktemp`
 
 if [ $1 == "--hook" ]; then
   shift 1

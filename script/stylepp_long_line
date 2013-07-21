@@ -1,8 +1,8 @@
 DIR="$( cd "$( dirname "${BASH_SOURCE[0]}" )" && pwd )"
 PID=$BASHPID
 PATH=$PATH:$DIR/../bin:$DIR
+FILE=`mktemp`
+stylepp_skeleton $* stylepp_warn80 2>FILE
 
-stylepp_skeleton $* stylepp_warn80 2>/tmp/files
-
-sh /tmp/files
+sh FILE
 
