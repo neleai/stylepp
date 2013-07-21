@@ -1,20 +1,21 @@
 DIR="$( cd "$( dirname "${BASH_SOURCE[0]}" )" && pwd )"
 PID=$BASHPID
 PATH=$PATH:$DIR/../bin:$DIR
-
+TMP_FILES=`mktemp`
+TMP_FMT=`mktemp`
 
 if [ $1 == "--hook" ]; then
   shift 1
   # Hook version.
   TOP=`git rev-parse --show-toplevel`
-  rm /tmp/files 2> /dev/null
-  echo > /tmp/files
+  rm $TMP_FILES 2> /dev/null
+  echo > $TMP_FILES
   for I in `git diff --name-only`; do
     I=$TOP/$I
-    echo $I >> /tmp/files
+    echo $I >> $TMP_FILES
   done
-  FILES=`cat /tmp/files`
-  rm /tmp/files
+  FILES=`cat $TMP_FILES`
+  rm $TMP_FILES
 else
   FILES=`find`
 fi
@@ -22,13 +23,13 @@ fi
 for CUP in $*; do
   for I in $FILES; do
     if [ "${I: -2}" == ".c" ] || [ "${I: -4}" == ".cpp" ] || [ "${I: -3}" == ".cc" ] || [ "${I: -2}" == ".h" ]; then
-      if $CUP $I <$I > /tmp/fmt.$PID; then
-        diff -u /tmp/fmt.$PID $I >> /tmp/diff
-        mv /tmp/fmt.$PID $I
+      if $CUP $I <$I > $TMP_FMT; then
+        diff -u $TMP_FMT $I >> /tmp/diff
+        mv $TMP_FMT $I
       fi
     fi
   done
 done
 
 # Cleanup.
-rm /tmp/fmp.$PID 2>/dev/null
+rm $TMP_FMT 2>/dev/null
