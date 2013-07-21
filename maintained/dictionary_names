@@ -2,7 +2,6 @@ coldfire ColdFire
 Coldfire ColdFire
 linux Linux
 git Git
-H8/S H8S
 mips MIPS
 Mips MIPS
 powerpc PowerPC
@@ -22,3 +21,4 @@ Vaxen VAXen
 microvax MicroVAX
 Microvax MicroVAX
 SHA1 SHA-1
+ok OK

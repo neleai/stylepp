@@ -6,4 +6,7 @@ git checkout libffi
 git checkout libjava/classpath
 git checkout libjava/libltdl
 git checkout libquadmath
-git checkout libgo/go/compress/testdata
+git checkout libgo
+git checkout libsanitizer
+git checkout gcc/go/gofrontend
+git checkout libgcc/soft-fp
