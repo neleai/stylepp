@@ -44,9 +44,16 @@ spellchecking:
     stylepp_spell_patch: 
       A high level script that automates most parts of generating patch that 
       fixes typos. For other workflows we recommend to copy and modify this script.
+
+    stylepp_strip_diff:
+      When verifying that patch fixes typos most of time is spend on finding what
+      was changed. A stylepp_strip_diff is a tool that takes patch as input and
+      present it in compact form which is much easier to review.
+
     stylepp_fix_spell:   
       A script that reads dictionary file (see maintained/dictionary_wiki)
       Then it replaces occurrences of specified typos in comments.
+
     stylepp_spellcheck:
       A script that creates list of likely misspells from codebase. A
       likely misspell is word that
@@ -54,6 +61,7 @@ spellchecking:
         2. Is not present in code.
         3. Is wrong according to aspell.
         4. Is lowercase.
+
     stylepp_dictionary:
       A script that takes list of misspells from stylepp_spellcheck and
       with user help generates replacement dictionary.
@@ -63,6 +71,7 @@ warnings:
     
   stylepp_warn_dead_link:
     Checks if all http links go to valid address.
+
   stylepp_warn_copyright: 
     Print list of names that lack copyright header or header has wrong year.
 
