@@ -1,39 +1,72 @@
 style per partes
 
-stylepp is a tool to maintain consistent style. 
 
-It consist of independent programs that can be used as needed.
+stylepp is a tool to maintain a consistent style.
+
+It consists of independent programs which can be used as needed.
 
 You need to run:
 
 make
 
-to compile stylepp. Then you can add stylepp/script directory into your PATH
-or run them with relative names.
+to compile stylepp. Then you can add the stylepp/script directory 
+into your PATH or run them with relative names.
+
+For simplicity stylepp works on git repositories. For different version
+control system use git-svn/git-cvs/'insert bridge'.
+
 
 A two basic workflows are possible.
 
-First run initial cleanup over codebase, this separate formatting changes 
+First run an initial cleanup over codebase; this separates formatting changes
 from code changes.
 
-Then to maintain consistent state you need either add appropriate hook 
-or run formatter periodically. A hook version is ran by --hook argument.
+Then to maintain a consistent state you need either add the appropriate hook
+or run formatter periodically. A hook version is run by --hook argument.
 
-You need to specify which files are stylepp responsibility. Currently this is done by 
-placing file .indent.on to each directory you want to format.
+You need to specify which files are stylepp's responsibility.
+A best way so far is write a script named ignore that does:
 
-You typically write combination of formatters, you can use following:
+git checkout HEAD blacklisted files # Link to upstream project.
 
-stylepp_space: Fix all leading and trailing whitespaces.
-stylepp_warnings: Run miscellaneous warnings.
-
-
-
-Current tools are:
-
-stylepp_leading_trailing_space: Fix leading and trailing spaces.
-stylepp_form_feed: Removes form feeds.
-stylepp_warn_spellcheck: Extract comments and after some filtering check them with aspell.
-stylepp_warn_copyright: Print list of names that lack copyright header.
+This simplifies splitting and sending every format patch; not just
+stylepp ones.
 
 
+There are several areas that stylepp covers:
+
+spellchecking: 
+  We try to make our commands safe. A spellchecker touches
+  in source files will touch only comments. 
+
+  You can use following commands:
+
+    stylepp_spell_patch: 
+      A high level script that automates most parts of generating patch that 
+      fixes typos. For other workflows we recommend to copy and modify this script.
+    stylepp_fix_spell:   
+      A script that reads dictionary file (see maintained/dictionary_wiki)
+      Then it replaces occurrences of specified typos in comments.
+    stylepp_spellcheck:
+      A script that creates list of likely misspells from codebase. A
+      likely misspell is word that
+        1. Is present in comment.
+        2. Is not present in code.
+        3. Is wrong according to aspell.
+        4. Is lowercase.
+    stylepp_dictionary:
+      A script that takes list of misspells from stylepp_spellcheck and
+      with user help generates replacement dictionary.
+
+warnings:
+  Check things that people should check. These are mostly used in hook.
+    
+  stylepp_warn_dead_link:
+    Checks if all http links go to valid address.
+  stylepp_warn_copyright: 
+    Print list of names that lack copyright header or header has wrong year.
+
+refactoring:
+  stylepp_long_line: 
+    Finds which files have lines longer than 80 characters and opens vim
+    on them.
