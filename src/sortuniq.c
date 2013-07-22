@@ -8,22 +8,24 @@
 #include <stdio.h>
 #include <stdlib.h>
 #define MAX_LEN 100
-#define ELEMS 1000000
+#define ELEMS 100000000
 char
 strcmp2 (char **a, char **b)
 {
   return strcmp (*a, *b);
 }
-char *words[ELEMS];
 int
 main (int argc, char **argv)
 {
+  char **words = malloc (ELEMS * sizeof (char *));
+  char buffer[10000];
   int words_no = 0;
   int i, j;
-  for (i = 0; i < ELEMS; i++)
-    words[i] = malloc (MAX_LEN);
-  while (fgets (words[words_no], MAX_LEN, stdin))
-    words_no++;
+  while (fgets (buffer, MAX_LEN, stdin))
+    {
+      words[words_no++] = strdup (buffer);
+    }
+  words[words_no] = malloc (1);
   qsort (words, words_no, sizeof (char *), strcmp2);
   for (i = 0; i < words_no; i++)
     {

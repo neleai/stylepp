@@ -7,5 +7,6 @@ git svn clone svn://scm.gforge.inria.fr/svnroot/mpc/trunk ../../stylepp_maintain
 git clone https://github.com/madler/zlib ../../stylepp_maintained/zlib
 git clone https://github.com/ivmai/bdwgc.git ../../stylepp_maintained/boehm-gc
 git clone https://github.com/git/git.git ../../stylepp_maintained/git
+git clone git://github.com/atgreen/libffi.git ../../stylepp_maintained/libffi
 
 cd ../../stylepp_maintained; cvs -z3 -d:pserver:anonymous@cvs.savannah.gnu.org:/sources/aspell co aspell
