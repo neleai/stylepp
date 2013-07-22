@@ -55,11 +55,16 @@ main (int argc, char **argv)
   while (fscanf (dictionary, "%s %s", names[name_number], replacements[name_number]) != EOF)
     name_number++;
   /* Verify that dictionary consists only of letters and '.  */
-  for (i = 0; i < name_number; i++)
+  for (i = 0; i < 2 * name_number; i += 2)
     {
       parseword (names[i]);
       parseword (replacements[i]);
       add_word (names[i], i);
+      strcpy (names[i + 1], names[i]);
+      strcpy (replacements[i + 1], replacements[i]);
+      names[i + 1][0] = toupper (names[i + 1][0]);
+      replacements[i + 1][0] = toupper (replacements[i + 1][0]);
+      add_word (names[i + 1], i + 1);
     }
 
 

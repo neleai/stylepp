@@ -33,7 +33,7 @@ main (int argc, char **argv)
 	}
       if (strcmp (word[0], word[1]))
 	{
-	  printf ("%20s %s\n", word[0], word[1]);
+	  printf ("%-20s %s\n", word[0], word[1]);
 	}
     }
 }
