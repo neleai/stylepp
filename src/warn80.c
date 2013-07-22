@@ -1,9 +1,7 @@
 /* Copyright 2013 by Ondřej Bílka <neleai@seznam.cz> */
 
-#include <stdio.h>
-#include <ctype.h>
-#include <string.h>
-#define isalnum_(x) (isalnum (x) || x == '_')
+#include "common.h"
+
 int
 main (int argc, char **argv)
 {
