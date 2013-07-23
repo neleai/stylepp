@@ -1,6 +1,13 @@
-echo > /tmp/typos
+TYPO=`mktemp`
+TYPOS=`mktemp`
+TYPO2=`mktemp`
+echo > TYPOS
 while git checkout HEAD^; do
-  git diff HEAD^ --word-diff | stylepp_typo_from_history > /tmp/typo
-  cat /tmp/typos /tmp/typo | stylepp_sortuniq > /tmp/typos2
-  mv /tmp/typos2 /tmp/typos
+  git diff HEAD^ --word-diff | stylepp_typo_from_history > TYPO
+  cat TYPOS TYPO | stylepp_sortuniq > TYPO2
+  mv TYPO2 TYPOS
+cp TYPOS /tmp/typos
 done
+
+cat TYPOS
+echo also saved to /tmp/typos 1>&2
