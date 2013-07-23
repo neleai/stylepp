@@ -2,7 +2,7 @@ TYPO=`mktemp`
 TYPOS=`mktemp`
 TYPO2=`mktemp`
 echo > TYPOS
-while git checkout HEAD^; do
+while git checkout HEAD^ >/dev/null; do
   git diff HEAD^ --word-diff | stylepp_typo_from_history > TYPO
   cat TYPOS TYPO | stylepp_sortuniq > TYPO2
   mv TYPO2 TYPOS
