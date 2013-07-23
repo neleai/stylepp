@@ -1,0 +1,48 @@
+git checkout $1 libgfortran
+git checkout $1 gcc/fortran
+git checkout $1 gcc/testsuite/gfortran.dg
+git checkout $1 gcc/testsuite/gfortran.fortran-torture
+git commit -a -m "Fix typos in fortran."
+git diff HEAD^ | stylepp_strip_diff > fortran.patch
+~/stylepp/gnu/mkchlog Fix typos in fortran.
+git commit -a --amend -m "Fix typos in fortran." 
+
+
+git diff HEAD^ >> fortran.patch
+
+git checkout $1 libada
+git checkout $1 gcc/ada
+git checkout $1 gcc/testsuite/ada
+git commit -a -m "Fix typos in ada."
+git diff HEAD^ | stylepp_strip_diff > ada.patch
+~/stylepp/gnu/mkchlog Fix typos in ada.
+git commit -a --amend -m "Fix typos in ada." 
+
+git diff HEAD^ >> ada.patch
+
+git checkout $1 libjava
+git checkout $1 gcc/java
+git commit -a -m "Fix typos in java."
+git diff HEAD^ | stylepp_strip_diff > java.patch
+~/stylepp/gnu/mkchlog Fix typos in java.
+git commit -a --amend -m "Fix typos in java." 
+
+git diff HEAD^ >> java.patch
+
+git checkout $1 libstdc++-v3
+git commit -a -m "Fix typos in libstdc++-v3."
+git diff HEAD^ | stylepp_strip_diff > libstdc++-v3.patch
+~/stylepp/gnu/mkchlog Fix typos in libstdc++-v3.
+git commit -a --amend -m "Fix typos in libstdc++-v3." 
+
+git diff HEAD^ >> libstdc++-v3.patch
+
+git checkout $1 .
+git checkout HEAD `find | grep ChangeLog`
+git commit -a -m "Fix typos."
+git diff HEAD^ | stylepp_strip_diff > gcc.patch
+~/stylepp/gnu/mkchlog Fix typos.
+git commit -a --amend -m "Fix typos."
+
+git diff HEAD^ >> gcc.patch
+

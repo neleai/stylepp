@@ -1,0 +1,5 @@
+cat header fortran_header body fortran.patch  > mails2/0001-fortran.patch
+cat header ada_header body ada.patch  > mails2/0002-ada.patch
+cat header java_header body java.patch  > mails2/0003-java.patch
+cat header libstdc++-v3_header body libstdc++-v3.patch  > mails2/0004-libstdc++-v3.patch
+cat header gcc_header body gcc.patch  > mails2/0005-gcc.patch
