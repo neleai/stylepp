@@ -1,0 +1,6 @@
+echo > /tmp/typos
+while git checkout HEAD^; do
+  git diff HEAD^ --word-diff | stylepp_typo_from_history > /tmp/typo
+  cat /tmp/typos /tmp/typo | stylepp_sortuniq > /tmp/typos2
+  mv /tmp/typos2 /tmp/typos
+done
