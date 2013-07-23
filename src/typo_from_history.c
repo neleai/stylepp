@@ -43,6 +43,11 @@ main (int argc, char **argv)
 		j++;
 	      if (cmp (buffer + j, "+}"))
 		goto next;
+	      j += 2;
+	      while (isspace (buffer[j]))
+		j++;
+	      if (!isalpha (buffer[j]))
+		goto next;
 	      printf ("%s %s\n", word, repl);
 	    }
 	next:;

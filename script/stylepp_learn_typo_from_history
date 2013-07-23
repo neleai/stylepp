@@ -9,5 +9,6 @@ while git checkout HEAD^ >/dev/null; do
 cp TYPOS /tmp/typos
 done
 
-cat TYPOS
+cat TYPOS | stylepp_clean_dictionary
+cat TYPOS | stylepp_clean_dictionary > /tmp/typos
 echo also saved to /tmp/typos 1>&2
