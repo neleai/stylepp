@@ -1,12 +1,12 @@
-git checkout boehm-gc
-git checkout zlib
-git checkout intl
-git checkout libdecnumber
-git checkout libffi
-git checkout libjava/classpath
-git checkout libjava/libltdl
-git checkout libquadmath
-git checkout libgo
-git checkout libsanitizer
-git checkout gcc/go/gofrontend
-git checkout libgcc/soft-fp
+git checkout HEAD boehm-gc
+git checkout HEAD zlib
+git checkout HEAD intl
+git checkout HEAD libdecnumber
+git checkout HEAD libffi
+git checkout HEAD libjava/classpath
+git checkout HEAD libjava/libltdl
+git checkout HEAD libquadmath
+git checkout HEAD libgo
+git checkout HEAD libsanitizer
+git checkout HEAD gcc/go/gofrontend
+git checkout HEAD libgcc/soft-fp
