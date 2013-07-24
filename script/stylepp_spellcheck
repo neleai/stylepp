@@ -6,7 +6,7 @@ mkdir $TOP/.stylepp 2> /dev/null
 
 echo > /tmp/code.$PID
 echo > /tmp/comment.$PID
-for I in `find -regex ".*\(\.c\|\.h\|\.cpp\|\.java\|.py\|\.txt\|\.htm\|\.html\|\.texi\)\$"`; do
+for I in `find -regex ".*\(.c\|\.h\|\.cc\|\.cpp\|\.java\|\.adb\|\.ads\|\.f\|\.f90\|\.f95\|\.py\|\.sh\|\.rb\|\.txt\|\.htm\|\.html\|\.tex\|\.texi\|\.ml\|\.mli\)\$"`; do
   stylepp_extract_code $I < $I >> /tmp/code.$PID
   stylepp_extract_comment $I < $I >> /tmp/comment.$PID
 done
