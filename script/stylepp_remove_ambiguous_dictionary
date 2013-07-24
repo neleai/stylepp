@@ -1,7 +1,7 @@
 while read WORD; do
   if [ "`echo $WORD | awk '{print $1;}'`" !=  "`echo $LASTWORD | awk '{print $1;}'`" ]; then
     if [ "$WRD" != "dupe" ]; then
-      echo $WRD
+      echo "$WRD"
     fi
     WRD=$WORD
   else
