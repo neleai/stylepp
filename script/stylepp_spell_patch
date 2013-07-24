@@ -1,29 +1,39 @@
 DIR="$( cd "$( dirname "${BASH_SOURCE[0]}" )" && pwd )"
 PATH=$PATH:$DIR/../bin:$DIR
+TOP=`git rev-parse --show-toplevel`
+mkdir $TOP/.stylepp 2> /dev/null
+
+stylepp_spellcheck
 
 if [ ! -f $DIR/../maintained/dictionary_personal ]; then
   cp $DIR/../maintained/dictionary_common $DIR/../maintained/dictionary_personal
 fi
 
-cp $DIR/../maintained/dictionary_wiki dictionary
+stylepp_subtract_dictionary $DIR/../maintained/dictionary_wiki $TOP/.stylepp/words_code > dictionary
 stylepp_fix_spell
 git commit -a -m "Fix common typos."
 
-cp $DIR/../maintained/dictionary_names dictionary
+stylepp_subtract_dictionary $DIR/../maintained/dictionary_names $TOP/.stylepp/words_code > dictionary
 stylepp_fix_spell
 git commit -a -m "Fix capitalization."
 
-cp $DIR/../maintained/dictionary_personal dictionary
+stylepp_subtract_dictionary $DIR/../maintained/dictionary_personal $TOP/.stylepp/words_code > dictionary
 stylepp_fix_spell
 git commit -a -m "Fix typos from personal list."
 
+stylepp_subtract_dictionary $DIR/../maintained/dictionary_history $TOP/.stylepp/words_code > dictionary
+stylepp_fix_spell
+git commit -a -m "Fix typos from history list."
+
 stylepp_spellcheck
 stylepp_dictionary
+
+cp $TOP/.stylepp/dictionary dictionary
 stylepp_fix_spell
 git commit -a -m "Fix typos."
 
 # Now merge fixes to personal directory
 TDICT=`mktemp`
-cat dictionary $DIR/../maintained/dictionary_personal | sort | uniq > $TDICT
+cat dictionary $DIR/../maintained/dictionary_personal | stylepp_sortuniq > $TDICT
 cp $TDICT $DIR/../maintained/dictionary_personal
 rm $TDICT

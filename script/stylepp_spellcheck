@@ -1,6 +1,8 @@
 DIR="$( cd "$( dirname "${BASH_SOURCE[0]}" )" && pwd )"
 PID=$BASHPID
 PATH=$PATH:$DIR/../bin:$DIR
+TOP=`git rev-parse --show-toplevel`
+mkdir $TOP/.stylepp 2> /dev/null
 
 echo > /tmp/code.$PID
 echo > /tmp/comment.$PID
@@ -10,19 +12,17 @@ for I in `find -regex ".*\(\.c\|\.h\|\.cpp\|\.java\|\.txt\|\.htm\|\.html\|\.texi
 done
 
 # Now we find words in comments but not in code
-cat /tmp/code.$PID    | stylepp_sortuniq | aspell list | stylepp_sortuniq> /tmp/code2.$PID
-cat /tmp/comment.$PID | stylepp_sortuniq | aspell list | stylepp_sortuniq> /tmp/comment2.$PID
+cat /tmp/code.$PID    | stylepp_sortuniq | aspell list | stylepp_sortuniq> $TOP/.stylepp/words_code
+cat /tmp/comment.$PID | stylepp_sortuniq | aspell list | stylepp_sortuniq> $TOP/.stylepp/words_comment
 
 # This can take while so it is better to save it to file for users which forget
 # to redirect this.
 
-stylepp_symdiff /tmp/comment2.$PID /tmp/code2.$PID | grep -v "[[:upper:]]" | aspell list > /tmp/misspells
-cat /tmp/misspells
+stylepp_symdiff $TOP/.stylepp/words_comment $TOP/.stylepp/words_code | grep -v "[[:upper:]]" | aspell list > $TOP/.stylepp/misspells
+cat $TOP/.stylepp/misspells
 
-echo "Also saved into /tmp/misspells file"
+echo "Also saved into $TOP/.stylepp/misspells file"
 
 # Cleanup.
 rm /tmp/code.$PID
 rm /tmp/comment.$PID
-rm /tmp/code2.$PID
-rm /tmp/comment2.$PID

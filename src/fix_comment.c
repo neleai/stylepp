@@ -28,7 +28,7 @@ parseword (char *word)
 
 
 int name_number;
-char names[10000][100], replacements[10000][100];
+char **names, **replacements;
 int
 main (int argc, char **argv)
 {
@@ -47,24 +47,31 @@ main (int argc, char **argv)
   char buffer2[100000];
   char *input = malloc (100000000), *ip = input;
   char *output = malloc (100000000), *op = output;
+  names = malloc (100000000);
+  replacements = malloc (100000000);
+
   _buffer[0] = ' ';
 
   /* Read a dictionary */
   FILE *dictionary = fopen ("dictionary", "r");
   name_number = 0;
-  while (fscanf (dictionary, "%s %s", names[name_number], replacements[name_number]) != EOF)
-    name_number++;
+  while (fscanf (dictionary, "%s %s", buffer, buffer2) != EOF)
+    {
+      names[name_number] = strdup (buffer);
+      replacements[name_number] = strdup (buffer2);
+      name_number++;
+    }
   /* Verify that dictionary consists only of letters and '.  */
-  for (i = 0; i < 2 * name_number; i += 2)
+  for (i = 0; i < name_number; i++)
     {
       parseword (names[i]);
       parseword (replacements[i]);
       add_word (names[i], i);
-      strcpy (names[i + 1], names[i]);
-      strcpy (replacements[i + 1], replacements[i]);
-      names[i + 1][0] = toupper (names[i + 1][0]);
-      replacements[i + 1][0] = toupper (replacements[i + 1][0]);
-      add_word (names[i + 1], i + 1);
+      names[i + name_number] = strdup (names[i]);
+      names[i + name_number][0] = toupper (names[i][0]);
+      replacements[i + name_number] = strdup (replacements[i]);
+      replacements[i + name_number][0] = toupper (replacements[i][0]);
+      add_word (names[i + name_number], i + name_number);
     }
 
 

@@ -13,7 +13,7 @@ diff_s diffs[1000000]; int diffs_no = 0;
 int
 diffcmp (diff_s *a, diff_s *b)
 {
-  return strcmp (a->lines[1] + 40, b->lines[1] + 40);
+  return strcasecmp (a->lines[1] + 40, b->lines[1] + 40);
 }
 int
 main (int argc, char **argv)
@@ -52,12 +52,23 @@ main (int argc, char **argv)
 	    i--;
 	  diff.different_from = i;
 
-	  diff.lines[0] = strdup (_buffer[1] + i);
-	  diff.lines[1] = strdup (_buffer[2] + i);
 	  for (i = 1; buffer[1][strlen (buffer[1]) - i] == buffer[2][strlen (buffer[2]) - i] && i < strlen (buffer[1]) && i < strlen (buffer[2]); i++)
 	    ;
 	  diff.different_to = strlen (buffer[2]) - i;
+	  diff.lines[0] = strdup (_buffer[1] + diff.different_from);
+	  diff.lines[1] = strdup (_buffer[2] + diff.different_from);
 
+	  /* Fill context with previous line. */
+	  if (diff.different_from < 40)
+	    {
+	      int rep = 40 - diff.different_from;
+	      diff.lines[0][rep - 3] = diff.lines[1][rep - 3] = ' ';
+	      diff.lines[0][rep - 2] = diff.lines[1][rep - 2] = '\\';
+	      diff.lines[0][rep - 1] = diff.lines[1][rep - 1] = 'n';
+	      for (i = 3; i < rep && i < strlen (buffer[0]); i++)
+		diff.lines[0][rep - i - 1] = diff.lines[1][rep - i - 1] = buffer[0][strlen (buffer[0]) - i + 1];
+	    }
+	  /* TODO context with next line. */
 	  diffs[diffs_no++] = diff;
 	  buffer[1][0] = ' ';
 	  buffer[2][0] = ' ';
