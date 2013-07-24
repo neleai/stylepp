@@ -14,6 +14,11 @@
 
 #include "common.h"
 
+#define LANG_C 1
+#define LANG_SH 2
+#define LANG_PLAIN 3
+
+
 parseword (char *word)
 {
   int i;
@@ -32,14 +37,15 @@ char **names, **replacements;
 int
 main (int argc, char **argv)
 {
+  int lang = LANG_C;
   test_indent_off (argv[1]);
-  int plain = 0;
   if (TEST_EXTENSION (argv[1], ".txt") ||
       TEST_EXTENSION (argv[1], ".htm") ||
       TEST_EXTENSION (argv[1], ".html") ||
       TEST_EXTENSION (argv[1], ".texi"))
-    plain = 1;
-
+    lang = LANG_PLAIN;
+  if (TEST_EXTENSION (argv[1], ".py"))
+    lang = LANG_SH;
 
   int i, j, k, l, len;
   int incomment = 0, incomment2 = 0, insquote = 0, indquote = 0, inmail = 0, inhtml = 0;
@@ -51,6 +57,11 @@ main (int argc, char **argv)
   replacements = malloc (100000000);
 
   _buffer[0] = ' ';
+
+  // Treat everything in plain files as comment.
+  if (lang == LANG_PLAIN)
+    incomment = 1;
+
 
   /* Read a dictionary */
   FILE *dictionary = fopen ("dictionary", "r");
@@ -80,7 +91,7 @@ main (int argc, char **argv)
     {
       for (i = 0, j = 0; buffer[i]; )
 	{
-	  if (incomment || incomment2 || plain)
+	  if (incomment || incomment2)
 	    {
 	      // Simple heuristic to identify mail address. Has false negatives
 	      // but they are relatively rare.
@@ -111,9 +122,10 @@ main (int argc, char **argv)
 		    }
 		}
 	    }
+
 	  if (incomment)
 	    {
-	      if (!cmp (buffer + i, "*/"))
+	      if (lang == LANG_C && !cmp (buffer + i, "*/"))
 		incomment = 0;
 	    }
 	  else if (incomment2)
@@ -121,6 +133,8 @@ main (int argc, char **argv)
 	      if (buffer[i] != '\\' && buffer[i + 1] == '\n')
 		incomment2 = 0;
 	    }
+
+
 	  else if (insquote)
 	    {
 	      if (buffer[i] == '\\')
@@ -137,10 +151,19 @@ main (int argc, char **argv)
 	    }
 	  else
 	    {
-	      if (!cmp (buffer + i, "/*"))
-		incomment = 1;
-	      if (!cmp (buffer + i, "//"))
-		incomment2 = 1;
+	      if (lang == LANG_C)
+		{
+		  if (!cmp (buffer + i, "/*"))
+		    incomment = 1;
+		  if (!cmp (buffer + i, "//"))
+		    incomment2 = 1;
+		}
+	      if (lang == LANG_SH)
+		{
+		  if (buffer[i] == '#')
+		    incomment2 = 1;
+		}
+
 	      if (incomment || incomment2)
 		inmail = 0;
 	      if (buffer[i] == '\'')
