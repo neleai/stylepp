@@ -39,13 +39,6 @@ main (int argc, char **argv)
        */
       if (!one_from (buffer[0][0], "+-") && buffer[1][0] == '-' && buffer[1][1] != '-' && buffer[2][0] == '+' && !one_from (buffer[3][0], "+-"))
 	{
-	  for (i = 0; buffer[1][i]; i++)
-	    if (buffer[1][i] == '\t')
-	      buffer[1][i] = ' ';
-	  for (i = 0; buffer[2][i]; i++)
-	    if (buffer[2][i] == '\t')
-	      buffer[2][i] = ' ';
-
 	  for (i = 1; buffer[1][i] == buffer[2][i] && buffer[2][i]; i++)
 	    ;
 	  while (isalpha (buffer[1][i - 1]))
@@ -68,6 +61,13 @@ main (int argc, char **argv)
 	      for (i = 3; i < rep && i < strlen (buffer[0]); i++)
 		diff.lines[0][rep - i - 1] = diff.lines[1][rep - i - 1] = buffer[0][strlen (buffer[0]) - i + 1];
 	    }
+
+	  /* Replace tabs to keep alignment. */
+	  for (i = 0; i < 2; i++)
+	    for (j = 0; diff.lines[i][j]; j++)
+	      if (diff.lines[i][j] == '\t')
+		diff.lines[i][j] = ' ';
+
 	  /* TODO context with next line. */
 	  diffs[diffs_no++] = diff;
 	  buffer[1][0] = ' ';
