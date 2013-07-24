@@ -41,7 +41,7 @@ main (int argc, char **argv)
     plain = 1;
 
 
-  int i, j, k, len;
+  int i, j, k, l, len;
   int incomment = 0, incomment2 = 0, insquote = 0, indquote = 0, inmail = 0, inhtml = 0;
   char _buffer[100000], *buffer = _buffer + 1;
   char buffer2[100000];
@@ -96,9 +96,18 @@ main (int argc, char **argv)
 		  k = get_word (word (buffer + i));
 		  if (!cmp (buffer + i, names[k]) && isseparator (buffer + i + strlen (names[k])))
 		    {
+		      if (isupper (names[k][0]))
+			{
+			  l = j - 1;
+			  while (isspace (buffer2[l]))
+			    l--;
+			  if (buffer2[l] != '.' && buffer2[l] != '*')
+			    goto skip2;
+			}
 		      strcpy (buffer2 + j, replacements[k]);
 		      i += strlen (names[k]);
 		      j += strlen (replacements[k]);
+		    skip2:;
 		    }
 		}
 	    }

@@ -1,10 +1,7 @@
 while read WORD; do
   if [ ! -z "`echo $WORD | awk '{print $1;}' | aspell list`" ]; then
     if [  -z "`echo $WORD | awk '{print $2;}' | aspell list`" ]; then
-      if [ "`echo $WORD | awk '{print $1;}'`" !=  "`echo $LASTWORD | awk '{print $1;}'`" ]; then
-	echo $LASTWORD
-      fi
-      LASTWORD=$WORD
+      echo $WORD
     fi
   fi
 done
