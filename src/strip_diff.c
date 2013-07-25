@@ -31,7 +31,7 @@ main (int argc, char **argv)
   diff_s diff;
   while (fgets (buffer[3], 100000, stdin))
     {
-      /* Find occurences of
+      /* Find occurrences of
          [^+-]line
          -[^-]line
          +line

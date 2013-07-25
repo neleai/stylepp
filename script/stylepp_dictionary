@@ -2,7 +2,6 @@ DIR="$( cd "$( dirname "${BASH_SOURCE[0]}" )" && pwd )"
 PATH=$PATH:$DIR/../bin:$DIR
 TOP=`git rev-parse --show-toplevel`
 
-cp /tmp/misspells .
 cp $TOP/.stylepp/misspells $TOP/.stylepp/corrected
 aspell -c $TOP/.stylepp/corrected
 stylepp_make_dictionary $TOP/.stylepp/misspells $TOP/.stylepp/corrected > $TOP/.stylepp/dictionary
