@@ -35,6 +35,6 @@ git commit -a -m "Fix typos."
 
 # Now merge fixes to personal directory
 TDICT=`mktemp`
-cat dictionary $DIR/../maintained/dictionary_personal | stylepp_sortuniq > $TDICT
+cat dictionary $DIR/../maintained/dictionary_personal | stylepp_format_dictionary | stylepp_sortuniq > $TDICT
 cp $TDICT $DIR/../maintained/dictionary_personal
 rm $TDICT
