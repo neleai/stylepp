@@ -10,9 +10,9 @@
 
 #define HASH_TYPE int
 
-#include "hash.h"
 
 #include "common.h"
+#include "hash.h"
 
 #include "comments.h"
 

@@ -12,8 +12,8 @@
 #include <string.h>
 
 #define HASH_TYPE char
-#include "hash.h"
 #include "common.h"
+#include "hash.h"
 
 #include "comments.h"
 

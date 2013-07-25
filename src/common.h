@@ -42,3 +42,15 @@ write_if_common (char *input, char *ip, char *output, char *op)
       return (0);
     }
 }
+
+int
+isword (char c)
+{
+  return isalpha (c) || c == '\'' || c == '-';
+}
+
+int
+isseparator (char *c)
+{
+  return isspace (c[0]) || ((c[0] == '.' || c[0] == ',' || c[0] == ';') && isspace (c[1]));
+}

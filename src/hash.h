@@ -1,17 +1,5 @@
 /* Copyright 2013 by Ondřej Bílka <neleai@seznam.cz> */
 
-int
-isword (char c)
-{
-  return isalpha (c) || c == '\'' || c == '-';
-}
-
-int
-isseparator (char *c)
-{
-  return isspace (c[0]) || ((c[0] == '.' || c[0] == ',' || c[0] == ';') && isspace (c[1]));
-}
-
 
 #define HASH_SIZE 1000000
 char _word[1000];
