@@ -10,20 +10,20 @@ if [ ! -f $DIR/../maintained/dictionary_personal ]; then
 fi
 
 stylepp_subtract_dictionary $DIR/../maintained/dictionary_wiki $TOP/.stylepp/words_code > dictionary
-stylepp_fix_spell
+stylepp_fix_spell $*
 git commit -a -m "Fix common typos."
 
 #stylepp_subtract_dictionary $DIR/../maintained/dictionary_names $TOP/.stylepp/words_code > dictionary
-#stylepp_fix_spell
+#stylepp_fix_spell $*
 #git commit -a -m "Fix capitalization."
 
 stylepp_subtract_dictionary $DIR/../maintained/dictionary_personal $TOP/.stylepp/words_code > dictionary
-stylepp_fix_spell
+stylepp_fix_spell $*
 git commit -a -m "Fix typos from personal list."
 
 # Generates false positives.
 stylepp_subtract_dictionary $DIR/../maintained/dictionary_history $TOP/.stylepp/words_code > dictionary
-stylepp_fix_spell
+stylepp_fix_spell $*
 git commit -a -m "Fix typos from history list."
 
 stylepp_spellcheck

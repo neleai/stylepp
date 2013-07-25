@@ -24,7 +24,7 @@ fi
 for CUP in stylepp_fix_comment; do
   for I in $FILES; do
     if [ "${I: -2}" == ".c" ] || [ "${I: -2}" == ".h" ] || [ "${I: -3}" == ".cc" ] || [ "${I: -4}" == ".cpp" ] || [ "${I: -5}" == ".java" ] || [ "${I: -4}" == ".adb" ] || [ "${I: -4}" == ".ads" ] || [ "${I: -2}" == ".f" ] || [ "${I: -4}" == ".f90" ] || [ "${I: -4}" == ".f95" ] || [ "${I: -3}" == ".py" ] || [ "${I: -3}" == ".sh" ] || [ "${I: -3}" == ".rb" ] || [ "${I: -4}" == ".txt" ] || [ "${I: -4}" == ".htm" ] || [ "${I: -5}" == ".html" ] || [ "${I: -4}" == ".tex" ] || [ "${I: -5}" == ".texi" ] || [ "${I: -3}" == ".ml" ] || [ "${I: -4}" == ".mli" ]; then
-      if $CUP $I <$I > $TMP_FMT; then
+      if $CUP $I $* <$I > $TMP_FMT; then
         diff -u $TMP_FMT $I >> /tmp/diff
         mv $TMP_FMT $I
       fi

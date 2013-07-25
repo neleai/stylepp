@@ -1,7 +1,6 @@
 ALl                  All
 AMTHI                ME
 ANtenna              Antenna
-APIs                 API
 ASSOICATION          ASSOCIATION
 Abilty               Ability
 Accellerators        Accelerators
@@ -628,7 +627,6 @@ UHBUsage             bool
 UNUSEABLE            UNUSABLE
 UartNumber           index
 Uegistering          Unregistering
-UltraSPARC           SPARC
 UnKnow               Unknown
 Unallocate           Deallocate
 Unamp                Unmap
@@ -2369,7 +2367,6 @@ hypothetic           hypothetical
 hz                   Hz
 iIf                  If
 iRemainder           remainder
-iSeries              The
 iTmp                 err
 iamge                image
 iare                 are
@@ -2748,12 +2745,9 @@ loging               logging
 longe                longer
 longuer              longer
 looop                loop
-loopIndex            i
 loopback             sending
 lossage              loss
 lossing              losing
-lossy                lossless
-lsr                  tty
 maake                make
 mabilbox             mailbox
 maby                 maybe
@@ -2885,7 +2879,6 @@ mosue                mouse
 moule                module
 moutn                mount
 movb                 movzbl
-moveq                mov
 movzb                movzbl
 mqe                  rc
 msut                 must
@@ -4262,7 +4255,6 @@ triger               trigger
 trigers              triggers
 triggerred           triggered
 triggred             triggered
-tristate             boolean
 trivialy             trivially
 trought              through
 truelly              truly
@@ -4288,7 +4280,6 @@ twised               twisted
 twize                twice
 twl                  status
 typcal               typical
-typedef              static
 typic                topic
 typicaly             typically
 typoes               typos
@@ -4405,7 +4396,6 @@ usefull              useful
 useing               using
 usere                user
 usern                user
-userspace            wait
 usese                uses
 usize                size
 usuallly             usually

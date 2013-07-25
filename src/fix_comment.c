@@ -31,7 +31,6 @@ parseword (char *word)
     }
 }
 
-
 int name_number;
 char **names, **replacements;
 int
@@ -39,6 +38,10 @@ main (int argc, char **argv)
 {
   int lang = find_language (argv[1]);
   test_indent_off (argv[1]);
+
+  int unfiltered = 0;
+  if (argc >= 2 && !strcmp (argv[2], "--unfiltered"))
+    unfiltered = 1;
 
   int i, j, k, l, len;
   int incomment = 0, incomment2 = 0, insquote = 0, indquote = 0, inmail = 0, inhtml = 0;
@@ -95,7 +98,7 @@ main (int argc, char **argv)
 
 	      // We try all replacement candidates.
 	      // TODO use trie.
-	      if (!inmail && !inhtml && isseparator (buffer + i - 1) && buffer[i - 1] != '.' && isalnum (buffer[i]))
+	      if ((unfiltered && isalnum (buffer[i])) || (!inmail && !inhtml && isseparator (buffer + i - 1) && buffer[i - 1] != '.' && isalnum (buffer[i])))
 		{
 		  k = get_word (word (buffer + i));
 		  if (!cmp (buffer + i, names[k]) && isseparator (buffer + i + strlen (names[k])))
