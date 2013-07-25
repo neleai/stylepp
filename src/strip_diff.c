@@ -41,7 +41,7 @@ main (int argc, char **argv)
 	{
 	  for (i = 1; buffer[1][i] == buffer[2][i] && buffer[2][i]; i++)
 	    ;
-	  while (isalpha (buffer[1][i - 1]))
+	  while (isword (buffer[1][i - 1]))
 	    i--;
 	  diff.different_from = i;
 
