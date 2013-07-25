@@ -22,7 +22,7 @@ test_indent_off (char *arg)
     return;
   char strbuf[1000]; strcpy (strbuf, arg);
   char strbuf2[1000];
-  while (strchr (strbuf, '/'))
+  while (strchr (strbuf, '/') && strbuf[0] && strbuf[1])
     {
       dirname (strbuf);
       strcpy (strbuf2, strbuf);

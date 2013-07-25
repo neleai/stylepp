@@ -22,9 +22,9 @@ stylepp_fix_spell
 git commit -a -m "Fix typos from personal list."
 
 # Generates false positives.
-#stylepp_subtract_dictionary $DIR/../maintained/dictionary_history $TOP/.stylepp/words_code > dictionary
-#stylepp_fix_spell
-#git commit -a -m "Fix typos from history list."
+stylepp_subtract_dictionary $DIR/../maintained/dictionary_history $TOP/.stylepp/words_code > dictionary
+stylepp_fix_spell
+git commit -a -m "Fix typos from history list."
 
 stylepp_spellcheck
 stylepp_dictionary

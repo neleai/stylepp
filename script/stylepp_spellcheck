@@ -4,25 +4,56 @@ PATH=$PATH:$DIR/../bin:$DIR
 TOP=`git rev-parse --show-toplevel`
 mkdir $TOP/.stylepp 2> /dev/null
 
-echo > /tmp/code.$PID
-echo > /tmp/comment.$PID
-for I in `find -regex ".*\(.c\|\.h\|\.cc\|\.cpp\|\.java\|\.adb\|\.ads\|\.f\|\.f90\|\.f95\|\.py\|\.sh\|\.rb\|\.txt\|\.htm\|\.html\|\.tex\|\.texi\|\.ml\|\.mli\)\$"`; do
+TMP_FILES=`mktemp`
+
+if [ $1 == "--hook" ]; then
+  shift 1
+  # Hook version.
+  TOP=`git rev-parse --show-toplevel`
+  rm $TMP_FILES 2> /dev/null
+  echo > $TMP_FILES
+  for I in `git diff --name-only`; do
+    I=$TOP/$I
+    echo $I >> $TMP_FILES
+  done
+  FILES=`cat $TMP_FILES`
+  rm $TMP_FILES
+  
+  echo > /tmp/code.$PID
+  echo > /tmp/comment.$PID
+
+  for I in $FILES; do
+    stylepp_extract_comment $I < $I >> /tmp/comment.$PID
+  done
+  cat $TOP/.stylepp/words_code /tmp/code.$PID | stylepp_sortuniq | aspell list | stylepp_sortuniq> $TOP/.stylepp/words_code
+  cat /tmp/comment.$PID | stylepp_sortuniq | aspell list | stylepp_sortuniq> $TOP/.stylepp/words_comment
+
+else
+  echo > /tmp/code.$PID
+  echo > /tmp/comment.$PID
+  for I in `find -regex ".*\(.c\|\.h\|\.cc\|\.cpp\|\.java\|\.adb\|\.ads\|\.f\|\.f90\|\.f95\|\.py\|\.sh\|\.rb\|\.txt\|\.htm\|\.html\|\.tex\|\.texi\|\.ml\|\.mli\)\$"`; do
   stylepp_extract_code $I < $I >> /tmp/code.$PID
   stylepp_extract_comment $I < $I >> /tmp/comment.$PID
-done
+  done
 
 # Now we find words in comments but not in code
-cat /tmp/code.$PID    | stylepp_sortuniq | aspell list | stylepp_sortuniq> $TOP/.stylepp/words_code
-cat /tmp/comment.$PID | stylepp_sortuniq | aspell list | stylepp_sortuniq> $TOP/.stylepp/words_comment
+  cat /tmp/code.$PID    | stylepp_sortuniq | aspell list | stylepp_sortuniq> $TOP/.stylepp/words_code
+  cat /tmp/comment.$PID | stylepp_sortuniq | aspell list | stylepp_sortuniq> $TOP/.stylepp/words_comment
+fi
+
 
 # This can take while so it is better to save it to file for users which forget
 # to redirect this.
 
 stylepp_symdiff $TOP/.stylepp/words_comment $TOP/.stylepp/words_code | grep -v "[[:upper:]]" | aspell list > $TOP/.stylepp/misspells
-cat $TOP/.stylepp/misspells
 
-echo "Also saved into $TOP/.stylepp/misspells file"
+if [ ! -z "`cat $TOP/.stylepp/misspells`" ]; then
 
+  cat $TOP/.stylepp/misspells | head
+  echo "Also saved into $TOP/.stylepp/misspells file."
+  echo "Use stylepp_TODO to fix them."
+fi
+  
 # Cleanup.
 rm /tmp/code.$PID
 rm /tmp/comment.$PID

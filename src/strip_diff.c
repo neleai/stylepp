@@ -10,6 +10,13 @@ typedef struct
 
 diff_s diffs[1000000]; int diffs_no = 0;
 
+
+char *
+strmove (char *dest, char *src)
+{
+  return memmove (dest, src, strlen (src) + 1);
+}
+
 int
 diffcmp (diff_s *a, diff_s *b)
 {
@@ -40,6 +47,12 @@ main (int argc, char **argv)
       char _pbuffer[10000], *pbuffer = _pbuffer + 40;
       if (!one_from (buffer[0][0], "+-") && buffer[1][0] == '-' && buffer[1][1] != '-' && buffer[2][0] == '+' && !one_from (buffer[3][0], "+-"))
 	{
+	  /* Strip leading spaces */
+	  for (i = 1; isspace (buffer[1][i]) && isspace (buffer[2][i]) && buffer[1][i] == buffer[2][i]; i++)
+	    ;
+	  for (j = 1; j <= 2; j++)
+	    strmove (buffer[j] + 1, buffer[j] + i);
+
 	  for (i = 1; buffer[1][i] == buffer[2][i] && buffer[2][i]; i++)
 	    ;
 	  int dif2 = i;
@@ -50,6 +63,30 @@ main (int argc, char **argv)
 	  for (i = 1; buffer[1][strlen (buffer[1]) - i] == buffer[2][strlen (buffer[2]) - i] && i < strlen (buffer[1]) && i < strlen (buffer[2]); i++)
 	    ;
 	  diff.different_to = strlen (buffer[2]) - i;
+
+	  /* Replace tabs to keep alignment. */
+	  for (j = 0; buffer[0][j]; j++)
+	    if (buffer[0][j] == '\t')
+	      buffer[0][j] = ' ';
+	  for (j = 0; j < diff.different_from; j++)
+	    if (buffer[1][j] == '\t')
+	      buffer[1][j] = ' ';
+	  for (j = diff.different_to + strlen (buffer[1]) - strlen (buffer[2]); buffer[1][j]; j++)
+	    if (buffer[1][j] == '\t')
+	      buffer[1][j] = ' ';
+	  for (j = 0; j < diff.different_from; j++)
+	    if (buffer[2][j] == '\t')
+	      buffer[2][j] = ' ';
+	  for (j = diff.different_to; buffer[2][j]; j++)
+	    if (buffer[2][j] == '\t')
+	      buffer[2][j] = ' ';
+	  for (j = 0; buffer[3][j]; j++)
+	    if (buffer[3][j] == '\t')
+	      buffer[3][j] = ' ';
+
+	  /* TODO remove spaces at start of lines.*/
+
+
 	  for (k = 0; k < 3; k++)
 	    diff.lines[k] = malloc (10000);
 
@@ -76,11 +113,6 @@ main (int argc, char **argv)
 		diff.lines[0][rep - i - 1] = diff.lines[1][rep - i - 1] = buffer[0][strlen (buffer[0]) - i + 1];
 	    }
 
-	  /* Replace tabs to keep alignment. */
-	  for (i = 0; i < 2; i++)
-	    for (j = 0; diff.lines[i][j]; j++)
-	      if (diff.lines[i][j] == '\t')
-		diff.lines[i][j] = ' ';
 
 	  if (diff.different_to - diff.different_from < 40 && strlen (diff.lines[0]) > 80 && strlen (diff.lines[1]) > 80)
 	    {
