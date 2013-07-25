@@ -76,6 +76,9 @@ warnings:
     Print list of names that lack copyright header or header has wrong year.
 
 refactoring:
+  stylepp_fix_executable_mode:
+    In large projects there are usualy few source files that are executable.
+    This script removes executable flag from them.
   stylepp_long_line: 
     Finds which files have lines longer than 80 characters and opens vim
     on them.
