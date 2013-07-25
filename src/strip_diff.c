@@ -4,7 +4,7 @@
 #include "common.h"
 typedef struct
 {
-  char *lines[2];
+  char *lines[3];
   int different_from, different_to;
 } diff_s;
 
@@ -18,7 +18,7 @@ diffcmp (diff_s *a, diff_s *b)
 int
 main (int argc, char **argv)
 {
-  int i, j;
+  int i, j, k;
   char _buffer[4][100000];
   char *buffer[4];
   for (j = 0; j < 4; j++)
@@ -37,10 +37,12 @@ main (int argc, char **argv)
          +line
          [^+-]line
        */
+      char _pbuffer[10000], *pbuffer = _pbuffer + 40;
       if (!one_from (buffer[0][0], "+-") && buffer[1][0] == '-' && buffer[1][1] != '-' && buffer[2][0] == '+' && !one_from (buffer[3][0], "+-"))
 	{
 	  for (i = 1; buffer[1][i] == buffer[2][i] && buffer[2][i]; i++)
 	    ;
+	  int dif2 = i;
 	  while (isword (buffer[1][i - 1]))
 	    i--;
 	  diff.different_from = i;
@@ -48,8 +50,20 @@ main (int argc, char **argv)
 	  for (i = 1; buffer[1][strlen (buffer[1]) - i] == buffer[2][strlen (buffer[2]) - i] && i < strlen (buffer[1]) && i < strlen (buffer[2]); i++)
 	    ;
 	  diff.different_to = strlen (buffer[2]) - i;
-	  diff.lines[0] = strdup (_buffer[1] + diff.different_from);
-	  diff.lines[1] = strdup (_buffer[2] + diff.different_from);
+	  for (k = 0; k < 3; k++)
+	    diff.lines[k] = malloc (10000);
+
+	  /* Place change marks */
+	  for (i = 0; i < 10000; i++)
+	    _pbuffer[i] = ' ';
+	  pbuffer[40 + dif2] = '^';
+	  pbuffer[40 + diff.different_to] = '^';
+	  pbuffer[79 + diff.different_from] = '\n';
+	  pbuffer[80 + diff.different_from] = 0;
+
+	  strcpy (diff.lines[0], _buffer[1] + diff.different_from);
+	  strcpy (diff.lines[1], _buffer[2] + diff.different_from);
+	  strcpy (diff.lines[2], pbuffer + diff.different_from);
 
 	  /* Fill context with previous line. */
 	  if (diff.different_from < 40)
@@ -89,14 +103,7 @@ main (int argc, char **argv)
   qsort (diffs, diffs_no, sizeof (diff_s), diffcmp);
   for (i = 0; i < diffs_no; i++)
     {
-      printf ("%s%s", diffs[i].lines[0], diffs[i].lines[1]);
-      for (j = 0; j < 40; j++)
-	printf (" ");
-      printf ("^");
-      for (j = 1; j < diffs[i].different_to - diffs[i].different_from; j++)
-	printf (" ");
-
-      printf ("^\n");
+      printf ("%s%s%s", diffs[i].lines[0], diffs[i].lines[1], diffs[i].lines[2]);
     }
 
   return 1;
