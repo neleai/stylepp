@@ -24,7 +24,10 @@ parseword (char *word)
       if (word[i] == '_')
 	word[i] = ' ';
       else if (!isword (word[i]) && !isdigit (word[i]))
-	abort ();
+	{
+	  printf ("illegal character in dictionary in: %s\n", word);
+	  abort ();
+	}
     }
 }
 
