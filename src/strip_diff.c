@@ -68,6 +68,14 @@ main (int argc, char **argv)
 	      if (diff.lines[i][j] == '\t')
 		diff.lines[i][j] = ' ';
 
+	  if (diff.different_to - diff.different_from < 40 && strlen (diff.lines[0]) > 80 && strlen (diff.lines[1]) > 80)
+	    {
+	      diff.lines[0][80] = '\n';
+	      diff.lines[0][81] = 0;
+	      diff.lines[1][80] = '\n';
+	      diff.lines[1][81] = 0;
+	    }
+
 	  /* TODO context with next line. */
 	  diffs[diffs_no++] = diff;
 	  buffer[1][0] = ' ';
