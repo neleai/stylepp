@@ -25,6 +25,9 @@ diffcmp (diff_s *a, diff_s *b)
 int
 main (int argc, char **argv)
 {
+  FILE *stream = stdin;
+  if (argc > 1)
+    stream = fopen (argv[1], "r");
   int i, j, k;
   char _buffer[4][100000];
   char *buffer[4];
@@ -36,7 +39,7 @@ main (int argc, char **argv)
     }
   int skip = 0;
   diff_s diff;
-  while (fgets (buffer[3], 100000, stdin))
+  while (fgets (buffer[3], 100000, stream))
     {
       /* Find occurrences of
          [^+-]line
