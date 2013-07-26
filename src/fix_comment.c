@@ -101,7 +101,7 @@ main (int argc, char **argv)
 	      if ((unfiltered && isalnum (buffer[i]) && !isalnum (buffer[i - 1])) || (!inmail && !inhtml && isseparator (buffer + i - 1) && buffer[i - 1] != '.' && isalnum (buffer[i])))
 		{
 		  k = get_word (word (buffer + i));
-		  if (!cmp (buffer + i, names[k]) && isseparator (buffer + i + strlen (names[k])))
+		  if (!cmp (buffer + i, names[k]) && (isseparator (buffer + i + strlen (names[k])) || (unfiltered && !isalnum (buffer[i + strlen (names[k])]))))
 		    {
 		      if (isupper (names[k][0]))
 			{

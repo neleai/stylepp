@@ -57,7 +57,9 @@ if [ ! -z "`cat $TOP/.stylepp/misspells`" ]; then
     cat $TOP/.stylepp/misspells | head
   fi
   echo "Also saved into $TOP/.stylepp/misspells file."
-  echo "Use stylepp_TODO to fix them."
+  echo "To fix them run:"
+  echo "stylepp_dictionary"
+  echo "stylepp_fix_spell"
 fi
   
 # Cleanup.
