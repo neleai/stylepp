@@ -201,7 +201,6 @@ Ingore               Ignore
 InitTempReg          Pointer
 Inital               Initial
 Initally             Initially
-Initialise           Parses
 Initialy             Initially
 Initialze            Initialize
 Inlcude              Include
@@ -474,6 +473,7 @@ Yementite            Yemenite
 Ywo                  Two
 ZeroOrOne            Optional
 a'ready              already
+aaaspects            aspects
 abailable            available
 abandonned           abandoned
 abbott               abort
@@ -495,6 +495,7 @@ abondons             abandons
 aborigene            aborigine
 aborrt               abort
 abotu                about
+abount               amount
 abouta               about_a
 aboutit              about_it
 aboutthe             about_the
@@ -573,6 +574,7 @@ accomodations        accommodations
 accomondate          accommodate
 accompagning         accompanying
 accompanyed          accompanied
+accomplised          accomplished
 accordeon            accordion
 accordian            accordion
 accordinly           accordingly
@@ -749,6 +751,7 @@ advertisments        advertisements
 advesary             adversary
 adviced              advised
 adviseable           advisable
+advisible            advisable
 aera                 area
 aeriel               aerial
 aeriels              aerials
@@ -760,6 +763,7 @@ afficionados         aficionados
 affilate             affiliate
 affilliate           affiliate
 aforememtioned       aforementioned
+afterwars            afterwards
 againnst             against
 agains               against
 againt               against
@@ -776,6 +780,7 @@ aggreement           agreement
 aggreggate           aggregate
 aggregious           egregious
 aggresive            aggressive
+aggresslive          aggressive
 aggrivation          aggravation
 agian                again
 agianst              against
@@ -838,9 +843,11 @@ algorith             algorithm
 algorithsm           algorithms
 algoritms            algorithms
 algorthm             algorithm
+algorythm            algorithm
 aliassing            aliasing
 alibration           calibration
 alientating          alienating
+aligment             alignment
 aligmment            alignment
 alignement           alignment
 alignemnt            alignment
@@ -864,6 +871,7 @@ alligned             aligned
 alliviate            alleviate
 alllocation          allocation
 alllowed             allowed
+alloated             allocated
 allocat              allocate
 allocatbale          allocatable
 allocatoor           allocator
@@ -905,8 +913,10 @@ alsot                also
 alterate             alternate
 alterative           alternative
 alternativly         alternatively
+alternatlive         alternative
 alternitives         alternatives
 altho                although
+altogethere          altogether
 altough              although
 alwasy               always
 alwyas               always
@@ -993,6 +1003,7 @@ anonimity            anonymity
 anonnymous           anonymous
 anonymus             anonymous
 anoter               another
+anothere             another
 anounced             announced
 anouncement          announcement
 ansalization         nasalization
@@ -1025,6 +1036,7 @@ appart               apart
 appartment           apartment
 appartments          apartments
 appearantly          apparently
+appeare              appeared
 appeareance          appearance
 appearence           appearance
 appearences          appearances
@@ -1060,6 +1072,7 @@ approachs            approaches
 approp               appropriate
 appropariate         appropriate
 appropiate           appropriate
+appropiately         appropriately
 appropraite          appropriate
 appropriatly         appropriately
 appropriete          appropriate
@@ -1077,6 +1090,7 @@ apropriate           appropriate
 aproval              approval_
 aproximate           approximate
 aproximately         approximately
+aproximation         approximation
 aqquire              acquire
 aquaduct             aqueduct
 aquaintance          acquaintance
@@ -1101,6 +1115,7 @@ arbtirary            arbitrary
 archaelogical        archaeological
 archaelogists        archaeologists
 archaelogy           archaeology
+archecture           architecture
 archetect            architect
 archetects           architects
 archetectural        architectural
@@ -1115,6 +1130,7 @@ architechtures       architectures
 architectual         architectural
 architecturies       architectures
 archivio             repository
+archtectures         architectures
 archtiecture         architecture
 archtype             archetype
 archtypes            archetypes
@@ -1136,6 +1152,7 @@ arguements           arguments
 arguemtns            arguments
 argumements          arguments
 argumens             arguments
+argumenth            arguments
 argumet              argument
 arhive               archive
 arhives              archives
@@ -1165,6 +1182,7 @@ arrray               array
 arrrays              arrays
 artcile              article
 artefact             artifact
+artefacts            artifacts
 arthmatic            arithmetic
 artical              article
 artice               article
@@ -1212,6 +1230,7 @@ assiciates           associates
 asside               aside
 assigment            assignment
 assigments           assignments
+assigneed            assigned
 assignement          assignment
 assignemnt           assignment
 assignmen            assignment
@@ -1256,6 +1275,7 @@ assumtions           assumptions
 assupmption          assumption
 assuption            assumption
 assuptions           assumptions
+assyme               assume
 assymetric           asymmetric
 assymetrical         asymmetrical
 asterices            asterisks
@@ -1315,6 +1335,7 @@ attribues            attributes
 attribuet            attribute
 attributesc          attributes
 attributred          attributed
+attributs            attributes
 attributtes          attributes
 attrocities          atrocities
 atttached            attached
@@ -1322,6 +1343,7 @@ atttributes          attributes
 atually              actually
 aucune               double
 audeince             audience
+auditin              auditing
 auromated            automated
 austrailia           Australia
 austrailian          Australian
@@ -1334,6 +1356,7 @@ authomatic           automatic
 authorative          authoritative
 authories            authorities
 authorisation        authorization
+authoritatlive       authoritative
 authorites           authorities
 authorithy           authority
 authoritiers         authorities
@@ -1342,6 +1365,7 @@ authorizer           authorize
 authrorities         authorities
 autmatic             automatic
 autmatically         automatically
+autodetetc           autodetect
 automatcally         automatically
 automatical          automatic
 automaticall         automatically
@@ -1361,6 +1385,7 @@ auxilliaries         auxiliaries
 auxilliary           auxiliary
 avaiable             available
 availabe             available
+availabel            available
 availables           available
 availaible           available
 availalbe            available
@@ -1382,6 +1407,7 @@ avilable             available
 avove                above
 awared               awarded
 aways                always
+awessome             awesome
 awkard               awkward
 awrning              warning
 awya                 away
@@ -1390,6 +1416,7 @@ bacause              because
 baceause             because
 backdor              backdoor
 backgorund           background
+backgroand           background
 backrounds           backgrounds
 bakc                 back
 bakward              backward
@@ -1481,6 +1508,7 @@ berween              between
 beseige              besiege
 beseiged             besieged
 beseiging            besieging
+besidea              besides
 beteeen              between
 beteen               between
 beter                better
@@ -1585,6 +1613,7 @@ buttoni              button
 buttton              button
 bwtween              between
 byets                bytes
+bypassign            bypassing
 byteval              value
 byts                 bytes
 cace                 cache
@@ -1606,6 +1635,7 @@ calculatable         calculable
 calculater           calculator
 calculcate           calculate
 calculs              calculus
+calcutated           calculated
 calee                callee
 calees               callees
 calibtration         calibration
@@ -1629,6 +1659,8 @@ campain              campaign
 campains             campaigns
 camparing            comparing
 can'be               can't_be
+cancallation         cancellation
+cancelable           cancellable
 cancelation          cancellation
 cancellability       cancelability
 cancelling           canceling
@@ -1638,6 +1670,7 @@ candiates            candidates
 candidiate           candidate
 candididate          candidate
 candindate           candidate
+cann't               can't
 cannister            canister
 cannisters           canisters
 cannnot              cannot
@@ -1722,6 +1755,7 @@ catterpillar         caterpillar
 catterpillars        caterpillars
 cattleship           battleship
 cbase                base
+cconsider            consider
 ccpu                 shared
 cellpading           cellpadding
 cementary            cemetery
@@ -1773,6 +1807,7 @@ characeters          characters
 charachter           character
 charachters          characters
 characte             character
+characted            character
 characteres          characters
 characterised        characterized
 charactersistic      characteristic
@@ -1780,6 +1815,7 @@ charactes            characters
 charactors           characters
 charactrs            characters
 characts             characters
+chararacter          chararcters
 charasmatic          charismatic
 charaterized         characterized
 charaters            characters
@@ -1787,6 +1823,7 @@ charcter             character
 chariman             chairman
 charistics           characteristics
 chasr                chaser
+cheapply             cheaply
 cheching             checking
 cheecking            checking
 cheif                chief
@@ -1844,6 +1881,7 @@ classe               base
 classfication        classification
 classifaction        classification
 classiffication      classification
+cleaneed             cleaned
 cleaness             cleanness
 cleareance           clearance
 cleints              clients
@@ -1856,11 +1894,13 @@ cloding              coding
 clomuns              columns
 clonage              commit
 cloneable            clonable
+cloneed              cloned
 cloneing             cloning
 clonsed              cloned
 cloober              clobber
 closeing             closing
 cloure               closure
+cmdlone              cmdline
 cmmands              commands
 cmo                  com
 cmoputer             computer
@@ -1875,6 +1915,7 @@ coallescing          coalescing
 coalsing             coalescing
 coctail              cocktail
 codi                 descriptor
+coditional           conditional
 coditions            conditions
 coeffecients         coefficients
 coefficent           coefficient
@@ -1888,6 +1929,7 @@ cofig                config
 coform               conform
 cognizent            cognizant
 coincedentally       coincidentally
+coincidea            coincide
 colaborations        collaborations
 colapse              collapse
 colapsing            collapsing
@@ -1901,6 +1943,7 @@ collecton            collection
 colleection          collection
 collegue             colleague
 collegues            colleagues
+colletc              collect
 collonade            colonnade
 collonies            colonies
 collony              colony_
@@ -1932,6 +1975,7 @@ combatible           compatible
 combatting           combating
 combinatins          combinations
 combinatoric         combinatorics
+combineed            combined
 combinine            combine
 combusion            combustion
 comdemnation         condemnation
@@ -1960,6 +2004,7 @@ comittee             committee
 comitting            committing
 comlex               complex
 comlexity            complexity
+commandlone          commandline
 commandoes           commandos
 commedic             comedic
 commemerative        commemorative
@@ -1981,6 +2026,7 @@ commisioned          commissioned
 commisioner          commissioner
 commisioning         commissioning
 commisions           commissions
+commissioneed        commissioned
 commited             committed
 commitee             committee
 commiting            committing
@@ -2005,6 +2051,7 @@ comonents            components
 compaatibility       compatibility
 compaison            comparison
 comparer             comparator
+comparion            comparing
 comparision          comparison
 comparitive          comparative
 comparitively        comparatively
@@ -2016,6 +2063,7 @@ compatable           compatible
 compatablities       compatibilities
 compatablity         compatibility
 compatiable          compatible
+compatibiity         compatibility
 compatibile          compatible
 compatibiliy         compatibility
 compatibilty         compatibility
@@ -2023,6 +2071,7 @@ compatibily          compatibility
 compatibity          compatibility
 compatiblities       compatibilities
 compatiblity         compatibility
+compatility          compatibility
 compativle           compatible
 compeitions          competitions
 compeletion          completion
@@ -2043,6 +2092,7 @@ compiliant           compliant
 compiliation         compilation
 compilor             compiler
 compitent            competent
+complaineed          complained
 complation           compilation
 comple               compile
 compleated           completed
@@ -2075,6 +2125,7 @@ compontent           component
 composited           composed
 compositing          composing
 comprable            comparable
+comprehenslive       comprehensive
 compressions         compression's
 comprimise           compromise
 compuatation         computation
@@ -2099,6 +2150,8 @@ concatented          concatenated
 concatination        concatenation
 conceptification     conceptualization
 concerened           concerned
+concerneed           concerned
+concernred           concerned
 concider             consider
 concidered           considered
 concidering          considering
@@ -2117,8 +2170,10 @@ condemmed            condemned
 condidions           conditions
 condidtion           condition
 condidtions          conditions
+condions             conditions
 conditionsof         conditions_of
 conditoinal          conditional
+conditon             condition
 conditonal           conditional
 condtiion            condition
 condtion             condition
@@ -2157,6 +2212,7 @@ conjuction           conjunction
 conjuntion           conjunction
 conncect             connect
 connecing            connecting
+connetc              connect
 connetced            connected
 conneted             connected
 connsecutive         consecutive
@@ -2176,6 +2232,7 @@ consdidered          considered
 consdiered           considered
 consectutive         consecutive
 consectutively       consecutively
+consecutlive         consecutive
 consenquently        consequently
 consentrate          concentrate
 consentrated         concentrated
@@ -2191,6 +2248,7 @@ conserned            concerned
 conserning           concerning
 conservativeky       conservatively
 conservativelty      conservatively
+conservatlive        conservative
 conservitive         conservative
 consiciousness       consciousness
 consicousness        consciousness
@@ -2198,6 +2256,7 @@ consided             considered
 considerd            considered
 consideres           considered
 consious             conscious
+consis               consist
 consistancy          consistency
 consistantly         consistently
 consisten            consistent
@@ -2235,6 +2294,7 @@ constituend          constituent
 constituion          constitution
 constituional        constitutional
 constnat             constant
+constraineed         constrained
 constrainted         constrained
 constraucts          constructs
 constrcutor          constructor
@@ -2249,6 +2309,7 @@ consulant            consultant
 consumate            consummate
 consumated           consummated
 contaiminate         contaminate
+containeed           contained
 containes            contains
 containg             containing
 containint           containment
@@ -2280,6 +2341,7 @@ contidions           conditions
 contigent            contingent
 contigious           contiguous
 contigous            contiguous
+contigously          contiguously
 contiguosly          contiguously
 continaed            continued
 contined             continued
@@ -2289,6 +2351,7 @@ continous            continuous
 continously          continuously
 continueing          continuing
 continuos            continuous
+continuse            continues
 contnets             contents
 contnue              continue
 contorl              control
@@ -2328,13 +2391,16 @@ convenienve          convenience
 convential           conventional
 conventient          convenient
 convergance          convergence
+converion            conversion
 converions           conversions
 converison           conversion
 convertable          convertible
 convertables         convertibles
 convertion           conversion
+convertions          conversions
 convertor            converter
 convertors           converters
+conveted             converted
 conviced             convinced
 convience            convenience
 convienient          convenient
@@ -2356,6 +2422,7 @@ cooresponding        corresponding
 cooridinate          coordinate
 coorperation         cooperation
 coorperations        corporations
+copile               compile
 copmatibility        compatibility
 copmatible           compatible
 copmetitors          competitors
@@ -2392,6 +2459,7 @@ corresponging        corresponding
 corresponidng        corresponding
 corresponing         corresponding
 corressponding       corresponding
+corretc              correct
 corridoors           corridors
 corrispond           correspond
 corrispondant        correspondent
@@ -2404,6 +2472,7 @@ corrolate            correlate
 corrolations         correlations
 corrosponding        corresponding
 corrosponds          corresponds
+corrrectly           correctly
 corrspond            correspond
 corse                coarse
 cosntants            constants
@@ -2420,6 +2489,7 @@ couldn               couldn't
 counries             countries
 counsellor           counselor
 countains            contains
+counterintuitlive    counterintuitive
 counterpoart         counterpart
 countires            countries
 countpart            counterpart
@@ -2445,6 +2515,7 @@ crit                 critical
 critereon            criterion
 criterias            criteria
 critertion           criterion
+critial              critical
 criticial            critical
 criticised           criticized
 criticists           critics
@@ -2466,6 +2537,7 @@ csretcc              define
 ctructure            structure
 cuases               causes
 culiminating         culminating
+cumberssome          cumbersome
 cummulative          cumulative
 cumulatative         cumulative
 cuntion              function
@@ -2488,6 +2560,7 @@ custome              custom
 customising          customizing
 cuurent              current
 cxan                 cyan
+cycless              cycles
 cyclinder            cylinder
 daclaration          declaration
 dacquiri             daiquiri
@@ -2511,6 +2584,7 @@ dealloacte           deallocate
 dealte               delete
 deamon               daemon
 deapth               depth
+deatched             detached
 debateable           debatable
 debuging             debugging
 decalre              declare
@@ -2558,6 +2632,7 @@ decsribes            described
 decsribing           describing
 decsription          description
 decsriptions         descriptions
+decsriptor           descriptor
 dectect              detect
 decyption            decryption
 deeep                deep
@@ -2590,9 +2665,12 @@ defination           definition
 definatly            definitely
 defind               defined
 definder             definer
+defineed             defined
 definetly            definitely
 definiations         definitions
+definied             defined
 definining           defining
+defininitions        definitions
 definit              definite
 definitetly          definitely
 definitin            definition
@@ -2629,6 +2707,7 @@ delimeter            delimiter
 delimeters           delimiters
 delimier             delimiter
 delimters            delimiters
+dellocated           deallocated
 delmiters            delimiters
 delusionally         delusively
 dem                  den
@@ -2638,6 +2717,7 @@ demolision           demolition
 demorcracy           democracy
 demostration         demonstration
 denegrating          denigrating
+denomal              denormal
 densly               densely
 dentifier            identifier
 deocder              decoder
@@ -2658,6 +2738,7 @@ dependece            dependence
 dependecy            dependency
 dependences          dependencies
 dependend            dependent
+depens               depends
 depond               depend
 depricated           deprecated
 deram                dram
@@ -2677,6 +2758,7 @@ desciptors           descriptors
 descirptors          descriptors
 descision            decision
 descisions           decisions
+descreased           decreased
 describles           describes
 describng            describing
 descriibes           describes
@@ -2702,6 +2784,7 @@ desgnate             designate
 deside               decide
 desiderable          desirable
 desigining           designing
+designeed            designed
 desinations          destinations
 desing               design
 desintegrated        disintegrated
@@ -2713,6 +2796,7 @@ desn't               doesn't
 desorder             disorder
 desoriented          disoriented
 desparate            desperate
+desparately          desperately
 despict              depict
 despiration          desperation
 desrcibed            described
@@ -2728,6 +2812,7 @@ destablized          destabilized
 destinarion          destination
 destinated           destined
 destinatino          destination
+destinationn         destination
 destinaton           destination
 destiniation         destination
 destintation         destination
@@ -2735,6 +2820,7 @@ destion              destination
 destory              destroy
 destoryed            destroyed
 destroyes            destroys
+destructlive         destructive
 destrutor            destructor
 destryed             destroyed
 destuctible          destructible
@@ -2752,10 +2838,13 @@ determenistic        deterministic
 determie             determine
 determin             determine
 determinating        determining
+determineed          determined
 determing            determining
 determinining        determining
 determins            determines
 determinstic         deterministic
+determone            determine
+detetc               detect
 detials              details
 detremental          detrimental
 deubgging            debugging
@@ -2787,6 +2876,7 @@ diagnositc           diagnostic
 diagnotic            diagnostic
 diagonsed            diagnosed
 dialling             dialing
+dialof               dialog
 diamons              diamonds
 diaster              disaster
 dichtomy             dichotomy
@@ -2809,6 +2899,7 @@ diferent             different
 diferrent            different
 diffent              different
 differend            different
+differnce            difference
 diffferent           different
 difficulity          difficulty
 diffrent             different
@@ -2842,14 +2933,18 @@ direcly              directly
 direcotry            directory
 direcoty             directory
 directires           directories
+directlive           directive
 directores           directories
 directoy             directory
+diretc               direct
 diretory             directory
 dirived              derived
 dirtyness            dirtiness
 dirver               driver
+diryectory           directory
 disaable             disable
 disabl               disable
+disabless            disables
 disagreeed           disagreed
 disapeared           disappeared
 disapointing         disappointing
@@ -2865,11 +2960,14 @@ disatisfaction       dissatisfaction
 disatisfied          dissatisfied
 disatrous            disastrous
 discaring            discarding
+discconnected        disconnected
 discernable          discernible
 discirminant         discriminant
 disconected          disconnected
 disconnet            disconnect
+disconnetc           disconnect
 disconnnect          disconnect
+discrepency          discrepancy
 discribe             describe
 discribed            described
 discribes            describes
@@ -2887,6 +2985,7 @@ disenting            dissenting
 disgnostic           diagnostic
 disiplined           disciplined
 disjunct             disjoint
+dismis               dismiss
 disobediance         disobedience
 disobediant          disobedient
 disolved             dissolved
@@ -2903,6 +3002,7 @@ dispencing           dispensing
 dispicable           despicable
 dispite              despite
 displacment          displacement
+displaid             displayed
 displayble           displayable
 displayes            displays
 dispostion           disposition
@@ -3002,6 +3102,7 @@ doubl                double
 doulbe               double
 dowloads             downloads
 dpeth                depth
+draineed             drained
 dramtic              dramatic
 draught              drought
 drawin               darwin
@@ -3062,9 +3163,11 @@ efel                 evil
 effeciency           efficiency
 effecient            efficient
 effeciently          efficiently
+effectlive           effective
 efficency            efficiency
 efficent             efficient
 efficently           efficiently
+efficiencies         deficiencies
 efford               effort
 effords              efforts
 effulence            effluence
@@ -3109,6 +3212,7 @@ embarrased           embarrassed
 embarrasing          embarrassing
 embarrasment         embarrassment
 embeded              embedded
+embeeded             embedded
 embezelled           embezzled
 emblamatic           emblematic
 emements             elements
@@ -3228,6 +3332,7 @@ equiped              equipped
 equippment           equipment
 equitorial           equatorial
 equival              equivalent
+equivalance          equivalence
 equivelant           equivalent
 equivelent           equivalent
 equivilant           equivalent
@@ -3258,10 +3363,12 @@ essense              essence
 essentail            essential
 essentialy           essentially
 essentual            essential
+essentually          essentially
 essesital            essential
 estabishes           establishes
 establising          establishing
 ethe                 the
+ethenet              Ethernet
 ethnocentricm        ethnocentrism
 ethose               those
 etnries              entries
@@ -3301,6 +3408,7 @@ examineed            examined
 examing              examining
 examinining          examining
 examle               example
+exampless            examples
 exampt               exempt
 exapansion           expansion
 exapnded             expanded
@@ -3326,6 +3434,7 @@ excetion             exception
 exceuting            executing
 exchanching          exchanging
 excisted             existed
+excluslive           exclusive
 exculsivly           exclusively
 excution             execution
 execising            exercising
@@ -3334,6 +3443,7 @@ exected              executed
 exection             execution
 exectued             executed
 execuetable          executable
+executabless         executables
 executs              execute
 exeed                exceed
 exeedingly           exceedingly
@@ -3373,6 +3483,7 @@ exitting             exiting
 exlamation           exclamation
 exlicitly            explicitly
 exliled              exiled
+exluded              excluded
 exludes              excludes
 exlusion             exclusion
 exmaple              example
@@ -3393,12 +3504,15 @@ experiance           experience
 experianced          experienced
 experiemental        experimental
 experted             exported
+expexted             expected
 expiditions          expeditions
 expierence           experience
 expilicitely         explicitly
 explaination         explanation
+explaineed           explained
 explands             expands
 explaning            explaining
+explantation         explanation
 explicily            explicitly
 explicited           explicitly
 explicitely          explicitly
@@ -3463,6 +3577,7 @@ familiies            families
 familliar            familiar
 famoust              famous
 fanatism             fanaticism
+fashioneed           fashioned
 fastly               rapidly
 fatc                 fact
 faught               fought
@@ -3544,6 +3659,7 @@ foootball            football
 fopund               found
 forbad               forbade
 forbiden             forbidden
+forbiding            forbidding
 forbitten            forbidden
 forcedly             forcibly
 foreigh              foreign
@@ -3579,7 +3695,6 @@ fpga                 base
 fpsecification       specification
 fractionnal          fractional
 frane                frame
-fredrik              recursive
 freezed              frozen
 freind               friend
 freindly             friendly
@@ -3628,11 +3743,13 @@ funguses             fungi
 funtion              function
 funtionality         functionality
 funtions             functions
+furthere             further
 furuther             further
 futher               further
 futhermore           furthermore
 futrue               future
 gae                  game
+gaineed              gained
 galatic              galactic
 gallaxies            galaxies
 galvinized           galvanized
@@ -3662,6 +3779,7 @@ generatting          generating
 genereate            generate
 genertor             generator
 genialia             genitalia
+genorally            generally
 geographicial        geographical
 geometrician         geometer
 gerat                great
@@ -3690,6 +3808,7 @@ govenrment           government
 goverance            governance
 goverment            government
 govermental          governmental
+governeed            governed
 governer             governor
 governmnet           government
 govorment            government
@@ -3702,6 +3821,7 @@ gradientes           gradients
 graet                great
 grafitti             graffiti
 grahic               graphic
+graineed             grained
 gramatically         grammatically
 grammaticaly         grammatically
 grammer              grammar
@@ -3760,6 +3880,7 @@ happended            happened
 happenes             happens
 happenned            happened
 happense             happens
+happneed             happened
 harased              harassed
 harases              harasses
 harasment            harassment
@@ -3906,6 +4027,7 @@ idealogy             ideology
 ideia                idea
 idel                 idle
 idenitify            identify
+idential             identical
 identicatal          identical
 identicial           identical
 identifeir           identifier
@@ -3915,6 +4037,7 @@ identifibale         identifiable
 identifing           identifying
 ideosyncratic        idiosyncratic
 idesa                ideas
+idexes               indexes
 idiosyncracy         idiosyncrasy
 ierify               verify
 ifloating            floating
@@ -4030,6 +4153,7 @@ includeing           including
 includng             including
 inclue               include
 inclues              includes
+incomatibility       incompatibility
 incomging            incoming
 incomming            incoming
 incompatabilities    incompatibilities
@@ -4048,6 +4172,7 @@ incomptetent         incompetent
 incomptible          incompatible
 inconflict           conflict
 inconsistant         inconsistent
+inconsistensy        inconsistency
 incoroporated        incorporated
 incorperation        incorporation
 incorportaed         incorporated
@@ -4066,6 +4191,7 @@ incremeneted         incremented
 incrimented          incremented
 inctroduce           introduce
 inctroduced          introduced
+inctruction          instruction
 incuding             including
 incunabla            incunabula
 incw                 incl
@@ -4121,6 +4247,7 @@ ine                  one
 inefficienty         inefficiently
 inegality            inequality
 ineqality            inequality
+ineration            iteration
 inerface             interface
 inerfaces            interfaces
 inerrupt             interrupt
@@ -4192,10 +4319,14 @@ initializa           initialize
 initializaiton       initialization
 initilialized        initialized
 initilializes        initializes
+initiliaze           initialize
 initilization        initialization
 inits                initializes
 inlcude              include
 inlcuding            including
+inlineed             inlined
+inling               inlining
+inlone               inline
 inluence             influence
 inly                 only
 inmigrant            immigrant
@@ -4213,6 +4344,7 @@ inpolite             impolite
 inpossible           impossible
 inprecise            imprecise
 inprisonment         imprisonment
+inproved             improved
 inproving            improving
 inscrutible          inscrutable
 insde                inside
@@ -4225,6 +4357,7 @@ insigned             unsigned
 insistance           insistence
 insitution           institution
 insitutions          institutions
+inspetc              inspect
 inspite              in_spite
 insprired            inspired
 instable             unstable
@@ -4375,6 +4508,7 @@ irrelevent           irrelevant
 irreplacable         irreplaceable
 irresistable         irresistible
 irresistably         irresistibly
+irrespectlive        irrespective
 irtual               virtual
 isAsmParserOnly      Constraints
 isAssemblerInstruction Validate
@@ -4468,6 +4602,7 @@ lazyness             laziness
 lcomm                comm
 leage                league
 leanr                lean
+learneed             learned
 learnt               learned
 leathal              lethal
 lefted               left
@@ -4604,6 +4739,7 @@ manisfestations      manifestations
 manisfested          manifested
 manitissa            mantissa
 mannor               manner
+mannual              manual
 mano                 man
 manoeuverability     maneuverability
 manouver             maneuver
@@ -4636,6 +4772,7 @@ marryied             married
 marshalled           marshaled
 maschines            machines
 maskes               masks
+masslive             massive
 massmedia            mass_media
 masterbation         masturbation
 mataphysical         metaphysical
@@ -4785,6 +4922,7 @@ modifed              modified
 modifer              modifier
 modifie              modify
 modifing             modifying
+modifiy              modify
 modifiying           modify
 modle                model
 modul                module
@@ -4855,6 +4993,7 @@ mysterous            mysterious
 nad                  and
 naieve               naive
 narow                narrow
+natation             notation
 naturaly             naturally
 naturely             naturally
 naturual             natural
@@ -4871,6 +5010,7 @@ necesary             necessary
 necessarilly         necessarily
 necessarry           necessary
 necessaryly          necessarily
+necessasy            necessary
 necessiate           necessitate
 ned                  need
 needeed              needed
@@ -4878,17 +5018,20 @@ needes               needs
 neeed                needed
 neeeded              needed
 neet                 need
+negateve             negative
 negativate           negative
 negatiye             negative
 neglible             negligible
 negligable           negligible
 negociate            negotiate
+negociated           negotiated
 negociation          negotiation
 negociations         negotiations
 negotation           negotiation
 neice                niece
 neigborhood          neighborhood
 neigbour             neighbour
+neighbourhood        neighborhood
 neighbours           neighbors
 neolitic             neolithic
 nessasarily          necessarily
@@ -4942,6 +5085,7 @@ noticably            noticeably
 noticeing            noticing
 noticible            noticeable
 notifactions         notifications
+notifcation          notification
 notificaition        notification
 notive               notice
 notwhithstanding     notwithstanding
@@ -5075,8 +5219,10 @@ onterested           interested
 ony                  only
 onyl                 only
 opVecVT              result
+openened             opened
 openess              openness
 operants             operands
+operatation          operation
 operatations         operations
 operatons            operations
 opernds              operands
@@ -5114,6 +5260,7 @@ optimise             optimize
 optimised            optimized
 optimizier           optimizer
 optimze              optimize
+optimzed             optimized
 optimzer             optimizer
 optimziation         optimization
 optinally            optionally
@@ -5239,6 +5386,7 @@ particuarly          particularly
 particularily        particularly
 particulary          particularly
 particulear          particular
+partitially          partially
 pary                 party
 pase                 pass
 pased                passed
@@ -5264,6 +5412,7 @@ pdiss                pass
 peacefuland          peaceful_and
 peageant             pageant
 peculure             peculiar
+pedentic             pedantic
 pedestrain           pedestrian
 peding               pending
 peformed             performed
@@ -5311,12 +5460,14 @@ permenant            permanent
 permenantly          permanently
 permissable          permissible
 permisson            permission
+permutated           permuted
 perogative           prerogative
 peroidic             periodic
 peronal              personal
 perosnality          personality
 perphas              perhaps
 perpindicular        perpendicular
+perposes             purposes
 perseverence         perseverance
 persistance          persistence
 persistant           persistent
@@ -5417,6 +5568,8 @@ poluted              polluted
 polutes              pollutes
 poluting             polluting
 polution             pollution
+polynimial           polynomial
+polynoimal           polynomial
 polyphonyic          polyphonic
 pomegranite          pomegranate
 pomotion             promotion
@@ -5449,6 +5602,7 @@ posion               poison
 posistion            position
 positition           position
 positon              position
+positve              positive
 posponed             postponed
 possable             possible
 possably             possibly
@@ -5467,8 +5621,6 @@ possiblities         possibilities
 possiblity           possibly
 possition            position
 posssible            possible
-postcondition        precondition
-postdominate         be
 posthomous           posthumous
 postion              position
 postition            position
@@ -5513,7 +5665,9 @@ precentage           percentage
 precessor            predecessor
 precice              precise
 precidence           precedence
+precisiion           precision
 precisly             precisely
+precission           precision
 preconditiona        precondition
 prectision           precision
 precurser            precursor
@@ -5530,6 +5684,7 @@ prefered             preferred
 prefering            preferring
 preferrable          preferable
 preferrably          preferably
+preferrence          preference
 preformance          performance
 pregancies           pregnancies
 preiod               period
@@ -5572,6 +5727,7 @@ previosly            previously
 previvous            previous
 previx               prefix
 prevoius             previous
+prevous              previous
 prgrammed            programmed
 pricipal             principal
 priciple             principle
@@ -5581,6 +5737,7 @@ primative            primitive
 primatively          primitively
 primatives           primitives
 primay               primary
+primerily            primarily
 primitve             primitive
 primordal            primordial
 principaly           principality
@@ -5778,6 +5935,7 @@ pyscic               psychic
 qtuie                quite
 quantaty             quantity
 quantitiy            quantity
+quantties            quantities
 quarantaine          quarantine
 quater               quarter
 quering              querying
@@ -5791,6 +5949,7 @@ quinessential        quintessential
 quitted              quit
 quizes               quizzes
 quoteed              quoted
+quotent              quotient
 quroum               quorum
 qutie                quite
 rabinnical           rabbinical
@@ -5888,6 +6047,7 @@ reconized            recognized
 reconnaisance        reconnaissance
 reconnaissence       reconnaissance
 reconsistituted      reconstituted
+reconstracted        reconstructed
 recontructed         reconstructed
 recordproducer       record_producer
 recory               recovery
@@ -5929,8 +6089,10 @@ refereneces          references
 referiang            referring
 refering             referring
 refernce             reference
+refernced            referenced
 refernces            references
 referncing           referencing
+referneced           referenced
 referrence           reference
 referrences          references
 referrs              refers
@@ -5964,6 +6126,7 @@ registor             register
 registors            registers
 registred            registered
 regiter              register
+regiters             registers
 regluar              regular
 regognize            recognize
 regressionn          regression
@@ -6015,7 +6178,9 @@ religously           religiously
 relinguishing        relinquishing
 relinqushment        relinquishment
 relitavely           relatively
+reloaction           relocation
 relpacement          replacement
+remainer             remainder
 remaing              remaining
 remainnig            remaining
 remainting           remaining
@@ -6031,6 +6196,7 @@ remenicent           reminiscent
 remianing            remaining
 reminent             remnant
 reminescent          reminiscent
+remining             remaining
 reminscent           reminiscent
 reminsicent          reminiscent
 renalyzing           reanalyzing
@@ -6080,6 +6246,7 @@ represantative       representative
 represend            represent
 represengin          representing
 representaiton       representation
+representatinos      representations
 representes          represents
 represention         representation
 representive         representative
@@ -6143,6 +6310,7 @@ resonable            reasonable
 resonably            reasonably
 resouce              resource
 resourses            resources
+respecitvely         respectively
 respectivly          respectively
 responce             response
 respones             response
@@ -6212,6 +6380,7 @@ retrun               return
 retruns              returns
 retrurn              return
 retun                return
+returend             returned
 returing             returning
 returnd              returned
 returnning           returning
@@ -6301,6 +6470,7 @@ satelite             satellite
 satelites            satellites
 satelitte            satellite
 satic                static
+satiration           saturation
 satisfactority       satisfactorily
 satisify             satisfy
 satisties            satisfies
@@ -6319,6 +6489,7 @@ scalarize            split
 scaleable            scalable
 scandanavia          Scandinavia
 scaned               scanned
+scaning              scanning
 scannig              scanning
 scanrp               scan
 scaricity            scarcity
@@ -6363,6 +6534,7 @@ sectio               section
 sedereal             sidereal
 seeem                seems
 seeked               sought
+seemlingly           seemingly
 seesl                sees
 seeting              setting
 seetings             settings
@@ -6389,6 +6561,7 @@ senstive             sensitive
 sensure              censure
 sentance             sentence
 sentinal             sentinel
+seomthing            something
 separte              separate
 separted             separated
 seperate             separate
@@ -6451,6 +6624,7 @@ shoudl               should
 shoudln              should
 shoukld              should
 shouldnt             shouldn't
+shpped               shipped
 shreak               shriek
 shrinked             shrunk
 shuold               should
@@ -6466,10 +6640,13 @@ siezed               seized
 siezing              seizing
 siezure              seizure
 siezures             seizures
+sifnificand          significand
 sigaled              signaled
 sigificance          significance
 siginificant         significant
 signe                sign
+signficaand          significand
+signficand           significand
 signficant           significant
 signficiant          significant
 signfies             signifies
@@ -6477,6 +6654,7 @@ signgle              single
 signicant            major
 signifantly          significantly
 significently        significantly
+signifigand          significand
 signifigant          significant
 signifigantly        significantly
 signitories          signatories
@@ -6498,6 +6676,7 @@ simplier             simpler
 simpliest            simplest
 simular              similar
 simulataneous        simultaneous
+simulataneously      simultaneously
 simultainious        simultaneous
 simultanious         simultaneous
 simultanous          simultaneous
@@ -6583,6 +6762,7 @@ speach               speech
 specfic              specific
 specficiation        specification
 specfied             specified
+specfies             specifies
 specialise           specialize
 specialised          specialized
 speciality           specialty
@@ -6632,6 +6812,7 @@ spritual             spiritual
 sqaure               square
 squence              sequence
 squirrelled          squirreled
+sring                string
 sripping             stripping
 sstupid              stupid
 ssubtituted          substituted
@@ -6641,6 +6822,7 @@ staic                static
 stainlees            stainless
 staion               station
 staitic              static
+standardsized        standardized
 standars             standards
 standdard            standard
 standrads            standards
@@ -6735,6 +6917,7 @@ subsciber            subscriber
 subsidary            subsidiary
 subsiduary           subsidiary
 subsiquent           subsequent
+subsituted           substituted
 subsquent            subsequent
 subsquently          subsequently
 substace             substance
@@ -6803,10 +6986,12 @@ suiable              suitable
 suiteable            suitable
 sumary               summary
 summ                 sum
+summmaries           summaries
 sunglases            sunglasses
 suop                 soup
 supercede            supersede
 superceded           superseded
+supercedes           supersedes
 superceeded          superseded
 superintendant       superintendent
 superseeds           supersedes
@@ -6897,6 +7082,7 @@ swithing             switching
 swrich               switch
 swtich               switch
 syas                 says
+sychronous           synchronous
 symboblic            symbolic
 symbold              symbol
 symetric             symmetric
@@ -6914,6 +7100,8 @@ synch                sync
 synching             syncing
 synchonization       synchronization
 synchonize           support
+synchronicitiy       synchronicity
+synchronisity        synchronicity
 synchronizarion      synchronization
 synchronizatio       synchronization
 synchroously         synchronously
@@ -6930,6 +7118,7 @@ synphony             symphony
 syntaces             syntaxes
 syntatically         syntactically
 synteax              syntax
+synthesise           synthesize
 synthesizable        legal
 synthetize           synthesize
 synthetizes          synthesizes
@@ -6945,6 +7134,7 @@ sytle                style
 sytnax               syntax
 tabacco              tobacco
 tabel                table
+tabluate             tabulate
 taging               tagging
 tahn                 than
 taht                 that
@@ -7106,6 +7296,7 @@ tihs                 this
 tijdopnemer          timer
 timage               image
 timeo                control
+timming              timing
 timne                time
 tiome                time
 tipus                descriptor
@@ -7219,6 +7410,7 @@ troups               troupes
 tru                  true
 trucate              truncate
 trucated             truncated
+trucation            truncation
 truelly              truly
 truely               truly
 trule                true
@@ -7271,12 +7463,15 @@ umpteem              umpteen
 una                  la
 unacompanied         unaccompanied
 unahppy              unhappy
+unaliged             unaligned
 unambigous           unambiguous
 unanymous            unanimous
 unavailible          unavailable
+unbaised             unbiased
 unballance           unbalance
 unbeknowst           unbeknownst
 unbeleivable         unbelievable
+unbisaed             unbiased
 uncertainity         uncertainty
 uncessary            unnecessary
 unchangable          unchangeable
@@ -7390,6 +7585,7 @@ unsucessful          unsuccessful
 unsucessfull         unsuccessful
 unsucessfully        unsuccessfully
 unsucsessful         unsuccessful
+unsugned             unsigned
 unsuportable         unsupportable
 unsuported           unsupported
 unsuprising          unsurprising
@@ -7469,6 +7665,7 @@ varity               variety
 vartical             vertical
 vasall               vassal
 vasalls              vassals
+vaue                 value
 vaues                values
 vbit                 bit
 vbroadcastsd         broadcast
@@ -7493,6 +7690,7 @@ vermillion           vermilion
 versio               version
 versitilaty          versatility
 versitlity           versatility
+verson               version
 vertification        verification
 veryify              verify
 vetween              between
@@ -7637,6 +7835,7 @@ wokr                 work
 wokring              working
 wonderfull           wonderful
 wordlwide            worldwide
+workding             working
 workststion          workstation
 worls                world
 worstened            worsened
