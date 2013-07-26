@@ -40,7 +40,7 @@ main (int argc, char **argv)
   test_indent_off (argv[1]);
 
   int unfiltered = 0;
-  if (argc >= 2 && !strcmp (argv[2], "--unfiltered"))
+  if (argc >= 3 && !strcmp (argv[2], "--unfiltered"))
     unfiltered = 1;
 
   int i, j, k, l, len;
