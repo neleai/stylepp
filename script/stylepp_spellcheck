@@ -7,6 +7,7 @@ mkdir $TOP/.stylepp 2> /dev/null
 TMP_FILES=`mktemp`
 
 if [ $1 == "--hook" ]; then
+  HOOK="true"
   shift 1
   # Hook version.
   TOP=`git rev-parse --show-toplevel`
@@ -17,12 +18,12 @@ if [ $1 == "--hook" ]; then
     echo $I >> $TMP_FILES
   done
   FILES=`cat $TMP_FILES`
-  rm $TMP_FILES
   
   echo > /tmp/code.$PID
   echo > /tmp/comment.$PID
-
+  
   for I in $FILES; do
+    echo $I
     stylepp_extract_comment $I < $I >> /tmp/comment.$PID
   done
   cat $TOP/.stylepp/words_code /tmp/code.$PID | stylepp_sortuniq | aspell list | stylepp_sortuniq> $TOP/.stylepp/words_code
@@ -48,12 +49,18 @@ fi
 stylepp_symdiff $TOP/.stylepp/words_comment $TOP/.stylepp/words_code | grep -v "[[:upper:]]" | aspell list > $TOP/.stylepp/misspells
 
 if [ ! -z "`cat $TOP/.stylepp/misspells`" ]; then
-
-  cat $TOP/.stylepp/misspells | head
+  if [ "$HOOK" == "true" ]; then
+    for WORD in `cat $TOP/.stylepp/misspells | head`; do
+      git diff HEAD | grep $WORD | head -n 1
+    done
+  else
+    cat $TOP/.stylepp/misspells | head
+  fi
   echo "Also saved into $TOP/.stylepp/misspells file."
   echo "Use stylepp_TODO to fix them."
 fi
   
 # Cleanup.
+rm $TMP_FILES
 rm /tmp/code.$PID
 rm /tmp/comment.$PID
