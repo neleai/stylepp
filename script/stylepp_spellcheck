@@ -51,7 +51,7 @@ stylepp_symdiff $TOP/.stylepp/words_comment $TOP/.stylepp/words_code | grep -v "
 if [ ! -z "`cat $TOP/.stylepp/misspells`" ]; then
   if [ "$HOOK" == "true" ]; then
     for WORD in `cat $TOP/.stylepp/misspells | head`; do
-      git diff HEAD | grep $WORD | head -n 1
+      git diff HEAD | grep $WORD | sed -e"s/ $WORD / ++$WORD++ /g" | head -n 1
     done
   else
     cat $TOP/.stylepp/misspells | head
