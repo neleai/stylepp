@@ -1,7 +1,7 @@
 while read WORD; do
   if [ ! -z "`echo $WORD | awk '{print $1;}' | aspell list`" ]; then
     if [  -z "`echo $WORD | awk '{print $2;}' | aspell list`" ]; then
-      echo $WORD
+      echo "$WORD"
     fi
   fi
 done
