@@ -112,14 +112,18 @@ main (int argc, char **argv)
 	      for (i = 3; i < rep && i < strlen (buffer[0]); i++)
 		diff.lines[0][rep - i - 1] = diff.lines[1][rep - i - 1] = buffer[0][strlen (buffer[0]) - i + 1];
 	    }
-
-
-	  if (diff.different_to - diff.different_from < 40 && strlen (diff.lines[0]) > 80 && strlen (diff.lines[1]) > 80)
+	  for (i = 0; i < 2; i++)
 	    {
-	      diff.lines[0][80] = '\n';
-	      diff.lines[0][81] = 0;
-	      diff.lines[1][80] = '\n';
-	      diff.lines[1][81] = 0;
+	      diff.lines[i][strlen (diff.lines[i]) - 1] = 0;
+	      strcat (diff.lines[i], " \\n ");
+	      for (j = 0; isspace (buffer[3][j]); j++)
+		;
+	      strcat (diff.lines[i], buffer[3] + j);
+	      diff.lines[i][strlen (diff.lines[i]) - 1] = 0;
+	      for (j = strlen (diff.lines[i]); j < 80; j++)
+		diff.lines[i][j] = ' ';
+	      diff.lines[i][80] = '\n';
+	      diff.lines[i][81] = 0;
 	    }
 
 	  /* TODO context with next line. */
