@@ -24,7 +24,7 @@ if [ "$1" == "--hook" ]; then
   fi
   rm $TMP_FILES 2> /dev/null
   echo > $TMP_FILES
-  for I in `git diff --name-only`; do
+  for I in `git diff HEAD --name-only`; do
     I=$TOP/$I
     echo $I >> $TMP_FILES
   done
@@ -68,9 +68,11 @@ if [ ! -z "`cat $TOP/.stylepp/misspells`" ]; then
   else
     cat $TOP/.stylepp/misspells | head
   fi
+  echo
   echo "Also saved into $TOP/.stylepp/misspells file."
   echo "To fix them run:"
   echo "stylepp_dictionary"
+  echo 
 fi
   
 # Cleanup.

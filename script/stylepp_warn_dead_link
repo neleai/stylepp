@@ -8,7 +8,14 @@ for LINK in `stylepp_skeleton $* stylepp_extract_http_address 2>&1 | sort | uniq
   if curl -f "$LINK" >/dev/null 2>/dev/null; then
     true
   else
+    DEAD="true"
     echo Dead link: $LINK
   fi
 done
-exit 1
+
+if [ -z "$DEAD" ]; then
+  exit 0
+else
+  echo
+  exit 1
+fi

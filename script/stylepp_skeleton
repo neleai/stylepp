@@ -12,7 +12,7 @@ if [ $1 == "--hook" ]; then
   TOP=`git rev-parse --show-toplevel`
   rm $TMP_FILES 2> /dev/null
   echo > $TMP_FILES
-  for I in `git diff --name-only`; do
+  for I in `git diff HEAD --name-only`; do
     I=$TOP/$I
     echo $I >> $TMP_FILES
   done

@@ -2,10 +2,12 @@
 
 if [ -z "`grep "[Cc]opyright" $1`" ]; then
   echo $1: Missing copyright notice. >&2
+  exit 1
 else
   YEAR=`date +%Y`
   if [ -z "`grep "[Cc]opyright.*$YEAR" $1`" ]; then
     echo $1: Stale copyright year.. >&2
   fi
+  exit 1
 fi
-exit 1
+exit 0
