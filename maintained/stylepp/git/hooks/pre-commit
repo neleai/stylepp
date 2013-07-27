@@ -1,0 +1,5 @@
+stylepp_skeleton --hook stylepp_warn_copyright
+stylepp_warn_dead_link --hook
+stylepp_spellcheck --hook
+stylepp_warn_long_line --hook
+git add src/*.c src/*.h
