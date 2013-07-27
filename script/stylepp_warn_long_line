@@ -1,0 +1,19 @@
+#!/bin/bash
+
+DIR="$( cd "$( dirname "${BASH_SOURCE[0]}" )" && pwd )"
+PATH=$PATH:$DIR/../bin:$DIR
+TOP=`git rev-parse --show-toplevel`
+FILE=$TOP/.stylepp/long_lines
+stylepp_skeleton $* stylepp_warn80 2>$FILE
+chmod +x $FILE
+
+if [ -z "`cat $FILE`" ]; then
+  rm $FILE
+  exit 0
+else
+  echo "Long lines detected."
+  echo "Run $FILE to edit them by vim."
+  echo
+  exit 1
+fi
+
