@@ -1,3 +1,5 @@
+#!/bin/bash
+
 TYPO=`mktemp`
 TYPOS=`mktemp`
 TYPO2=`mktemp`
