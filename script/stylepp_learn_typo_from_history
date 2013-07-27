@@ -1,27 +1,17 @@
 #!/bin/bash
 
-TYPO=`mktemp`
-TYPOS=`mktemp`
-TYPO2=`mktemp`
-stylepp_spellcheck
+#stylepp_spellcheck
 TOP=`git rev-parse --show-toplevel`
-mkdir $TOP/.stylepp 2> /dev/null
+FILES=`mktemp`
+DIC=/tmp/dict
+echo >$DIC
+mkdir $TOP/.stylepp/history
 
+git format-patch -o $TOP/.stylepp/history `git log --pretty=format:%H | tail -1` > $FILES
 
-echo > $TYPOS
-while git checkout HEAD^ >/dev/null; do
-  git diff HEAD^ --word-diff | stylepp_typo_from_history > $TYPO
-  cat $TYPOS $TYPO | stylepp_sortuniq > $TYPO2
-  mv $TYPO2 $TYPOS
-cp $TYPOS /tmp/typos$1
+for FILE in $FILES; do
+	stylepp_typos_from_diff < $FILE >> $DIC
 done
-stylepp_subtract_dictionary $TYPOS $TOP/.stylepp/words_code > $TYPO2
-cat $TYPO2 | stylepp_clean_dictionary > $TOP/.stylepp/dictionary_history
+cat $DIC | stylepp_sortuniq
+rm -r $TOP/.stylepp/history
 
-cat $TOP/.stylepp/dictionary_history
-
-echo also saved to $TOP/.stylepp/dictionary_history 1>&2
-
-rm $TYPO
-rm $TYPOS
-rm $TYPO2

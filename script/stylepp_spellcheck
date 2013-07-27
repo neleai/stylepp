@@ -60,7 +60,7 @@ fi
 stylepp_symdiff $TOP/.stylepp/words_comment $TOP/.stylepp/words_code | grep -v "[[:upper:]]" | aspell list > $TOP/.stylepp/misspells
 
 if [ ! -z "`cat $TOP/.stylepp/misspells`" ]; then
-  echo "Likely misspells:"
+  echo "There are `cat $TOP/.stylepp/misspells | wc -l` Likely misspells:"
   if [ "$HOOK" == "true" ]; then
     for WORD in `cat $TOP/.stylepp/misspells | head`; do
       git diff HEAD | grep $WORD | sed -e"s/ $WORD / ++$WORD++ /g" | head -n 1
