@@ -29,8 +29,6 @@ git commit -a -m "Fix typos from history list."
 stylepp_spellcheck
 stylepp_dictionary
 
-cp $TOP/.stylepp/dictionary dictionary
-stylepp_fix_spell
 git commit -a -m "Fix typos."
 
 # Now merge fixes to personal directory

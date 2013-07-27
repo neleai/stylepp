@@ -1,16 +1,25 @@
 DIR="$( cd "$( dirname "${BASH_SOURCE[0]}" )" && pwd )"
 PID=$BASHPID
 PATH=$PATH:$DIR/../bin:$DIR
-TOP=`git rev-parse --show-toplevel`
+if git rev-parse --show-toplevel >/dev/null 2>/dev/null; then
+  TOP=`git rev-parse --show-toplevel`
+else
+  echo "stylepp_spellcheck needs to be ran in git repository."
+  exit 1
+fi
 mkdir $TOP/.stylepp 2> /dev/null
 
 TMP_FILES=`mktemp`
 
-if [ $1 == "--hook" ]; then
+if [ "$1" == "--hook" ]; then
   HOOK="true"
   shift 1
   # Hook version.
-  TOP=`git rev-parse --show-toplevel`
+  if [ ! -f $TOP/.stylepp/words_code ]; then
+    echo "List of known words ($TOP/.stylepp/words_code) does not exist."
+    echo "Run stylepp_spellcheck to generate it."
+    exit 1
+  fi
   rm $TMP_FILES 2> /dev/null
   echo > $TMP_FILES
   for I in `git diff --name-only`; do
@@ -23,7 +32,7 @@ if [ $1 == "--hook" ]; then
   echo > /tmp/comment.$PID
   
   for I in $FILES; do
-    echo $I
+    stylepp_extract_code $I < $I >> /tmp/code.$PID
     stylepp_extract_comment $I < $I >> /tmp/comment.$PID
   done
   cat $TOP/.stylepp/words_code /tmp/code.$PID | stylepp_sortuniq | aspell list | stylepp_sortuniq> $TOP/.stylepp/words_code
@@ -33,8 +42,8 @@ else
   echo > /tmp/code.$PID
   echo > /tmp/comment.$PID
   for I in `find -regex ".*\(.c\|\.h\|\.cc\|\.cpp\|\.S\|\.java\|\.adb\|\.ads\|\.f\|\.f90\|\.f95\|\.py\|\.sh\|\.rb\|\.txt\|\.htm\|\.html\|\.tex\|\.texi\|\.ml\|\.mli\)\$"`; do
-  stylepp_extract_code $I < $I >> /tmp/code.$PID
-  stylepp_extract_comment $I < $I >> /tmp/comment.$PID
+    stylepp_extract_code $I < $I >> /tmp/code.$PID
+    stylepp_extract_comment $I < $I >> /tmp/comment.$PID
   done
 
 # Now we find words in comments but not in code
@@ -49,6 +58,7 @@ fi
 stylepp_symdiff $TOP/.stylepp/words_comment $TOP/.stylepp/words_code | grep -v "[[:upper:]]" | aspell list > $TOP/.stylepp/misspells
 
 if [ ! -z "`cat $TOP/.stylepp/misspells`" ]; then
+  echo "Likely misspells:"
   if [ "$HOOK" == "true" ]; then
     for WORD in `cat $TOP/.stylepp/misspells | head`; do
       git diff HEAD | grep $WORD | sed -e"s/ $WORD / ++$WORD++ /g" | head -n 1
@@ -59,10 +69,10 @@ if [ ! -z "`cat $TOP/.stylepp/misspells`" ]; then
   echo "Also saved into $TOP/.stylepp/misspells file."
   echo "To fix them run:"
   echo "stylepp_dictionary"
-  echo "stylepp_fix_spell"
 fi
   
 # Cleanup.
 rm $TMP_FILES
 rm /tmp/code.$PID
 rm /tmp/comment.$PID
+exit 0

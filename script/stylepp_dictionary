@@ -6,3 +6,5 @@ cp $TOP/.stylepp/misspells $TOP/.stylepp/corrected
 aspell -c $TOP/.stylepp/corrected
 stylepp_make_dictionary $TOP/.stylepp/misspells $TOP/.stylepp/corrected > $TOP/.stylepp/dictionary
 cp $TOP/.stylepp/dictionary .
+
+stylepp_fix_spell
