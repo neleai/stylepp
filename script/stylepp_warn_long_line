@@ -11,8 +11,8 @@ if [ -z "`cat $FILE`" ]; then
   rm $FILE
   exit 0
 else
-  echo "Long lines detected."
-  echo "Run $FILE to edit them by vim."
+  echo "Detected `cat $FILE | wc -l` lines longer than 80 characters."
+  echo "Run $FILE to edit them in vim."
   echo
   exit 1
 fi
