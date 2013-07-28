@@ -24,7 +24,7 @@ main (int argc, char **argv)
       int diff = 0;
       for (i = 0; i < 256; i++)
 	diff += abs (counts[0][i] - counts[1][i]);
-      if (diff < 3)
+      if (diff < 3 && strlen (word[0]) > 2 && strlen (word[1]) > 2)
 	printf ("%-20s %s\n", word[0], word[1]);
     }
 }
