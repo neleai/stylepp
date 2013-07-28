@@ -8,11 +8,11 @@ HISTORYDIR=$TOP/.stylepp/history
 HISTORYDICTIONARY=$TOP/.stylepp/dictionary_history
 mkdir $HISTORYDIR
 
-git format-patch -o $HISTORYDIR `git log --pretty=format:%H | tail -1` 
+git format-patch -o $HISTORYDIR `git log --pretty=format:%H | tail -1`
 
 for FILE in $HISTORYDIR/*; do
-    echo $FILE
-	stylepp_typos_from_diff < $FILE >> $DIC
+  echo $FILE
+  stylepp_typos_from_diff < $FILE >> $DIC
 done
 
 stylepp_spellcheck > /dev/null

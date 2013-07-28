@@ -39,7 +39,7 @@ if [ "$1" == "--hook" ]; then
   done
   cat $TOP/.stylepp/words_code /tmp/code.$PID | stylepp_sortuniq | aspell list | stylepp_sortuniq> $TOP/.stylepp/words_code
   cat /tmp/comment.$PID | stylepp_sortuniq | aspell list | stylepp_sortuniq> $TOP/.stylepp/words_comment
-
+  
 else
   echo > /tmp/code.$PID
   echo > /tmp/comment.$PID
@@ -47,8 +47,8 @@ else
     stylepp_extract_code $I < $I >> /tmp/code.$PID
     stylepp_extract_comment $I < $I >> /tmp/comment.$PID
   done
-
-# Now we find words in comments but not in code
+  
+  # Now we find words in comments but not in code
   cat /tmp/code.$PID    | stylepp_sortuniq | aspell list | stylepp_sortuniq> $TOP/.stylepp/words_code
   cat /tmp/comment.$PID | stylepp_sortuniq | aspell list | stylepp_sortuniq> $TOP/.stylepp/words_comment
 fi
@@ -72,9 +72,9 @@ if [ ! -z "`cat $TOP/.stylepp/misspells`" ]; then
   echo "Also saved into $TOP/.stylepp/misspells file."
   echo "To fix them run:"
   echo "stylepp_dictionary"
-  echo 
+  echo
 fi
-  
+
 # Cleanup.
 rm $TMP_FILES
 rm /tmp/code.$PID
