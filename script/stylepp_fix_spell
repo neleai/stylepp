@@ -7,7 +7,7 @@ PATH=$PATH:$DIR/../bin:$DIR
 TMP_FILES=`mktemp`
 TMP_FMT=`mktemp`
 
-if [ $1 == "--hook" ]; then
+if [ "$1" == "--hook" ]; then
   shift 1
   # Hook version.
   TOP=`git rev-parse --show-toplevel`

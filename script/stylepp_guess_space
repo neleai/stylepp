@@ -1,0 +1,36 @@
+#!/bin/bash
+
+DIR="$( cd "$( dirname "${BASH_SOURCE[0]}" )" && pwd )"
+PID=$BASHPID
+PATH=$PATH:$DIR/../bin:$DIR
+
+
+if [ $1 == "--hook" ]; then
+  shift 1
+  # Hook version.
+  TOP=`git rev-parse --show-toplevel`
+  rm /tmp/files 2> /dev/null
+  echo > /tmp/files
+  for I in `git diff --name-only`; do
+    I=$TOP/$I
+    echo $I >> /tmp/files
+  done
+  FILES=`cat /tmp/files`
+  rm /tmp/files
+else
+  FILES=`find`
+fi
+
+for CUP in $*; do
+  for I in $FILES; do
+    if [ "${I: -2}" == ".c" ] || [ "${I: -4}" == ".cpp" ] || [ "${I: -3}" == ".cc" ] || [ "${I: -2}" == ".h" ]; then
+      if $CUP $I <$I > /tmp/fmt.$PID; then
+        diff -u /tmp/fmt.$PID $I >> /tmp/diff
+        mv /tmp/fmt.$PID $I
+      fi
+    fi
+  done
+done
+
+# Cleanup.
+rm /tmp/fmp.$PID 2>/dev/null
