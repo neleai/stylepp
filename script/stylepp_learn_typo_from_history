@@ -16,7 +16,7 @@ for FILE in $HISTORYDIR/*; do
 done
 
 stylepp_spellcheck > /dev/null
-stylepp_subtract_dictionary $DIC $TOP/.stylepp/words_code  | stylepp_format_dictionary | stylepp_sortuniq  | stylepp_remove_ambiguous_dictionary | stylepp_clean_dictionary > $HISTORYDICTIONARY
+stylepp_subtract_dictionary $DIC $TOP/.stylepp/words_code  | stylepp_format_dictionary | stylepp_filter_dictionary | stylepp_sortuniq  | stylepp_remove_ambiguous_dictionary | stylepp_clean_dictionary > $HISTORYDICTIONARY
 
 #rm -r $HISTORYDIR
 
