@@ -1,13 +1,10 @@
 ADCS                 ADC
-ADDFLAG              SET
 AFter                After
 ALignment            Alignment
 ALl                  All
 ALso                 Also
-ANDROIDEABI          Android
 ANd                  And
 APOffset             Offset
-AbstractCU           Parent
 Accomodate           Accommodate
 Adter                After
 Agressive            Aggressive
@@ -23,7 +20,6 @@ Analize              Analyze
 Analyse              Analyze
 Analyss              Analysis
 Annother             Another
-Anonmyous            Literal
 Aquire               Acquire
 Arange               Arrange
 Asmera               Asmara
@@ -42,7 +38,6 @@ Brittish             British
 Buddah               Buddha
 Buddist              Buddhist
 Bunp                 Bump
-Byval                Some
 CHeck                Check
 COnstant             Constant
 COntributed          Contributed
@@ -72,20 +67,16 @@ Classifiy            Classify
 Coallesce            Coalesce
 Coallesced           Coalesced
 Coallescing          Coalescing
-ColumnFlushed        Column
 Complerely           Completely
 Conext               Context
 Configureation       Configuration
 Conneticut           Connecticut
-ConstPool            Constant
-ConstPoolVal         Constant
 Constrct             Construct
 Contribued           Contributed
 Coud                 Could
 Critial              Critical
 Currenly             Currently
 Dardenelles          Dardanelles
-Databank             Operation
 Dawswon              Dawson
 Decend               Descend
 Decreate             Decrease
@@ -109,7 +100,6 @@ Eurpoean             European
 Evironment           Environment
 Explicita            Explicit
 Exponentional        Exponential
-ExprRef              Result
 Extented             Extended
 Exteranl             External
 FALGS                FLAGS
@@ -118,7 +108,6 @@ Farenheit            Fahrenheit
 Febuary              February
 Feburary             February
 Firey                Fiery
-FixedWidth           Fixed
 Flemmish             Flemish
 Floatin              Floating
 Follwed              Followed
@@ -149,8 +138,6 @@ Hierachical          Hierarchical
 Hosist               Hoist
 Ihaca                Ithaca
 Implmenetation       Implementation
-InDegrees            degrees
-InValid              Invalid
 Independant          Independent
 Indicies             Indices
 Inftrastructre       Infrastructure
@@ -163,7 +150,6 @@ Inlcude              Include
 Interence            Interference
 Invarient            Invariant
 Irreconsilable       Irreconcilable
-IsThunk              Remove
 Ise                  Use
 Israelies            Israelis
 Itineratries         Itineraries
@@ -173,19 +159,13 @@ Japanes              Japanese
 Jospeh               Joseph
 Juadaism             Judaism
 Juadism              Judaism
-Khamenya             Spencer
 Kirgizstan           Kyrgyzstan
 Knute                Knuth
-LLVMIntrinsic        Intrinsic
 Leoaprd              Leopard
 Lesen                Laden
 Libraty              Library
 Likesie              Likewise
 Lybia                Libya
-MATHTYPE             FLOAT
-MAXDIGITS            DIGITS
-MCast                Result
-MSAsmWildcard        Memory
 MULTIPLER            MULTIPLIER
 Maek                 Mark
 Mainted              Maintained
@@ -195,14 +175,12 @@ Makre                Make
 Malcom               Malcolm
 Managment            Management
 Mappen               Mapping
-Maschine             Operation
 Massachussets        Massachusetts
 Massachussetts       Massachusetts
 Maximem              Maximum
 Maximu               Maximum
 Mediteranean         Mediterranean
 Michagan             Michigan
-Milli                Micro
 Mininum              Minimum
 Misouri              Missouri
 Missisipi            Mississippi
@@ -233,7 +211,6 @@ PRECISON             PRECISION
 Palistian            Palestinian
 Palistinian          Palestinian
 Palistinians         Palestinians
-ParamAttr            Attribute
 Paramter             Parameter
 Pennyslvania         Pennsylvania
 Perferred            Preferred
@@ -318,7 +295,6 @@ THe                  The
 THis                 This
 Targetting           Targeting
 Telgu                Telugu
-ThePrefix            Prefix
 Theis                This
 Thie                 The
 Thsi                 This
@@ -353,6 +329,7 @@ abilties             abilities
 abilty               ability
 abiove               above
 abitrary             arbitrary
+abitration           arbitration
 abolute              absolute
 abondon              abandon
 abondoned            abandoned
@@ -496,6 +473,7 @@ acknowldeged         acknowledged
 acknowledgeing       acknowledging
 acknowledgement      acknowledgment
 acknowledgements     acknowledgments
+acomment             comment
 acommodate           accommodate
 acomplish            accomplish
 acomplished          accomplished
@@ -517,9 +495,6 @@ activit              activity
 activites            activities
 activly              actively
 acton                action
-actualMagic          FT
-actualTarget         Triple
-actualisation        estimation
 actuall              actual
 actualy              actually
 actullay             actually
@@ -719,7 +694,6 @@ aligmment            alignment
 alignement           alignment
 alignemnt            alignment
 alignent             alignment
-alignmask            align
 alignmed             aligned
 alingment            alignment
 alinment             alignment
@@ -844,7 +818,6 @@ andle                handle
 andps                and
 androgenous          androgynous
 androgeny            androgyny
-ands                 constants
 ane                  and
 anem                 and
 anihilation          annihilation
@@ -1119,6 +1092,7 @@ assoctiated          associated
 assoicate            associate
 assoicated           associated
 assoicates           associates
+assomption           assumption
 assosiated           associated
 assosication         assassination
 assotiated           associated
@@ -1151,6 +1125,7 @@ asthan               as_than
 asthetic             aesthetic
 asthetically         aesthetically
 asthetics            aesthetics
+astraction           abstraction
 asume                assume
 asumption            assumption
 asupport             support
@@ -1173,7 +1148,6 @@ atribute             attribute
 atributed            attributed
 atrribute            attribute
 atrributes           attributes
-att                  add
 attachement          attachment
 attched              attached
 attemp               attempt
@@ -1257,6 +1231,7 @@ availables           available
 availaible           available
 availalbe            available
 availalble           available
+availavle            available
 availbale            available
 availble             available
 availiability        availability
@@ -1329,6 +1304,7 @@ beetwen              between
 befoer               before
 befor                before
 beforere             before
+befores              before
 befre                before
 beggin               begin
 begginer             beginner
@@ -1369,8 +1345,6 @@ beneits              benefits
 beng                 being
 benifit              benefit
 benifits             benefits
-beq                  be
-berett               redo
 berween              between
 beseige              besiege
 beseiged             besieged
@@ -1396,6 +1370,7 @@ bidirectinal         bidirectional
 bilateraly           bilaterally
 billingualism        bilingualism
 bimask               bitmask
+binable              bindable
 bindigs              bindings
 binitialized         initialized
 binominal            binomial
@@ -1563,6 +1538,7 @@ caperbility          capability
 capibility           capability
 capible              capable
 captial              capital
+captialized          capitalized
 captued              captured
 captur               capture
 capturd              captured
@@ -1626,7 +1602,6 @@ ccmdline             cmdline
 ccomment             comment
 ccomplete            complete
 cconsider            consider
-ccpu                 shared
 cellpading           cellpadding
 cementary            cemetery
 cemetarey            cemetery
@@ -1667,6 +1642,7 @@ chanels              channels
 chanenel             channel
 chanenl              channel
 chang                change
+changable            changeable
 changs               changes
 chaning              changing
 channle              channel
@@ -1726,7 +1702,6 @@ chracters            characters
 chrashing            crashing
 chuch                church
 churchs              churches
-cilja                mete
 circulaton           circulation
 circumrefence        circumference
 circumsicion         circumcision
@@ -1783,7 +1758,6 @@ coallesced           coalesced
 coallescing          coalescing
 coalsing             coalescing
 coctail              cocktail
-codi                 descriptor
 coditional           conditional
 coditions            conditions
 coeffecients         coefficients
@@ -2335,7 +2309,6 @@ corrispond           correspond
 corrispondant        correspondent
 corrispondants       correspondents
 corrisponded         corresponded
-corrispondenti       relative
 corrisponding        corresponding
 corrisponds          corresponds
 corrolate            correlate
@@ -2403,7 +2376,6 @@ crussial             crucial
 cryptograpically     cryptographically
 crytal               crystal
 crytographic         cryptographic
-csretcc              define
 ctructure            structure
 cuases               causes
 culiminating         culminating
@@ -2437,7 +2409,6 @@ dacquiri             daiquiri
 daed                 dead
 dael                 deal
 dafults              defaults
-dai                  component
 dalmation            dalmatian
 damenor              demeanor
 dammage              damage
@@ -2447,7 +2418,6 @@ dasn't               doesn't
 datad                data
 daugher              daughter
 daugther             daughter
-deadPass             pass
 deail                deal
 dealilng             dealing
 dealloacte           deallocate
@@ -2468,7 +2438,6 @@ decendents           descendants
 decideable           decidable
 decidely             decidedly
 decieved             deceived
-decimalExponent      val
 decison              decision
 declararing          declaring
 declaratinos         declarations
@@ -3249,7 +3218,6 @@ evaluted             evaluated
 evalutes             evaluates
 evaulated            evaluated
 evenhtually          eventually
-evenlen              older
 eventally            eventually
 eventhough           even_though
 eventially           eventually
@@ -3346,7 +3314,6 @@ exisiting            existing
 exisitng             existing
 existance            existence
 existant             existent
-existe               hay
 existince            existence
 exitted              exited
 exitting             exiting
@@ -3439,7 +3406,6 @@ faield               failed
 faild                failed
 failue               failure
 fainess              fairness
-falg                 third
 falgs                flags
 familar              familiar
 familes              families
@@ -3453,7 +3419,6 @@ fatc                 fact
 faught               fought
 favour               favor
 favoured             favored
-fconst               first
 feasable             feasible
 featues              features
 feautre              feature
@@ -3465,7 +3430,6 @@ fgrep                grep
 fhe                  the
 fianite              finite
 fianlly              finally
-fichier              type
 ficticious           fictitious
 fictious             fictitious
 fidliest             fiddliest
@@ -3474,7 +3438,6 @@ fieldm               field
 fiercly              fiercely
 fightings            fighting
 fileds               fields
-fileevent            close
 filiament            filament
 filterring           filtering
 filterting           filtering
@@ -3483,7 +3446,7 @@ finacial             financial
 finaize              finalize
 finaly               finally
 financialy           financially
-finializer           prepared
+finializer           finalizer
 finised              finished
 finr                 finds
 fireing              firing
@@ -3494,16 +3457,14 @@ firts                flirts
 firware              firmware
 fisionable           fissionable
 fith                 fifth
-flagT                int
 flagg                flag
 flamable             flammable
-flaot                flags
+flaot                float
 flattenning          flattening
 flavours             flavors
 flawess              flawless
 fleed                fled
 flg                  flag
-flgs                 deletion
 fliter               filter
 floatting            floating
 flourescent          fluorescent
@@ -3523,7 +3484,7 @@ fomed                formed
 fomr                 from
 fon                  on
 fonction             function
-fonctions            divers
+fonctions            functions
 fonetic              phonetic
 foootball            football
 fopund               found
@@ -3561,7 +3522,6 @@ fourties             forties
 fourty               forty
 fouth                fourth
 foward               forward
-fpga                 base
 fpsecification       specification
 fractionnal          fractional
 frane                frame
@@ -3572,7 +3532,6 @@ freqency             frequency
 frequence            frequency
 frequentily          frequently
 frmo                 from
-fromby               by
 frome                from
 fromed               formed
 fron                 from
@@ -3580,7 +3539,6 @@ froniter             frontier
 frozes               freezes
 fstat                stat
 fter                 after
-ftrace               function
 fucntion             function
 fucntioning          functioning
 fucntions            functions
@@ -3684,7 +3642,6 @@ governmnet           government
 govorment            government
 govormental          governmental
 govornment           government
-gpios                status
 gracefull            graceful
 gradiant             gradient
 gradientes           gradients
@@ -3770,10 +3727,8 @@ harware              hardware
 hashses              hashes
 hasing               hashing
 hasnt                hasn't
-hauria               ha
 hav                  have
 haviest              heaviest
-hba                  interface
 heado                head
 headquarer           headquarter
 headquater           headquarter
@@ -3913,7 +3868,6 @@ ierify               verify
 ifloating            floating
 ignoreing            ignoring
 igonred              ignored
-ikke                 er
 ile                  file
 ilke                 like
 illegimacy           illegitimacy
@@ -4356,7 +4310,6 @@ intutive             intuitive
 intutively           intuitively
 inudstry             industry
 inumerable           enumerable
-invSrc               Invert
 invaraint            invariant
 inventer             inventor
 invertibrates        invertebrates
@@ -4380,9 +4333,6 @@ irresistable         irresistible
 irresistably         irresistibly
 irrespectlive        irrespective
 irtual               virtual
-isAsmParserOnly      Constraints
-isAssemblerInstruction Validate
-isNonLazy            Indirect
 isnt                 isn't
 isntruction          instruction
 isntructions         instructions
@@ -4425,7 +4375,6 @@ kenrel               kernel
 keyward              keyword
 keywoards            keywords
 keywrod              keyword
-killIdx              index
 kindergarden         kindergarten
 klee                 KLEE
 knive                knife
@@ -4447,7 +4396,7 @@ lagout               layout
 laguage              language
 laguages             languages
 landng               landing
-langs                bindings
+langs                languages
 laod                 load
 laoded               loaded
 laods                loads
@@ -4486,7 +4435,6 @@ lelements            elements
 lenget               length
 lengh                length
 lenght               length
-leni                 status
 lenth                length
 leran                learn
 leraned              learned
@@ -4499,7 +4447,6 @@ levetated            levitated
 levetates            levitates
 levetating           levitating
 levle                level
-liItr                I
 liasion              liaison
 liason               liaison
 liasons              liaisons
@@ -4526,7 +4473,6 @@ lightyears           light_years
 likelyhood           likelihood
 limiation            limitation
 limitiation          limitation
-linebuffered         buffered
 linek                link
 linkfs               links
 liquify              liquefy
@@ -4625,8 +4571,6 @@ manufature           manufacture
 manufatured          manufactured
 manufaturing         manufacturing
 manuver              maneuver
-mapa                 tabla
-mapas                tablas
 maping               mapping
 mappng               mapping
 mappoing             mapping
@@ -4664,8 +4608,6 @@ matris               matrix
 matster              master
 mattch               match
 mattern              pattern
-mattr                out
-maxfire              expires
 maxium               maximum
 mchanics             mechanics
 meaninless           meaningless
@@ -4676,7 +4618,6 @@ measurment           measurement
 measurments          measurements
 mechandise           merchandise
 mechanisim           mechanism
-mechinery            engine
 mechnanism           mechanism
 mechnism             mechanism
 medacine             medicine
@@ -4684,7 +4625,6 @@ medeival             medieval
 medevial             medieval
 medievel             medieval
 meens                means
-meer                 minder
 mehanism             mechanism
 membe                member
 memeber              member
@@ -4810,8 +4750,6 @@ montains             mountains
 montanous            mountainous
 monts                months
 moodified            modified
-mopI                 MI
-mopItr               MOI
 mordern              modern
 moreso               more
 morgage              mortgage
@@ -4834,7 +4772,6 @@ muiltiple            multiple
 mulipexed            multiplexed
 muliple              multiple
 mulitple             multiple
-multiclass           class
 multicultralism      multiculturalism
 multipe              multiple
 multipled            multiplied
@@ -4842,7 +4779,6 @@ multiplers           multipliers
 multipliciaton       multiplication
 multiplty            Multiply
 multipy              multiply
-multitouch           touch
 munbers              numbers
 muncipalities        municipalities
 muncipality          municipality
@@ -4926,7 +4862,6 @@ nkow                 know
 nkwo                 know
 nmae                 name
 nned                 need
-nodeID               i
 noin                 none
 noncombatents        noncombatants
 nonequal             unequal
@@ -5087,7 +5022,6 @@ ont                  not
 onterested           interested
 ony                  only
 onyl                 only
-opVecVT              result
 openened             opened
 openess              openness
 operants             operands
@@ -5098,7 +5032,6 @@ opernds              operands
 operotains           operations
 opertion             operation
 opertional           operational
-oplock               execution
 oponent              opponent
 oportunity           opportunity
 opose                oppose
@@ -5118,7 +5051,6 @@ opression            oppression
 opressive            oppressive
 oprtation            operation
 optain               obtain
-optall               all
 opthalmic            ophthalmic
 opthalmologist       ophthalmologist
 opthalmology         ophthalmology
@@ -5166,7 +5098,6 @@ otehr                other
 otehrwise            otherwise
 othe                 other
 othen                other
-otherside            loop
 otherwis             otherwise
 othter               other
 otions               options
@@ -5237,9 +5168,7 @@ parantheses          parentheses
 paraphenalia         paraphernalia
 parellels            parallels
 paremeter            parameter
-parentPointer        N
 parenthesises        parentheses
-parentlist           parents
 parimary             primary
 parituclar           particular
 parliment            parliament
@@ -5272,12 +5201,9 @@ patsh                paths
 patt                 pattern
 pattented            patented
 pavillion            pavilion
-pblendvb             or
 pblisher             publisher
 pbulisher            publisher
 pcheck               check
-pci                  s
-pdiss                pass
 peacefuland          peaceful_and
 peageant             pageant
 peculure             peculiar
@@ -5387,7 +5313,6 @@ pinapple             pineapple
 pinnaple             pineapple
 pinoneered           pioneered
 piont                point
-placeSpills          prepare
 placehoder           placeholder
 plaftorms            platforms
 plagarism            plagiarism
@@ -5757,7 +5682,6 @@ provisiosn           provision
 provisonal           provisional
 provoding            providing
 proximty             proximity
-proxywidgets         tutorials
 prrottypes           prototypes
 pseudononymous       pseudonymous
 pseudonyn            pseudonym
@@ -5828,7 +5752,6 @@ radify               ratify
 raelly               really
 ramdord              ramrod
 randon               random
-rango                id
 rapidily             rapidly
 rarified             rarefied
 rdy                  ready
@@ -5857,7 +5780,6 @@ reassociate          optimize
 rebiulding           rebuilding
 rebllions            rebellions
 rebounce             rebound
-rebroadcasted        forwarded
 recalulation         recalculation
 reccomend            recommend
 reccomendations      recommendations
@@ -5981,7 +5903,6 @@ refridgerator        refrigerator
 refromist            reformist
 refued               refused
 refusla              refusal
-regEnd               E
 regardes             regards
 regester             register
 regiser              register
@@ -6253,7 +6174,6 @@ returend             returned
 returing             returning
 returnd              returned
 returnning           returning
-retypeset            output
 reulator             regulator
 reundant             redundant
 reuquired            required
@@ -6281,11 +6201,9 @@ rhytmic              rhythmic
 rigth                right
 rininging            ringing
 rised                rose
-rmItr                RI
 rmeote               remote
 rococco              rococo
 rocord               record
-rom                  ROM
 roomate              roommate
 rooom                room
 rouding              rounding
@@ -6298,15 +6216,12 @@ routinge             routine
 rquirement           requirement
 rsource              resource
 rtelease             release
-rtsd                 add
 rucuperate           recuperate
 rudimentatry         rudimentary
 rulle                rule
 rulls                rules
 ruls                 rules
 rumoured             rumored
-runDesc              run
-runHeader            run
 runing               running
 runnung              running
 russina              Russian
@@ -6316,7 +6231,6 @@ rythim               rhythm
 rythm                rhythm
 rythmic              rhythmic
 rythyms              rhythms
-sStefan              Stefan
 sacrafice            sacrifice
 sacreligious         sacrilegious
 sacrifical           sacrificial
@@ -6354,7 +6268,6 @@ saveing              saving
 saxaphone            saxophone
 sbecomes             becomes
 sbitmap              bitmap
-scalarize            split
 scaleable            scalable
 scandanavia          Scandinavia
 scaned               scanned
@@ -6364,7 +6277,6 @@ scanrp               scan
 scaricity            scarcity
 scavange             scavenge
 scavanged            scavenged
-sccIter              It
 sceme                scheme
 scenerio             scenario
 schdule              schedule
@@ -6407,7 +6319,6 @@ seemlingly           seemingly
 seesl                sees
 seeting              setting
 seetings             settings
-segI                 SI
 segement             segment
 segementation        segmentation
 segements            segments
@@ -6453,7 +6364,6 @@ serie                series
 seriouly             seriously
 serwer               server
 sessoin              session
-setcondinst          compare
 setion               section
 settelement          settlement
 settlment            settlement
@@ -6480,13 +6390,11 @@ shfit                shift
 shineing             shining
 shiped               shipped
 shiping              shipping
-shladd               or
 shoadow              shadow
 shoftware            software
 shoing               showing
 shopkeeepers         shopkeepers
 shorly               shortly
-shortnane            description
 shortwhile           short_while
 shoud                should
 shoudl               should
@@ -6520,7 +6428,7 @@ signficant           significant
 signficiant          significant
 signfies             signifies
 signgle              single
-signicant            major
+signicant            significant
 signifantly          significantly
 significently        significantly
 signifigand          significand
@@ -6528,7 +6436,6 @@ signifigant          significant
 signifigantly        significantly
 signitories          signatories
 signitory            signatory
-signness             flag
 sigular              singular
 similarily           similarly
 similate             simulate
@@ -6552,7 +6459,7 @@ simultanous          simultaneous
 simultanously        simultaneously
 sincerley            sincerely
 singal               signal
-singlar              existing
+singlar              singular
 singsog              singsong
 sinplify             simplify
 sinse                sines
@@ -6686,7 +6593,6 @@ sripping             stripping
 sstupid              stupid
 ssubtituted          substituted
 stablility           stability
-stacker              C
 staic                static
 stainlees            stainless
 staion               station
@@ -6723,8 +6629,6 @@ stong                strong
 stoped               stopped
 stoping              stopping
 stopry               story
-storeInsertPoint     mi
-storefield           store
 storeis              stories
 storise              stories
 stornegst            strongest
@@ -6768,7 +6672,6 @@ studdy               study
 studing              studying
 stuggling            struggling
 sturcture            structure
-subc                 Op
 subcatagories        subcategories
 subcatagory          subcategory
 subconsiously        subconsciously
@@ -6780,8 +6683,6 @@ submited             submitted
 subpecies            subspecies
 subprgoram           subprogram
 subprgram            subprogram
-subrcMax             e
-subregisters         aliases
 subsciber            subscriber
 subsidary            subsidiary
 subsiduary           subsidiary
@@ -6800,7 +6701,6 @@ substraction         subtraction
 substracts           subtracts
 subsytem             subsystem
 subtances            substances
-subtarget            Processor
 subterranian         subterranean
 subtrace             subtract
 subtracing           subtracting
@@ -6812,7 +6712,7 @@ succcessfully        successfully
 succecessor          successor
 succed               succeed
 succedded            succeeded
-succedes             follows
+succedes             succeeds
 succeds              succeeds
 succes               success
 succesful            successful
@@ -6968,7 +6868,7 @@ synagouge            synagogue
 synch                sync
 synching             syncing
 synchonization       synchronization
-synchonize           support
+synchonize           synchronize
 synchronicitiy       synchronicity
 synchronisity        synchronicity
 synchronizarion      synchronization
@@ -6988,14 +6888,12 @@ syntaces             syntaxes
 syntatically         syntactically
 synteax              syntax
 synthesise           synthesize
-synthesizable        legal
 synthetize           synthesize
 synthetizes          synthesizes
 synthezise           synthesize
 syphyllis            syphilis
 sypmtoms             symptoms
 syrap                syrup
-sysclasses           subsystems
 sysmatically         systematically
 systme               system
 sytem                system
@@ -7009,7 +6907,6 @@ tahn                 than
 taht                 that
 tain                 taint
 tak                  take
-taka                 rupee
 taks                 take
 talbe                table
 talekd               talked
@@ -7040,7 +6937,6 @@ technitian           technician
 techniuqes           techniques
 technnology          technology
 technolgy            technology
-tegn                 byte
 teh                  the
 tehy                 they
 telelevision         television
@@ -7183,7 +7079,6 @@ todya                today
 toghether            together
 togles               toggles
 togther              together
-tokenfactors         hi
 tolerence            tolerance
 tomatos              tomatoes
 tommorow             tomorrow
@@ -7259,7 +7154,6 @@ trasmitted           transmitted
 trasnaction          transaction
 trasnforms           transforms
 trayed               strayed
-trcI                 I
 treaded              treated
 tremelo              tremolo
 tremelos             tremolos
@@ -7269,7 +7163,6 @@ trigged              triggered
 trigonmetric         trigonometric
 triguered            triggered
 triology             trilogy
-tripleString         Triple
 trivialy             trivially
 trnasformed          transformed
 troling              trolling
@@ -7292,7 +7185,6 @@ tryied               tried
 tryies               tries
 trys                 tries
 trzing               trying
-tsoh                 header
 tthem                them
 tthese               these
 turboe               turbo
@@ -7316,7 +7208,6 @@ tyranies             tyrannies
 tyrany               tyranny
 tyrranies            tyrannies
 tyrrany              tyranny
-uNum                 Level
 ubiquitious          ubiquitous
 ublisher             publisher
 udpated              updated
@@ -7357,7 +7248,6 @@ uncongested          unblocked
 uncontitutional      unconstitutional
 unconvential         unconventional
 und                  and
-undeadifying         loading
 undecideable         undecidable
 undefiend            undefined
 undeflow             underflow
@@ -7407,7 +7297,6 @@ unknonwn             unknown
 unknow               unknown
 unkown               unknown
 unlcoked             unlocked
-unlegalized          unprocessed
 unligned             unaligned
 unlikey              unlikely
 unlimted             unlimited
@@ -7520,7 +7409,6 @@ valididy             validity
 valie                value
 valuble              valuable
 valueable            valuable
-valuemap             dict
 valy                 value
 valze                value
 varations            variations
@@ -7627,11 +7515,9 @@ wating               waiting
 watn                 want
 wayword              wayward
 wcomplete            complete
-wcount               written
 weaks                forward
 weaponary            weaponry
 weas                 was
-webbrowser           twitter
 wehn                 when
 weifght              weight
 weigths              weights
@@ -7674,7 +7560,6 @@ wih                  with
 wihin                within
 wiht                 with
 wihtout              without
-wijd                 breed
 wiley                wily
 wilh                 will
 wille                will
