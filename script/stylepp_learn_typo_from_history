@@ -1,17 +1,22 @@
 #!/bin/bash
 
-#stylepp_spellcheck
 TOP=`git rev-parse --show-toplevel`
 FILES=`mktemp`
 DIC=/tmp/dict
 echo >$DIC
-mkdir $TOP/.stylepp/history
+HISTORYDIR=$TOP/.stylepp/history
+HISTORYDICTIONARY=$TOP/.stylepp/dictionary_history
+mkdir $HISTORYDIR
 
-git format-patch -o $TOP/.stylepp/history `git log --pretty=format:%H | tail -1` > $FILES
+git format-patch -o $HISTORYDIR `git log --pretty=format:%H | tail -1` 
 
-for FILE in $FILES; do
+for FILE in $HISTORYDIR/*; do
+    echo $FILE
 	stylepp_typos_from_diff < $FILE >> $DIC
 done
-cat $DIC | stylepp_sortuniq
-rm -r $TOP/.stylepp/history
+
+stylepp_spellcheck > /dev/null
+stylepp_subtract_dictionary $DIC $TOP/.stylepp/words_code  | stylepp_format_dictionary | stylepp_sortuniq  | stylepp_remove_ambiguous_dictionary | stylepp_clean_dictionary > $HISTORYDICTIONARY
+
+#rm -r $HISTORYDIR
 
