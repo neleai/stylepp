@@ -1,0 +1,15 @@
+#!/bin/bash
+
+if [ ! -z "`git log -1 --pretty=%B | aspell list`" ]; then
+  echo "Warning: Possible typos in commit message:"
+  git log -1 --pretty=%B | aspell list
+  echo
+  exit 1
+fi
+if [ ! -z "`git diff --name-only --diff-filter=A HEAD^ | aspell list`" ]; then
+  echo "Warning: Possible typos in new file:"
+  git diff --name-only --diff-filter=A HEAD^ | aspell list
+  echo
+  exit 1
+fi
+exit 0

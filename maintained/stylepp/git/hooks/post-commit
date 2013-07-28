@@ -1,0 +1,15 @@
+DIR=~/stylepp
+
+stylepp_warn_typo_in_commit_message
+stylepp_skeleton $DIR/gnu/format_with_uncrustify
+
+for I in  $DIR/script/*; do
+  $DIR/fmt/beautify_bash.rb $I
+done
+
+if [ ! -z "`git diff`" ]; then
+  echo "Fixed some formatting issues."
+  echo "See git diff for what changed."
+  echo "Then git commit --amend"
+fi
+

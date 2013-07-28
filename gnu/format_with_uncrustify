@@ -1,0 +1,29 @@
+#!/bin/bash
+
+DIR="$( cd "$( dirname "${BASH_SOURCE[0]}" )" && pwd )"
+
+TMP=`mktemp`
+ERR=`mktemp`
+ERR2=`mktemp`
+for I in $*; do
+  if [ "${I: -2}" == ".c" ] || [ "${I: -2}" == ".h" ]; then
+    uncrustify -l C -c $DIR/indent.cfg -f $I -o $TMP 2> $ERR
+    cat $ERR | grep -v "Detected a macro that ends with a semicolon" > $ERR2
+    if [ "`wc -l < $ERR2`" -eq "1" ]; then
+      
+      if [ ! -z "`diff -u $I $TMP`" ]; then
+        cp $TMP $I
+      fi
+      
+    else
+      echo "Failed to format $I" 1>&2
+      cat $ERR2 1>&2
+      exit 1
+    fi
+  fi
+done
+rm $TMP
+rm $ERR
+rm $ERR2
+
+exit 1
