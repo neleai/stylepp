@@ -2,7 +2,7 @@
 
 TOP=`git rev-parse --show-toplevel`
 FILES=`mktemp`
-DIC=/tmp/dict
+DIC=`mktemp`
 echo >$DIC
 HISTORYDIR=$TOP/.stylepp/history
 HISTORYDICTIONARY=$TOP/.stylepp/dictionary_history
