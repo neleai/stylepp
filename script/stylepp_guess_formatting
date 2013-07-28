@@ -1,0 +1,22 @@
+#!/bin/bash
+
+DIR="$( cd "$( dirname "${BASH_SOURCE[0]}" )" && pwd )"
+PID=$BASHPID
+PATH=$PATH:$DIR/../bin:$DIR
+
+git stash >/dev/null
+
+stylepp_leading_spaces
+SPACES=`git diff | grep "^+" | wc -l`
+git reset --hard >/dev/null
+stylepp_leading_tabs
+TABS=`git diff | grep "^+" | wc -l`
+git reset --hard >/dev/null
+
+echo "# Lines changed when going to tabs:spaces $TABS:$SPACES"
+if [ "$SPACES" -le "$TABS" ]; then
+  echo stylepp_leading_spaces
+else
+  echo stylepp_leading_tabs
+fi
+git stash pop 2>/dev/null

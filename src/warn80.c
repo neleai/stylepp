@@ -25,7 +25,7 @@ main (int argc, char **argv)
 	{
 	  fprintf (stderr, "vim +%i %s\n", line, argv[1]);
 	  line++; // As this line will probably be split into two
-		  // we need adjust position of subsequent opens.
+	          // we need adjust position of subsequent opens.
 	}
       line++;
     }
