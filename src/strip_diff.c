@@ -42,10 +42,10 @@ main (int argc, char **argv)
   while (fgets (buffer[3], 100000, stream))
     {
       /* Find occurrences of
-         [^+-]line
-         -[^-]line
-         +line
-         [^+-]line
+	 [^+-]line
+	 -[^-]line
+	 +line
+	 [^+-]line
        */
       char _pbuffer[10000], *pbuffer = _pbuffer + 40;
       if (!one_from (buffer[0][0], "+-") && buffer[1][0] == '-' && buffer[1][1] != '-' && buffer[2][0] == '+' && !one_from (buffer[3][0], "+-"))
