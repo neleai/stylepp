@@ -38,6 +38,8 @@ main (int argc, char **argv)
 	      if (!cmp (buffer + i, " \t"))
 		spacebeforetab = 1;
 	    }
+
+# ifdef LEADING_TAB
 	  if (spacebeforetab)
 	    {
 	      for (k = 0; k < len / 8; k++)
@@ -47,6 +49,10 @@ main (int argc, char **argv)
 	    }
 	  else
 	    i = 0;
+# else
+	  for (k = 0; k < len; k++)
+	    buffer2[j++] = ' ';
+# endif
 	}
 #endif
 
