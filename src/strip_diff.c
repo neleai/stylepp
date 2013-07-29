@@ -139,7 +139,7 @@ main (int argc, char **argv)
       for (i = 0; i < 3; i++)
 	strcpy (buffer[i], buffer[i + 1]);
     }
-  qsort (diffs, diffs_no, sizeof (diff_s), diffcmp);
+  qsort (diffs, diffs_no, sizeof (diff_s), (__compar_fn_t) diffcmp);
   for (i = 0; i < diffs_no; i++)
     {
       printf ("%s%s%s", diffs[i].lines[0], diffs[i].lines[1], diffs[i].lines[2]);

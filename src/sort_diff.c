@@ -79,7 +79,7 @@ main (int argc, char **argv)
 	  bodyp += strlen (bodyp);
 	}
     }
-  qsort (diffs + 1, diffs_no - 1, sizeof (diff_s), diffcmp);
+  qsort (diffs + 1, diffs_no - 1, sizeof (diff_s), (__compar_fn_t) diffcmp);
   for (i = 1; i < diffs_no - 1; i++)
     {
       printf ("%s%s", diffs[i].header, diffs[i].body);

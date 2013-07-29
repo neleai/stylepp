@@ -26,7 +26,7 @@ main (int argc, char **argv)
       words[words_no++] = strdup (buffer);
     }
   words[words_no] = malloc (1);
-  qsort (words, words_no, sizeof (char *), strcmp2);
+  qsort (words, words_no, sizeof (char *), (__compar_fn_t) strcmp2);
   for (i = 0; i < words_no; i++)
     {
       if (strcmp (words[i], words[i + 1]))

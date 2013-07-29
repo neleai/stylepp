@@ -58,7 +58,7 @@ main (int argc, char **argv)
   if (lang == LANG_PLAIN)
     incomment = 1;
 
-
+#ifndef FIX_A_AN
   /* Read a dictionary */
   FILE *dictionary = fopen ("dictionary", "r");
   name_number = 0;
@@ -80,7 +80,7 @@ main (int argc, char **argv)
       replacements[i + name_number][0] = toupper (replacements[i][0]);
       add_word (names[i + name_number], i + name_number);
     }
-
+#endif
 
 
   while (fgets (buffer, 100000, stdin))
@@ -98,6 +98,7 @@ main (int argc, char **argv)
 
 	      // We try all replacement candidates.
 	      // TODO use trie.
+#ifndef FIX_A_AN
 	      if ((unfiltered && isalnum (buffer[i]) && !isalnum (buffer[i - 1])) || (!inmail && !inhtml && isseparator (buffer + i - 1) && buffer[i - 1] != '.' && isalnum (buffer[i])))
 		{
 		  k = get_word (word (buffer + i));
@@ -117,6 +118,32 @@ main (int argc, char **argv)
 		    skip2:;
 		    }
 		}
+#else
+	      if (isspace (buffer[i - 1]) && !cmp (buffer + i, "a ") && one_from (buffer[i + 2], "aeio") && strlen (word (buffer + i + 2)) > 3)
+		{
+		  strcpy (buffer2 + j, "an ");
+		  i += strlen ("a ");
+		  j += strlen ("an ");
+		}
+	      if (buffer[i - 2] == '.' && isspace (buffer[i - 1]) && !cmp (buffer + i, "A ") && one_from (buffer[i + 2], "aeio") && strlen (word (buffer + i + 2)) > 3)
+		{
+		  strcpy (buffer2 + j, "An ");
+		  i += strlen ("A ");
+		  j += strlen ("An ");
+		}
+	      if (isspace (buffer[i - 1]) && !cmp (buffer + i, "an ") && islower (buffer[i + 2]) && !one_from (buffer[i + 2], "aeiouy") && strlen (word (buffer + i + 2)) > 3)
+		{
+		  strcpy (buffer2 + j, "a ");
+		  i += strlen ("an ");
+		  j += strlen ("a ");
+		}
+	      if (buffer[i - 2] == '.' && isspace (buffer[i - 1]) && !cmp (buffer + i, "An ") && islower (buffer[i + 2]) && !one_from (buffer[i + 2], "aeiouy") && strlen (word (buffer + i + 2)) > 3)
+		{
+		  strcpy (buffer2 + j, "A ");
+		  i += strlen ("An ");
+		  j += strlen ("A ");
+		}
+#endif
 	    }
 
 
