@@ -1,0 +1,9 @@
+#!/bin/bash
+
+DIR="$( cd "$( dirname "${BASH_SOURCE[0]}" )" && pwd )"
+PATH=$PATH:$DIR/../bin:$DIR
+
+VERSION=`cd $DIR; git rev-parse HEAD`
+for I in  trailing_space form_feed space_before_tab leading_space; do
+  stylepp_skeleton $* stylepp_$I
+done

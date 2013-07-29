@@ -1,0 +1,16 @@
+HASH=`git rev-parse HEAD`
+MERGED=`mktemp`
+NEW=`mktemp`
+BLAME=`mktemp`
+for OLD in `git diff HEAD^ --name-only`; do
+  cp $OLD $NEW
+  git checkout HEAD $OLD
+  git blame HEAD $OLD > $BLAME
+  stylepp__restrict_formatter $OLD $NEW $HASH $BLAME > $MERGED
+  
+  cp $MERGED $OLD
+done
+
+rm $MERGED
+rm $NEW
+rm $BLAME

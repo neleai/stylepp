@@ -79,6 +79,8 @@ main (int argc, char **argv)
 	  bodyp += strlen (bodyp);
 	}
     }
+  if (!diffs_no)
+    return 1;
   qsort (diffs + 1, diffs_no - 1, sizeof (diff_s), (__compar_fn_t) diffcmp);
   for (i = 1; i < diffs_no - 1; i++)
     {
