@@ -3,8 +3,8 @@
 /*
    Prints list of words that appear in first sorted file but not second.
  */
-#include <string.h>
-#include <stdio.h>
+#include "common.h"
+
 #define MAX_LEN 10000
 
 

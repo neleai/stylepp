@@ -9,6 +9,7 @@
 #include <stdlib.h>
 #include <string.h>
 #include <libgen.h>
+typedef int (*__compar_fn_t )(const void *, const void *);
 
 #define isalnum_(x) (isalnum (x) || x == '_')
 #define cmp(x, y) memcmp (x, y, strlen (y))

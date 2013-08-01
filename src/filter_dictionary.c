@@ -27,4 +27,5 @@ main (int argc, char **argv)
       if (diff < 3 && strlen (word[0]) > 2 && strlen (word[1]) > 2)
 	printf ("%-20s %s\n", word[0], word[1]);
     }
+  return 0;
 }

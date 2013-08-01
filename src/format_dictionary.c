@@ -15,4 +15,5 @@ main (int argc, char **argv)
     {
       printf ("%-20s %s\n", word[0], word[1]);
     }
+  return 0;
 }

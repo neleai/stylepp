@@ -16,6 +16,7 @@
 
 #include "comments.h"
 
+void
 parseword (char *word)
 {
   int i;
