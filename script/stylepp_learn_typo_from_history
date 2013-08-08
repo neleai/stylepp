@@ -1,6 +1,6 @@
 #!/bin/bash
 
-TOP=`git rev-parse --show-toplevel`
+. $STYLEPP_DIR/stylepp_common
 FILES=`mktemp`
 DIC=`mktemp`
 echo >$DIC

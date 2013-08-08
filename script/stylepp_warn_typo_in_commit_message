@@ -1,4 +1,5 @@
 #!/bin/bash
+. $STYLEPP_DIR/stylepp_common
 
 if [ ! -z "`git log -1 --pretty=%B | aspell list`" ]; then
   echo "Warning: Possible typos in commit message:"

@@ -1,0 +1,3 @@
+DIR=$STYLEPP_DIR
+PATH=$PATH:$DIR/bin
+TOP=`git rev-parse --show-toplevel`

@@ -1,7 +1,6 @@
 #!/bin/bash
+. $STYLEPP_DIR/stylepp_common
 
-DIR="$( cd "$( dirname "${BASH_SOURCE[0]}" )" && pwd )"
-PATH=$PATH:$DIR/../bin:$DIR
 TMP_FILES=`mktemp`
 TMP_FMT=`mktemp`
 

@@ -1,8 +1,7 @@
 #!/bin/bash
-
-DIR="$( cd "$( dirname "${BASH_SOURCE[0]}" )" && pwd )"
+. $STYLEPP_DIR/stylepp_common
 PID=$BASHPID
-PATH=$PATH:$DIR/../bin:$DIR
+
 if git rev-parse --show-toplevel >/dev/null 2>/dev/null; then
   TOP=`git rev-parse --show-toplevel`
 else

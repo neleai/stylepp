@@ -1,3 +1,6 @@
+#!/bin/bash
+. $STYLEPP_DIR/stylepp_common
+
 HASH=`git rev-parse HEAD`
 MERGED=`mktemp`
 NEW=`mktemp`

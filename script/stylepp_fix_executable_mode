@@ -1,4 +1,6 @@
 #!/bin/bash
+. $STYLEPP_DIR/stylepp_common
+
 
 for I in `find  -executable -type f | grep "\(\.c\|\.h\|\.cc\|\.cpp\|\.java\|\.adb\|\.ads\|\.f\|\.f90\|\.f95\|\.txt\|\.htm\|\.html\|\.tex\|\.texi\|\.ml\|\.mli\)$"`; do
   chmod -x $I
