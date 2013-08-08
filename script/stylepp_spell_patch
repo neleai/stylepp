@@ -3,6 +3,7 @@
 DIR="$( cd "$( dirname "${BASH_SOURCE[0]}" )" && pwd )"
 PATH=$PATH:$DIR/../bin:$DIR
 TOP=`git rev-parse --show-toplevel`
+DIC=.stylepp/dictionary
 mkdir $TOP/.stylepp 2> /dev/null
 
 stylepp_spellcheck
@@ -11,22 +12,27 @@ if [ ! -f $DIR/../maintained/dictionary_personal ]; then
   cp $DIR/../maintained/dictionary_common $DIR/../maintained/dictionary_personal
 fi
 
-stylepp_subtract_dictionary $DIR/../maintained/dictionary_wiki $TOP/.stylepp/words_code > dictionary
+stylepp_subtract_dictionary $DIR/../maintained/dictionary_wiki $TOP/.stylepp/words_code > $DIC
 stylepp_fix_spell $*
 git commit -a -m "Fix common typos."
 
-#stylepp_subtract_dictionary $DIR/../maintained/dictionary_names $TOP/.stylepp/words_code > dictionary
+#stylepp_subtract_dictionary $DIR/../maintained/dictionary_names $TOP/.stylepp/words_code > DIC
 #stylepp_fix_spell $*
 #git commit -a -m "Fix capitalization."
 
-stylepp_subtract_dictionary $DIR/../maintained/dictionary_personal $TOP/.stylepp/words_code > dictionary
+stylepp_subtract_dictionary $DIR/../maintained/dictionary_personal $TOP/.stylepp/words_code > $DIC
 stylepp_fix_spell $*
 git commit -a -m "Fix typos from personal list."
 
 # Generates false positives.
-stylepp_subtract_dictionary $DIR/../maintained/dictionary_history $TOP/.stylepp/words_code > dictionary
+stylepp_subtract_dictionary $DIR/../maintained/dictionary_history $TOP/.stylepp/words_code > $DIC
 stylepp_fix_spell $*
 git commit -a -m "Fix typos from history list."
+
+cp  $DIR/../maintained/a_an_exceptions.txt $DIC
+stylepp_skeleton stylepp_fix_a_an
+git commit -a -m "Fix missplaced a/an."
+
 
 stylepp_spellcheck
 stylepp_dictionary

@@ -61,7 +61,7 @@ main (int argc, char **argv)
 
 #ifndef FIX_A_AN
   /* Read a dictionary */
-  FILE *dictionary = fopen ("dictionary", "r");
+  FILE *dictionary = fopen (".stylepp/dictionary", "r");
   name_number = 0;
   while (fscanf (dictionary, "%s %s", buffer, buffer2) != EOF)
     {
@@ -80,6 +80,20 @@ main (int argc, char **argv)
       replacements[i + name_number] = strdup (replacements[i]);
       replacements[i + name_number][0] = toupper (replacements[i][0]);
       add_word (names[i + name_number], i + name_number);
+    }
+#else
+  /* Read a dictionary */
+  FILE *dictionary = fopen ("dictionary", "r");
+  name_number = 1;
+  while (fscanf (dictionary, "%s", buffer) != EOF)
+    {
+      names[name_number] = strdup (buffer);
+      name_number++;
+    }
+  for (i = 1; i < name_number; i++)
+    {
+      parseword (names[i]);
+      add_word (names[i], i);
     }
 #endif
 
@@ -121,25 +135,25 @@ main (int argc, char **argv)
 		}
 #else
 	      /* TODO check if a/A does appear in code to avoid more false positives.*/
-	      if (isspace (buffer[i - 1]) && !cmp (buffer + i, "a ") && one_from (buffer[i + 2], "aeio") && strlen (word (buffer + i + 2)) > 3)
+	      if (isspace (buffer[i - 1]) && !cmp (buffer + i, "a ") && one_from (buffer[i + 2], "aeio") && strlen (word (buffer + i + 2)) > 3 && !get_word (word (buffer + i + 2)))
 		{
 		  strcpy (buffer2 + j, "an ");
 		  i += strlen ("a ");
 		  j += strlen ("an ");
 		}
-	      if (buffer[i - 2] == '.' && isspace (buffer[i - 1]) && !cmp (buffer + i, "A ") && one_from (buffer[i + 2], "aeio") && strlen (word (buffer + i + 2)) > 3)
+	      if (buffer[i - 2] == '.' && isspace (buffer[i - 1]) && !cmp (buffer + i, "A ") && one_from (buffer[i + 2], "aeio") && strlen (word (buffer + i + 2)) > 3 && !get_word (word (buffer + i + 2)))
 		{
 		  strcpy (buffer2 + j, "An ");
 		  i += strlen ("A ");
 		  j += strlen ("An ");
 		}
-	      if (isspace (buffer[i - 1]) && !cmp (buffer + i, "an ") && islower (buffer[i + 2]) && !one_from (buffer[i + 2], "aeiouy") && strlen (word (buffer + i + 2)) > 3)
+	      if (isspace (buffer[i - 1]) && !cmp (buffer + i, "an ") && islower (buffer[i + 2]) && !one_from (buffer[i + 2], "aeiouy") && strlen (word (buffer + i + 2)) > 3 && !get_word (word (buffer + i + 3)))
 		{
 		  strcpy (buffer2 + j, "a ");
 		  i += strlen ("an ");
 		  j += strlen ("a ");
 		}
-	      if (buffer[i - 2] == '.' && isspace (buffer[i - 1]) && !cmp (buffer + i, "An ") && islower (buffer[i + 2]) && !one_from (buffer[i + 2], "aeiouy") && strlen (word (buffer + i + 2)) > 3)
+	      if (buffer[i - 2] == '.' && isspace (buffer[i - 1]) && !cmp (buffer + i, "An ") && islower (buffer[i + 2]) && !one_from (buffer[i + 2], "aeiouy") && strlen (word (buffer + i + 2)) > 3 && !get_word (word (buffer + i + 3)))
 		{
 		  strcpy (buffer2 + j, "A ");
 		  i += strlen ("An ");

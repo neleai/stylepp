@@ -1,0 +1,3 @@
+STYLEPP_DIR="$( cd "$( dirname "${BASH_SOURCE[0]}" )" && pwd )"
+export STYLEPP_DIR
+PATH=$PATH:$STYLEPP_DIR/script:$STYLEPP_DIR/bin
