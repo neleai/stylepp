@@ -135,13 +135,13 @@ main (int argc, char **argv)
 		}
 #else
 	      /* TODO check if a/A does appear in code to avoid more false positives.*/
-	      if (isspace (buffer[i - 1]) && !cmp (buffer + i, "a ") && one_from (buffer[i + 2], "aeio") && strlen (word (buffer + i + 2)) > 3 && !get_word (word (buffer + i + 2)))
+	      if (isspace (buffer[i - 1]) && !cmp (buffer + i, "a ") && one_from (buffer[i + 2], "aeio") && strlen (word (buffer + i + 2)) > 3 && !get_word (word (buffer + i + 2)) && !cmp (buffer + i + 2, "one-"))
 		{
 		  strcpy (buffer2 + j, "an ");
 		  i += strlen ("a ");
 		  j += strlen ("an ");
 		}
-	      if (buffer[i - 2] == '.' && isspace (buffer[i - 1]) && !cmp (buffer + i, "A ") && one_from (buffer[i + 2], "aeio") && strlen (word (buffer + i + 2)) > 3 && !get_word (word (buffer + i + 2)))
+	      if (buffer[i - 2] == '.' && isspace (buffer[i - 1]) && !cmp (buffer + i, "A ") && one_from (buffer[i + 2], "aeio") && strlen (word (buffer + i + 2)) > 3 && !get_word (word (buffer + i + 2)) && !cmp (buffer + i + 2, "one-"))
 		{
 		  strcpy (buffer2 + j, "An ");
 		  i += strlen ("A ");
