@@ -97,7 +97,9 @@ main (int argc, char **argv)
     }
 #endif
 
-
+  /* End if there is nothing to do. */
+  if (!name_number)
+    return 1;
   while (fgets (buffer, 100000, stdin))
     {
       for (i = 0, j = 0; buffer[i]; )
