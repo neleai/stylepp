@@ -5,13 +5,11 @@
    We extract words that are contained in comments but not in actual source.
  */
 
-/*
-   TODO  use trie.
- */
+char **names;
 
 #include <string.h>
 
-#define HASH_TYPE char
+#define HASH_TYPE int
 #include "common.h"
 #include "hash.h"
 
@@ -34,7 +32,8 @@ main (int argc, char **argv)
   char *input = malloc (100000000), *ip = input;
   char *output = malloc (100000000), *op = output;
   _buffer[0] = ' ';
-
+  names = malloc (10000000);
+  int names_no = 1;
 
   // Treat everything in plain files as comment.
   if (lang == LANG_PLAIN)
@@ -45,8 +44,11 @@ main (int argc, char **argv)
       for (i = 0, j = 0; buffer[i]; )
 	{
 	  if (EXTRACT_COMMENT && (incomment || incomment2) && isseparator (buffer + i - 1) && isalpha (buffer[i]))
-	    if (add_word (word (buffer + i), 1))
-	      printf ("%s\n", word (buffer + i));
+	    if (add_word (word (buffer + i), names_no))
+	      {
+		names[names_no++] = strdup (word (buffer + i));
+		printf ("%s\n", word (buffer + i));
+	      }
 	  if (incomment)
 	    {
 	      if (end_comment (lang, buffer + i))
@@ -74,8 +76,11 @@ main (int argc, char **argv)
 	  else
 	    {
 	      if (!EXTRACT_COMMENT && !isalpha (buffer[i - 1]) && isalpha (buffer[i]))
-		if (add_word (word (buffer + i), 1))
-		  printf ("%s\n", word (buffer + i));
+		if (add_word (word (buffer + i), names_no))
+		  {
+		    names[names_no++] = strdup (word (buffer + i));
+		    printf ("%s\n", word (buffer + i));
+		  }
 	      if (start_comment (lang, buffer + i))
 		incomment = 1;
 	      if (start_line_comment (lang, buffer + i))

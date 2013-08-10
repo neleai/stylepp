@@ -10,6 +10,8 @@
 
 #define HASH_TYPE int
 
+int name_number;
+char **names, **replacements;
 
 #include "common.h"
 #include "hash.h"
@@ -32,8 +34,6 @@ parseword (char *word)
     }
 }
 
-int name_number;
-char **names, **replacements;
 int
 main (int argc, char **argv)
 {
@@ -60,9 +60,9 @@ main (int argc, char **argv)
     incomment = 1;
 
   FILE *dictionary = fopen (".stylepp/dictionary", "r");
+  name_number = 1;
 #ifndef FIX_A_AN
   /* Read a dictionary */
-  name_number = 0;
   while (fscanf (dictionary, "%s %s", buffer, buffer2) != EOF)
     {
       names[name_number] = strdup (buffer);
@@ -70,7 +70,7 @@ main (int argc, char **argv)
       name_number++;
     }
   /* Verify that dictionary consists only of letters and '.  */
-  for (i = 0; i < name_number; i++)
+  for (i = 1; i < name_number; i++)
     {
       parseword (names[i]);
       parseword (replacements[i]);
@@ -83,7 +83,6 @@ main (int argc, char **argv)
     }
 #else
   /* Read a dictionary */
-  name_number = 1;
   while (fscanf (dictionary, "%s", buffer) != EOF)
     {
       names[name_number] = strdup (buffer);
@@ -97,7 +96,7 @@ main (int argc, char **argv)
 #endif
 
   /* End if there is nothing to do. */
-  if (!name_number)
+  if (name_number == 1)
     return 1;
   while (fgets (buffer, 100000, stdin))
     {
@@ -118,7 +117,7 @@ main (int argc, char **argv)
 	      if ((unfiltered && isalnum (buffer[i]) && !isalnum (buffer[i - 1])) || (!inmail && !inhtml && isseparator (buffer + i - 1) && buffer[i - 1] != '.' && isalnum (buffer[i])))
 		{
 		  k = get_word (word (buffer + i));
-		  if (!cmp (buffer + i, names[k]) && (isseparator (buffer + i + strlen (names[k])) || (unfiltered && !isalnum (buffer[i + strlen (names[k])]))))
+		  if (k && (isseparator (buffer + i + strlen (names[k])) || (unfiltered && !isalnum (buffer[i + strlen (names[k])]))))
 		    {
 		      if (isupper (names[k][0]))
 			{

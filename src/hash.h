@@ -29,8 +29,14 @@ static int
 add_word (char *word, HASH_TYPE value)
 {
   int h = hash (word) % HASH_SIZE;
-  if (code_words[h])
-    return 0;
+  while (code_words[h])
+    {
+      if (!strcmp (word, names[code_words[h]]))
+	return 0;
+      h++;
+      if (h > HASH_SIZE)
+	h = 0;
+    }
   code_words[h] = value;
   return 1;
 }
@@ -39,5 +45,14 @@ static HASH_TYPE
 get_word (char *word)
 {
   int h = hash (word) % HASH_SIZE;
-  return code_words[h];
+  while (1)
+    {
+      if (!code_words[h])
+	return 0;
+      if (!strcmp (word, names[code_words[h]]))
+	return code_words[h];
+      h++;
+      if (h > HASH_SIZE)
+	h = 0;
+    }
 }
