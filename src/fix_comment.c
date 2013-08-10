@@ -59,9 +59,9 @@ main (int argc, char **argv)
   if (lang == LANG_PLAIN)
     incomment = 1;
 
+  FILE *dictionary = fopen (".stylepp/dictionary", "r");
 #ifndef FIX_A_AN
   /* Read a dictionary */
-  FILE *dictionary = fopen (".stylepp/dictionary", "r");
   name_number = 0;
   while (fscanf (dictionary, "%s %s", buffer, buffer2) != EOF)
     {
@@ -83,7 +83,6 @@ main (int argc, char **argv)
     }
 #else
   /* Read a dictionary */
-  FILE *dictionary = fopen ("dictionary", "r");
   name_number = 1;
   while (fscanf (dictionary, "%s", buffer) != EOF)
     {
