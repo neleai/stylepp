@@ -47,7 +47,7 @@ main (int argc, char **argv)
          +line
          [^+-]line
        */
-      char _pbuffer[10000], *pbuffer = _pbuffer + 40;
+      char _pbuffer = malloc (100000000), *pbuffer = _pbuffer + 40;
       if (!one_from (buffer[0][0], "+-") && buffer[1][0] == '-' && buffer[1][1] != '-' && buffer[2][0] == '+' && !one_from (buffer[3][0], "+-"))
 	{
 	  /* Strip leading spaces */

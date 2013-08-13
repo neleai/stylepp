@@ -9,13 +9,13 @@ main (int argc, char **argv)
 {
   int line = 1;
   int i, len, nslen, nsi;
-  char buffer[100000];
+  char buffer = malloc (100000000);
   while (fgets (buffer, 100000, stdin))
     {
       len = 0;
       nsi = 0;
       nslen = 0;
-      char word[100], repl[100];
+      char word = malloc (100000000), repl = malloc (100000000);
       for (i = 0; buffer[i]; i++)
 	{
 	  if (!cmp (buffer + i, "[-"))

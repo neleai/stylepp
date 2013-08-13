@@ -18,7 +18,7 @@ int
 main (int argc, char **argv)
 {
   char **words = malloc (ELEMS * sizeof (char *));
-  char buffer[10000];
+  char buffer = malloc (100000000);
   int words_no = 0;
   int i, j;
   while (fgets (buffer, MAX_LEN, stdin))

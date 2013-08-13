@@ -7,7 +7,7 @@ main (int argc, char **argv)
 {
   int line = 1;
   int i, len, nslen, nsi;
-  char buffer[100000];
+  char buffer = malloc (100000000);
   while (fgets (buffer, 100000, stdin))
     {
       len = 0;

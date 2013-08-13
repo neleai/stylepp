@@ -27,19 +27,19 @@ main (int argc, char **argv)
 
   int i, j, k, len;
   int incomment = 0, incomment2 = 0, insquote = 0, indquote = 0;
-  char _buffer[100000], *buffer = _buffer + 1;
-  char buffer2[100000];
+  char _buffer = malloc (100000000), *buffer = _buffer + 1;
+  char buffer2 = malloc (100000000);
   char *input = malloc (100000000), *ip = input;
   char *output = malloc (100000000), *op = output;
   _buffer[0] = ' ';
-  names = malloc (10000000);
+  names = malloc (100000000);
   int names_no = 1;
 
   // Treat everything in plain files as comment.
   if (lang == LANG_PLAIN)
     incomment = 1;
 
-  while (fgets (buffer, 100000, stdin))
+  while (fgets (buffer, 10000000, stdin))
     {
       for (i = 0, j = 0; buffer[i]; )
 	{
