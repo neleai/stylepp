@@ -46,8 +46,8 @@ main (int argc, char **argv)
 
   int i, j, k, l, len;
   int incomment = 0, incomment2 = 0, insquote = 0, indquote = 0, inmail = 0, inhtml = 0;
-  char _buffer = malloc (100000000), *buffer = _buffer + 1;
-  char buffer2 = malloc (100000000);
+  char *_buffer = malloc (100000000), *buffer = _buffer + 1;
+  char *buffer2 = malloc (100000000);
   char *input = malloc (100000000), *ip = input;
   char *output = malloc (100000000), *op = output;
   names = malloc (100000000);

@@ -28,13 +28,13 @@ main (int argc, char **argv)
   if (argc > 1)
     stream = fopen (argv[1], "r");
   int i, j, k;
-  char buffer = malloc (100000000);
+  char *buffer = malloc (100000000);
   diff_s diff;
-  char header = malloc (100000000);
-  char body = malloc (100000000);
+  char *header = malloc (100000000);
+  char *body = malloc (100000000);
   char *bodyp = body;
-  char firstm = 0, firstps = malloc (100000000);
-  char firstp = 0, firstms = malloc (100000000);
+  char firstm = 0, *firstps = malloc (100000000);
+  char firstp = 0, *firstms = malloc (100000000);
   while (fgets (buffer, 100000, stream))
     {
       if (!cmp (buffer, "diff --git"))
