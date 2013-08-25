@@ -1,0 +1,20 @@
+
+TMP_FILES=`mktemp`
+TMP_FMT=`mktemp`
+
+if [ "$1" == "--hook" ]; then
+  shift 1
+  # Hook version.
+  TOP=`git rev-parse --show-toplevel`
+  rm $TMP_FILES 2> /dev/null
+  echo > $TMP_FILES
+  for I in `git diff HEAD --name-only`; do
+    I=$TOP/$I
+    echo $I >> $TMP_FILES
+  done
+  FILES=`cat $TMP_FILES`
+  rm $TMP_FILES
+else
+  FILES=`find -not -path '*/.*/*' -not -name '.*'`
+fi
+rm $TMP_FMT 2>/dev/null

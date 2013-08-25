@@ -62,16 +62,23 @@ if [ ! -z "`cat $TOP/.stylepp/misspells`" ]; then
   echo "There are `cat $TOP/.stylepp/misspells | wc -l` Likely misspells:"
   if [ "$HOOK" == "true" ]; then
     for WORD in `cat $TOP/.stylepp/misspells | head`; do
-      git diff HEAD | grep $WORD | sed -e"s/ $WORD / ++$WORD++ /g" | head -n 1
+      git diff HEAD | grep $WORD | grep "^+" | sed -e"s/\\([^a-zA-Z]\\)$WORD\\([^a-zA-Z]\\)/\\1++$WORD++\\2/g" | head -n 10
     done
+    echo
+    echo "Also saved into $TOP/.stylepp/misspells file."
+    echo "To fix them run:"
+    echo "stylepp_dictionary --hook"
+    echo
+    
   else
     cat $TOP/.stylepp/misspells | head
+    echo
+    echo "Also saved into $TOP/.stylepp/misspells file."
+    echo "To fix them run:"
+    echo "stylepp_dictionary"
+    echo
+    
   fi
-  echo
-  echo "Also saved into $TOP/.stylepp/misspells file."
-  echo "To fix them run:"
-  echo "stylepp_dictionary"
-  echo
 fi
 
 # Cleanup.

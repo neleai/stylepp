@@ -1,24 +1,6 @@
 #!/bin/bash
 . $STYLEPP_DIR/stylepp_common
-
-TMP_FILES=`mktemp`
-TMP_FMT=`mktemp`
-
-if [ $1 == "--hook" ]; then
-  shift 1
-  # Hook version.
-  TOP=`git rev-parse --show-toplevel`
-  rm $TMP_FILES 2> /dev/null
-  echo > $TMP_FILES
-  for I in `git diff HEAD --name-only`; do
-    I=$TOP/$I
-    echo $I >> $TMP_FILES
-  done
-  FILES=`cat $TMP_FILES`
-  rm $TMP_FILES
-else
-  FILES=`find`
-fi
+. $STYLEPP_DIR/stylepp_directory
 
 for CUP in $*; do
   for I in $FILES; do
@@ -32,5 +14,3 @@ for CUP in $*; do
   done
 done
 
-# Cleanup.
-rm $TMP_FMT 2>/dev/null
