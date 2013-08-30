@@ -59,7 +59,7 @@ main (int argc, char **argv)
 	  for (i = 1; buffer[1][i] == buffer[2][i] && buffer[2][i]; i++)
 	    ;
 	  int dif2 = i;
-	  while (i > 2 && isword (buffer[1][i - 1]))
+	  while (i > 1 && isword (buffer[1][i - 1]))
 	    i--;
 	  diff.different_from = i;
 

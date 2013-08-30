@@ -64,7 +64,7 @@ main (int argc, char **argv)
 	      firstp = 1;
 	      for (i = 1; buffer[i] && buffer[i] == firstms[i]; i++)
 		;
-	      while (i > 2 && isword (buffer[i - 1]))
+	      while (i > 1 && isword (buffer[i - 1]))
 		i--;
 
 	      diffs[diffs_no].sort_by = strdup (buffer + i);
